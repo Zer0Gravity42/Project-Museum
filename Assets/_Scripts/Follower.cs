@@ -10,6 +10,7 @@ public class Follower : MonoBehaviour
     public bool attack = false;
     private float attackTimer = 0.0f;
     Vector2 direction;
+    public GameObject slash;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class Follower : MonoBehaviour
         //alekseys code
         if(!attack)
         {
+            slash.SetActive(false);
             //if possible we should add some lerping to this
             Vector3 mousePosition = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
@@ -36,20 +38,15 @@ public class Follower : MonoBehaviour
         }
         
         transform.position = playerTransform.position + (Vector3)(direction * distanceFromPlayer); // Set position at a fixed distance from the player
-        if(transform.position.x>0)
-        {
-            transform.up = direction; // Rotate to face the mouse
-        }
-        else
-        {
-            transform.up = -direction; // flip sometimes (this will look better with a real sprite)
-        }
+        transform.up = direction; // Rotate to face the mouse
+       
 
         //when mouse clicked (if attack not on cooldown) set attack to true and reset the timer
         if (Input.GetMouseButtonDown(0) && attackTimer>0.5f)
         {
             attack = true;
             attackTimer = 0.0f;
+            slash.SetActive(true);
         }
         //when attack duration is up set attack to false
         if(attackTimer>0.1f)
