@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4590218224618758707}
   - component: {fileID: 8836146116194994145}
   - component: {fileID: 362815392502869317}
-  - component: {fileID: 2708196264948598395}
+  - component: {fileID: -4178807480741364007}
   m_Layer: 0
-  m_Name: TestFollower
+  m_Name: SwordFollower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,7 +160,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2708196264948598395
+--- !u!114 &-4178807480741364007
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,11 +169,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2925893429769570803}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8f75767382580f49a737686d991ac32, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b340f26b30459a4da48d1902d073d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 0
-  slash: {fileID: 4112901398799786003}
 --- !u!1 &4112901398799786003
 GameObject:
   m_ObjectHideFlags: 0
