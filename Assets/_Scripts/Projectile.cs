@@ -21,7 +21,7 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject, lifetime);
     }
 
-    // OnTriggerEnter2D is called when this object collides with another object
+   
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
