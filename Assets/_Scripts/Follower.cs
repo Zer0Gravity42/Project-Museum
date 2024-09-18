@@ -10,7 +10,7 @@ public abstract class Follower : MonoBehaviour
     protected Vector2 direction;
     protected float distanceFromPlayer = 1.0f;
     protected bool attack = false;
-    protected float attackTimer = 0.0f;
+    protected float attackTimer = 0.1f;
 
     void Start()
     {

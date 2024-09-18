@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SwordFollower : Follower
 {
+    public GameObject slash;
     // Override the HandleAttack method for sword attack behavior
     protected override void HandleAttack()
     {
@@ -11,11 +12,13 @@ public class SwordFollower : Follower
         {
             attack = true;
             attackTimer = 0.0f;
+            slash.SetActive(true);
         }
 
         if (attackTimer > 0.1f)
         {
             attack = false;
+            slash.SetActive(false);
         }
 
         if (attack)
