@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class basicEnemy : Enemy
 {
+    private Vector2 attackDirection;
     protected override void setSpeedAndHealth()
     {
         speed = 0.02f;
@@ -13,22 +14,45 @@ public class basicEnemy : Enemy
 
     protected override void move()
     {
-        if(distanceFromPlayer > 1)
+        if(distanceFromPlayer > 3 && attacking == false)
         {
             transform.position -= (Vector3)(directionToPlayer * speed);
         }
         else
         {
-            attack();
+            attacking = true;
         }
     }
 
     protected override void attack()
     {
-        if(timer > 1)
+        bool attackOnCooldown= false;
+        if(timer < 1.5)
         {
-            Debug.Log("attack!");
-            timer = 0;
+            attackOnCooldown= true;
+        }
+        if(attacking== true) 
+        {
+            if (attackOnCooldown == false)
+            {
+                timer = 0;
+            }
+            if (timer >1)
+            {
+                attacking= false;
+            }
+            if(timer == 0 && attacking)
+            {
+                attackDirection = directionToPlayer;
+            }
+            if(timer < 0.3 && attacking)
+            {
+                transform.position += (Vector3)(attackDirection * (speed/4));
+            }
+            if(timer > 0.3 && attacking)
+            {
+                transform.position -= (Vector3)(attackDirection * (speed*2));
+            }
         }
     }
 }

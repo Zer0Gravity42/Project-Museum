@@ -6,16 +6,21 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
+    //player attributes
     public GameObject player;
     protected Vector2 directionToPlayer;
     protected float distanceFromPlayer;
+    //enemy atributes
     protected float speed;
     protected int health;
+    //for use in ai behaviour
     protected float timer;
+    protected bool moving = true;
+    protected bool attacking = false;
     // Start is called before the first frame update
     void Start()
     {
-        //sets the attribute for the specific enemy type
+        //sets the attributes for the specific enemy type
         setSpeedAndHealth();
     }
 
@@ -29,8 +34,9 @@ public abstract class Enemy : MonoBehaviour
         directionToPlayer = (transform.position - player.transform.position).normalized;
         distanceFromPlayer = MathF.Abs(transform.position.x - player.transform.position.x) + MathF.Abs(transform.position.y - player.transform.position.y);
 
-        //call move for enemy specific move ai, attack is probably called conditionally within move, we could add it here if its easier
+        //call move and attack with specific ai for each enemy
         move();
+        attack();
 
         //if dead then die
         if(health == 0)
