@@ -6,7 +6,7 @@ public class CollisionDetector : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "TestEnemy") // Ensure the target GameObject's name is "Target"
+        if (collision.gameObject.name == "TestEnemy") 
         {
             collision.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         }
