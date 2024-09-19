@@ -4,6 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - DungeonPortal
+  - MuseumPortal
+  - PinkDiamond
   - Enemy
   layers:
   - Default
@@ -41,4 +44,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Shadow
+    uniqueID: 2467859535
+    locked: 0
+  - name: Item
+    uniqueID: 4033407019
     locked: 0

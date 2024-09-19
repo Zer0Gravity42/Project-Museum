@@ -39,4 +39,17 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = new Vector2(movementDirection.x * movementSpeed, movementDirection.y * movementSpeed);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "DungeonPortal")
+        {
+            Application.LoadLevel("Dungeon");
+        }
+
+        if(collision.tag == "MuseumPortal")
+        {
+            Application.LoadLevel("Museum");
+        }
+    }
 }
