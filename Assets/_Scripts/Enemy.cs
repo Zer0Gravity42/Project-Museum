@@ -45,6 +45,11 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
+    public void takeDamage (int damage)
+    {
+        health -= damage;
+    }
+
     protected abstract void setSpeedAndHealth();
 
     protected abstract void move();

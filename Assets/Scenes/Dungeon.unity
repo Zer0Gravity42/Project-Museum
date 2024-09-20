@@ -1405,6 +1405,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8650200362277942175, guid: 104acf9c5c866774fbe5ac8be7a567ba, type: 3}
+      propertyPath: m_AutoTiling
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9023326529117949394, guid: 104acf9c5c866774fbe5ac8be7a567ba, type: 3}
       propertyPath: m_Name
       value: basicEnemy
@@ -1839,3 +1843,4 @@ SceneRoots:
   - {fileID: 1482164731}
   - {fileID: 1758710367}
   - {fileID: 749303397}
+  - {fileID: 317843432}

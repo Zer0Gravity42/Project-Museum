@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float movementSpeed = 2.0f;
     private Rigidbody2D rb;
     private Vector2 movementDirection;
+    private int health = 3;
     
     // Start is called before the first frame update
     void Start() 
@@ -25,6 +26,15 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Move();
+        if(health == 0)
+        {
+            Application.LoadLevel("Main Menu");
+        }
+    }
+
+    public void takeDamage(int damage)
+    {
+        health -= damage;
     }
     
     void ProcessInputs()
