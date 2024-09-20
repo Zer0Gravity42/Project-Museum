@@ -8,6 +8,7 @@ TagManager:
   - MuseumPortal
   - PinkDiamond
   - Enemy
+  - Weapon
   layers:
   - Default
   - TransparentFX
