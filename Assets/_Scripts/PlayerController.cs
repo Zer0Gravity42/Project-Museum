@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,18 +9,21 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float movementSpeed = 2.0f;
     private Rigidbody2D rb;
     private Vector2 movementDirection;
+    public Animator animator;
     
     // Start is called before the first frame update
     void Start() 
     {
         rb = GetComponent<Rigidbody2D>();
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         ProcessInputs();
+        UpdateAnimation();
     }
     
     void FixedUpdate()
@@ -38,6 +42,14 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         rb.velocity = new Vector2(movementDirection.x * movementSpeed, movementDirection.y * movementSpeed);
+    }
+
+    void UpdateAnimation()
+    {
+        // Update the animator parameters
+        animator.SetFloat("Horizontal", movementDirection.x);
+        animator.SetFloat("Vertical", movementDirection.y);
+        animator.SetFloat("Speed", movementDirection.sqrMagnitude);  // Use square magnitude to determine if the player is moving
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
