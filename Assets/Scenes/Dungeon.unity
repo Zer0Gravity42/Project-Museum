@@ -1461,6 +1461,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: basicEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 9023326529117949394, guid: 104acf9c5c866774fbe5ac8be7a567ba, type: 3}
+      propertyPath: m_TagString
+      value: SpectralEnemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
