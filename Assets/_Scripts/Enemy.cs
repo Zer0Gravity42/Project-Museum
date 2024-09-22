@@ -39,7 +39,7 @@ public abstract class Enemy : MonoBehaviour
         attack();
 
         //if dead then die
-        if(health == 0)
+        if(health <= 0)
         {
             Destroy(gameObject);
         }

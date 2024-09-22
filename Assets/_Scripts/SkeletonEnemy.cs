@@ -1,20 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
-public class basicEnemy : Enemy
+public class SkeletonEnemy : Enemy
 {
     private Vector2 attackDirection;
     protected override void setSpeedAndHealth()
     {
-        speed = 0.02f;
-        health = 5;
+        speed = 0.005f;
+        health = 10;
     }
 
     protected override void move()
     {
-        if(distanceFromPlayer > 3 && attacking == false)
+        if (distanceFromPlayer > 3 && attacking == false)
         {
             transform.position -= (Vector3)(directionToPlayer * speed);
         }
@@ -26,32 +25,32 @@ public class basicEnemy : Enemy
 
     protected override void attack()
     {
-        bool attackOnCooldown= false;
-        if(timer < 1.0)
+        bool attackOnCooldown = false;
+        if (timer < 1.0)
         {
-            attackOnCooldown= true;
+            attackOnCooldown = true;
         }
-        if(attacking== true) 
+        if (attacking == true)
         {
             if (attackOnCooldown == false)
             {
                 timer = 0;
             }
-            if (timer >0.7)
+            if (timer > 0.7)
             {
-                attacking= false;
+                attacking = false;
             }
-            if(timer == 0 && attacking)
+            if (timer == 0 && attacking)
             {
                 attackDirection = directionToPlayer;
             }
-            if(timer < 0.3 && attacking)
+            if (timer > 0.2 && timer < 0.3 && attacking)
             {
-                transform.position += (Vector3)(attackDirection * (speed/4));
+                transform.position -= (Vector3)(attackDirection * (speed * 8));
             }
-            if(timer > 0.3 && attacking)
+            else
             {
-                transform.position -= (Vector3)(attackDirection * (speed*2));
+                transform.position += (Vector3)(attackDirection * (speed / 4));
             }
         }
     }
