@@ -11,7 +11,7 @@ public class InteractionObject : MonoBehaviour
     {
         if (gameObject.GetComponent<Artifact>()) //check if interacted object is an artifact
         {
-            mainManager.GetComponent<MainManager>().artifacts.Add(gameObject); //add the artifact to the global artifact list
+            mainManager.GetComponent<MainManager>().artifacts.Add(gameObject.name); //add the artifact to the global artifact list
         }
 
         gameObject.SetActive(false); //disables the interacted item

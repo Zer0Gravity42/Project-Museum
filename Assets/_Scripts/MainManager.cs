@@ -7,7 +7,7 @@ public class MainManager : MonoBehaviour
     public static MainManager Instance;
 
     //All info relating to persisting data
-    public List<GameObject> artifacts;
+    public List<string> artifacts;
 
     private void Awake()
     {
