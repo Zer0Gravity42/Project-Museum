@@ -24,10 +24,13 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (tag != "Enemy")
         {
-            // Destroy the projectile upon hitting an enemy
-            Destroy(gameObject);
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                // Destroy the projectile upon hitting an enemy
+                Destroy(gameObject);
+            }
         }
     }
 }
