@@ -27,7 +27,7 @@ public class basicEnemy : Enemy
     protected override void attack()
     {
         bool attackOnCooldown= false;
-        if(timer < 1.5)
+        if(timer < 1.0)
         {
             attackOnCooldown= true;
         }
@@ -37,7 +37,7 @@ public class basicEnemy : Enemy
             {
                 timer = 0;
             }
-            if (timer >1)
+            if (timer >0.7)
             {
                 attacking= false;
             }

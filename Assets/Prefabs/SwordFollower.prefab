@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8836146116194994145}
   - component: {fileID: 362815392502869317}
   - component: {fileID: -4178807480741364007}
+  - component: {fileID: 4166519703965145131}
   m_Layer: 0
   m_Name: SwordFollower
   m_TagString: Weapon
@@ -95,7 +96,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2925893429769570803}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -173,6 +174,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slash: {fileID: 4112901398799786003}
+  artifactActive: 0
+  flyingDistance: 1
+  rotateSpeed: 2
+--- !u!114 &4166519703965145131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2925893429769570803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2468968a2f617414a9fd1b7d1c0cc8ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
 --- !u!1 &4112901398799786003
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class CollisionDetector : MonoBehaviour
         {
             if (tag == "Weapon")
             {
-                collision.gameObject.GetComponent<Enemy>().takeDamage(1);
+                collision.gameObject.GetComponent<Enemy>().takeDamage(this.GetComponent<DamageManager>().damage);
                 collision.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
             }
         }
@@ -18,7 +18,7 @@ public class CollisionDetector : MonoBehaviour
         {
             if (tag == "Enemy")
             {
-                collision.gameObject.GetComponent<PlayerController>().takeDamage(1);
+                collision.gameObject.GetComponent<PlayerController>().takeDamage(this.GetComponent<DamageManager>().damage);
                 collision.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
             }
         }

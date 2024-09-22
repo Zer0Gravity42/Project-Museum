@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 10
+  animator: {fileID: 0}
 --- !u!82 &8609405474803777289
 AudioSource:
   m_ObjectHideFlags: 0
@@ -493,6 +494,7 @@ GameObject:
   - component: {fileID: 8837917731816425515}
   - component: {fileID: 1567796233161880159}
   - component: {fileID: 1855162459133030699}
+  - component: {fileID: 3430574100151773556}
   m_Layer: 0
   m_Name: SwordFollower
   m_TagString: Untagged
@@ -665,6 +667,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slash: {fileID: 5097401811125208445}
+  artifactActive: 0
+  flyingDistance: 1
+  rotateSpeed: 2
+--- !u!114 &3430574100151773556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6283842431032405149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2468968a2f617414a9fd1b7d1c0cc8ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
 --- !u!1 &6470459902316594015
 GameObject:
   m_ObjectHideFlags: 0
