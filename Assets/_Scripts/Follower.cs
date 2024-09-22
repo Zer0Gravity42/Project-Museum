@@ -12,7 +12,7 @@ public abstract class Follower : MonoBehaviour
     protected bool attack = false;
     protected float attackTimer = 0.1f;
 
-    void Start()
+    protected virtual void Start()
     {
         // Initialize player transform reference
         playerTransform = transform.parent.transform;
