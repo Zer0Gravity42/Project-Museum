@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 movementDirection;
     public Animator animator;
     private int health = 3;
+    private GameObject currentInteraction = null; //This controls our interaction system, basically what the interactable object we are currently in contact with
+    
     
     // Start is called before the first frame update
     void Start() 
@@ -25,6 +27,7 @@ public class PlayerController : MonoBehaviour
     {
         ProcessInputs();
         UpdateAnimation();
+        ProcessInteracts(); //interaction system
     }
     
     void FixedUpdate()
@@ -45,6 +48,8 @@ public class PlayerController : MonoBehaviour
     {
         float moveX = Input.GetAxisRaw("Horizontal"); //Only 0 and 1. Can be changed to GetAxis for slight movement (controller)
         float moveY = Input.GetAxisRaw("Vertical");
+
+        
         
         movementDirection = new Vector2(moveX, moveY).normalized; //Normalizing this keeps the speed consistent on diagonals
     }
@@ -66,12 +71,28 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.tag == "DungeonPortal")
         {
-            Application.LoadLevel("Dungeon");
+            Application.LoadLevel("Dungeon"); //loads the dungeon scene
         }
 
         if(collision.tag == "MuseumPortal")
         {
-            Application.LoadLevel("Museum");
+            Application.LoadLevel("Museum"); //loads the dungeon system
         }
+
+        if(collision.CompareTag("InteractObject"))
+        {
+            //Debug.Log(collision.name);
+            currentInteraction = collision.gameObject; //Assing interaction object (usable for both dialogue and pickups)          
+        }
+    }
+
+    private void ProcessInteracts()
+    {
+        if(Input.GetButtonDown("Interact") && currentInteraction) //sends a message to object interaction system only if we're interacting with something
+        {
+            currentInteraction.SendMessage("DoInteraction"); //the method inside
+            currentInteraction = null;
+        }
+        
     }
 }
