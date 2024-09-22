@@ -12,11 +12,16 @@ public abstract class Enemy : MonoBehaviour
     protected float distanceFromPlayer;
     //enemy atributes
     protected float speed;
-    protected int health;
+    public int health;
+    protected int maxHealth;
     //for use in ai behaviour
     protected float timer;
     protected bool moving = true;
     protected bool attacking = false;
+
+    public int Health { get { return health; } }
+    public int MaxHealth { get { return maxHealth; } }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +44,7 @@ public abstract class Enemy : MonoBehaviour
         attack();
 
         //if dead then die
-        if(health == 0)
+        if(health <= 0)
         {
             Destroy(gameObject);
         }
@@ -48,6 +53,7 @@ public abstract class Enemy : MonoBehaviour
     public void takeDamage (int damage)
     {
         health -= damage;
+        Debug.Log($"{gameObject.name} took {damage} damage. Health is now {health}.");
     }
 
     protected abstract void setSpeedAndHealth();
