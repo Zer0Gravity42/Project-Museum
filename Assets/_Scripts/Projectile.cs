@@ -20,18 +20,5 @@ public class Projectile : MonoBehaviour
         // Destroy the projectile after its lifetime
         Destroy(gameObject, lifetime);
     }
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (tag != "Enemy")
-        {
-            if (collision.gameObject.CompareTag("Enemy"))
-            {
-                // Destroy the projectile upon hitting an enemy
-                Destroy(gameObject);
-            }
-        }
-    }
 }
 
