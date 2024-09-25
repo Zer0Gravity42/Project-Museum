@@ -862,17 +862,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 6739480182759727176}
   health: 0
---- !u!114 &654812377 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3733261720277895748, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
-  m_PrefabInstance: {fileID: 1052128724878336216}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b340f26b30459a4da48d1902d073d43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &744357416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1997,7 +1986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d445ae4739916b242831e8f1348c3196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordFollower: {fileID: 654812377}
+  swordFollower: {fileID: 1801903163}
   rangedFollower: {fileID: 1604049877}
 --- !u!4 &1482164731
 Transform:
@@ -8170,6 +8159,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainManager: {fileID: 1757525538}
+--- !u!114 &1801903163 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+  m_PrefabInstance: {fileID: 1052128724878336216}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b340f26b30459a4da48d1902d073d43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1865242784
 GameObject:
   m_ObjectHideFlags: 0
