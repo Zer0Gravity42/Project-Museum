@@ -13,24 +13,28 @@ public class DragonEnemy : Enemy
     protected override void setSpeedAndHealth()
     {
         speed = 0.005f;
-        health = 10;
+        health = 8;
         MoveDirection = UnityEngine.Random.insideUnitCircle.normalized;
     }
 
     protected override void move()
     {
+        //move further if too close
         if (distanceFromPlayer < 6)
         {
             transform.position += (Vector3)(directionToPlayer * speed);
         }
+        //move closer if too far
         else if (distanceFromPlayer > 12) 
         {
             transform.position -= (Vector3)(directionToPlayer * speed);
         }
+        //move randomly
         else
         {
             transform.position += (Vector3)(MoveDirection * speed);
         }
+        //change direction
         if(justAttacked)
         {
             MoveDirection = UnityEngine.Random.insideUnitCircle.normalized;
@@ -40,6 +44,7 @@ public class DragonEnemy : Enemy
 
     protected override void attack()
     {
+        //shoot a fireball at the player every 2 seconds
         if (timer > 2.0f)
         {
             Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, -directionToPlayer);

@@ -11,12 +11,15 @@ public abstract class Follower : MonoBehaviour
     protected float distanceFromPlayer = 1.0f;
     protected bool attack = false;
     protected float attackTimer = 0.1f;
+    protected float rotation;
 
     protected virtual void Start()
     {
         // Initialize player transform reference
         playerTransform = transform.parent.transform;
         direction = playerTransform.position;
+        //each follower needs to be rotated a bit differently unfortunatley
+        SetRotation();
     }
 
     void Update()
@@ -54,7 +57,7 @@ public abstract class Follower : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
             // Apply the rotation to the follower 
-            transform.rotation = Quaternion.AngleAxis(angle - 90f, Vector3.forward);
+            transform.rotation = Quaternion.AngleAxis(angle + rotation, Vector3.forward);
         }
 
         // Update the position of the follower relative to the player
@@ -63,5 +66,7 @@ public abstract class Follower : MonoBehaviour
 
     // Abstract method for handling attack logic, to be defined in child classes
     protected abstract void HandleAttack();
+
+    protected abstract void SetRotation();
 }
 

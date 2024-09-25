@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 4899477442213941386}
   - component: {fileID: -7801769136236821047}
   - component: {fileID: -8895603234973978994}
-  - component: {fileID: 1815343513415808273}
   - component: {fileID: -6572595543357165904}
+  - component: {fileID: 8010304595063475798}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Weapon
@@ -142,8 +142,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6df0df2d3050ce418b26f5ac190d862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &1815343513415808273
-CircleCollider2D:
+--- !u!114 &-6572595543357165904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7152693338403217308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2468968a2f617414a9fd1b7d1c0cc8ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+--- !u!61 &8010304595063475798
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -174,19 +187,16 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.016418457, y: 0}
+  m_Offset: {x: -0.036067337, y: -0.029509798}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 3.15, y: 2.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.54720306
---- !u!114 &-6572595543357165904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7152693338403217308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2468968a2f617414a9fd1b7d1c0cc8ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
+  m_Size: {x: 0.8491724, y: 0.8491725}
+  m_EdgeRadius: 0

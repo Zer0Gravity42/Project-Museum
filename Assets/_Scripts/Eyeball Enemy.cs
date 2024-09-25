@@ -27,29 +27,36 @@ public class basicEnemy : Enemy
     protected override void attack()
     {
         bool attackOnCooldown= false;
-        if(timer < 1.0)
+        //start attack only if timer is high enough
+        if (timer < 1.0)
         {
             attackOnCooldown= true;
         }
         if(attacking== true) 
         {
+
+            //this sets the timer to 0 at the first frame of attacking
             if (attackOnCooldown == false)
             {
                 timer = 0;
             }
+            //attack is done
             if (timer >0.7)
             {
                 attacking= false;
             }
-            if(timer == 0 && attacking)
+            //set attack direction at start and keep that direction
+            if (timer == 0 && attacking)
             {
                 attackDirection = directionToPlayer;
             }
-            if(timer < 0.3 && attacking)
+            //pull back
+            if (timer < 0.3 && attacking)
             {
                 transform.position += (Vector3)(attackDirection * (speed/4));
             }
-            if(timer > 0.3 && attacking)
+            //shoot forward
+            if (timer > 0.3 && attacking)
             {
                 transform.position -= (Vector3)(attackDirection * (speed*2));
             }

@@ -15,6 +15,10 @@ public class SwordFollower : Follower
         base.Start(); // Call the base class Start method 
         playerTransform = GameObject.FindWithTag("Player").transform;
     }
+    protected override void SetRotation()
+    {
+        rotation = -90f;
+    }
     protected override void HandleAttack()
     {
         if (artifactActive)

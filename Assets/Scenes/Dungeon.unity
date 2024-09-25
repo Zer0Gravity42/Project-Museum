@@ -862,6 +862,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 6739480182759727176}
   health: 0
+--- !u!114 &654812377 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3733261720277895748, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+  m_PrefabInstance: {fileID: 1052128724878336216}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b340f26b30459a4da48d1902d073d43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &744357416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,17 +1212,6 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1233831793 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
-  m_PrefabInstance: {fileID: 1052128724878336216}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b340f26b30459a4da48d1902d073d43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1262515522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1997,7 +1997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d445ae4739916b242831e8f1348c3196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordFollower: {fileID: 1233831793}
+  swordFollower: {fileID: 654812377}
   rangedFollower: {fileID: 1604049877}
 --- !u!4 &1482164731
 Transform:
@@ -10716,13 +10716,21 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1485574184152146510, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: attackCooldown
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: rotateSpeed
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: artifactActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2234234528322923825, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: m_SortingOrder
@@ -10818,6 +10826,7 @@ SceneRoots:
   - {fileID: 1052128724878336216}
   - {fileID: 251967610}
   - {fileID: 1262515527}
+  - {fileID: 1325836975}
   - {fileID: 529669453}
   - {fileID: 43991274}
   - {fileID: 1355115704}
@@ -10827,7 +10836,6 @@ SceneRoots:
   - {fileID: 1759159460}
   - {fileID: 353619428}
   - {fileID: 543145642}
-  - {fileID: 1325836975}
   - {fileID: 2108409558}
   - {fileID: 1757525540}
   - {fileID: 1779755394}
