@@ -23,14 +23,14 @@ public abstract class Enemy : MonoBehaviour
     public int MaxHealth { get { return maxHealth; } }
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Awake()
     {
         //sets the attributes for the specific enemy type
         setSpeedAndHealth();
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         //for use in enemy ai
         timer += Time.deltaTime;
@@ -50,7 +50,7 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
-    public void takeDamage (int damage)
+    public virtual void takeDamage (int damage)
     {
         health -= damage;
         Debug.Log($"{gameObject.name} took {damage} damage. Health is now {health}.");

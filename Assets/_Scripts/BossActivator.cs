@@ -4,7 +4,6 @@ public class BossActivator : MonoBehaviour
 {
     public GameObject boss;              // Assign the BossEnemy GameObject in the Inspector
     public Vector3 bossSpawnPosition;    // Set the position where the boss should appear
-    public BossHealthBar bossHealthBar;  // Reference to the BossHealthBar script
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,16 +15,11 @@ public class BossActivator : MonoBehaviour
             // Activate the boss
             boss.SetActive(true);
 
-            // Get the Enemy component from the boss GameObject
-            Enemy bossEnemy = boss.GetComponent<Enemy>();
+            // Activate the boss's health bar
+            BossEnemy bossEnemy = boss.GetComponent<BossEnemy>();
             if (bossEnemy != null)
             {
-                // Initialize the health bar with the boss enemy reference
-                bossHealthBar.Initialize(bossEnemy);
-            }
-            else
-            {
-                Debug.LogError("Boss GameObject does not have an Enemy component.");
+                bossEnemy.ActivateHealthBar();
             }
 
             // Optionally, destroy the trigger so it doesn't activate again
