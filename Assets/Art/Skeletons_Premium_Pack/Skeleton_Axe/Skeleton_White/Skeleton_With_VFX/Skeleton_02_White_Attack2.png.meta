@@ -205,9 +205,9 @@ TextureImporter:
       name: Skeleton_02_White_Attack2_5
       rect:
         serializedVersion: 2
-        x: 486
+        x: 470
         y: 0
-        width: 90
+        width: 103
         height: 45
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -226,9 +226,9 @@ TextureImporter:
       name: Skeleton_02_White_Attack2_6
       rect:
         serializedVersion: 2
-        x: 584
+        x: 577
         y: 0
-        width: 90
+        width: 97
         height: 46
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
