@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetButtonDown("Interact") && currentInteraction && currentInteraction.GetComponent<ArtifactDescription>())
         {
-            Debug.Log("Interacted with Museum object");
+            //Debug.Log("Interacted with Museum object");
             currentInteraction.SendMessage("DoDescriptionPopUp"); //artifact description interact (museum)
             currentInteraction = null;
         }

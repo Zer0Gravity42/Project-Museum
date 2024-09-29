@@ -17,7 +17,7 @@ public class InteractionObject : MonoBehaviour
 
     void DoDescriptionPopUp()
     {
-        Debug.Log("Received Pop Up message");
+        //Debug.Log("Received Pop Up message");
         gameObject.GetComponent<ArtifactDescription>().receivedMessage = true;
     }
 }
