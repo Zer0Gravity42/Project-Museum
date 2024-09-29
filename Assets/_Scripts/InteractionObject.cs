@@ -6,14 +6,18 @@ public class InteractionObject : MonoBehaviour
 {
     //get access to the main manager artifact list
     public GameObject mainManager;
+    
 
-    void DoInteraction()
+    void DoPickUp()
     {
-        if (gameObject.GetComponent<Artifact>()) //check if interacted object is an artifact
-        {
-            mainManager.GetComponent<MainManager>().artifacts.Add(gameObject.name); //add the artifact to the global artifact list
-        }
-
+        
+        mainManager.GetComponent<MainManager>().artifacts.Add(gameObject.name); //add the artifact to the global artifact list
         gameObject.SetActive(false); //disables the interacted item
+    }
+
+    void DoDescriptionPopUp()
+    {
+        Debug.Log("Received Pop Up message");
+        gameObject.GetComponent<ArtifactDescription>().receivedMessage = true;
     }
 }

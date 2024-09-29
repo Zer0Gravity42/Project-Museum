@@ -88,10 +88,22 @@ public class PlayerController : MonoBehaviour
 
     private void ProcessInteracts()
     {
-        if(Input.GetButtonDown("Interact") && currentInteraction) //sends a message to object interaction system only if we're interacting with something
+        if(Input.GetButtonDown("Interact") && currentInteraction && currentInteraction.GetComponent<Artifact>()) //sends a message to object interaction system only if we're interacting with something
         {
-            currentInteraction.SendMessage("DoInteraction"); //the method inside
+            currentInteraction.SendMessage("DoPickUp"); //the method inside
             currentInteraction = null;
+        }
+
+        if(Input.GetButtonDown("Interact") && currentInteraction && currentInteraction.GetComponent<ArtifactDescription>())
+        {
+            Debug.Log("Interacted with Museum object");
+            currentInteraction.SendMessage("DoDescriptionPopUp"); //artifact description interact (museum)
+            currentInteraction = null;
+        }
+
+        if (Input.GetButtonDown("Interact"))
+        {
+            Debug.Log("Interacting");
         }
         
     }

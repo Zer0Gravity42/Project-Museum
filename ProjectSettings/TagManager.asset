@@ -11,6 +11,7 @@ TagManager:
   - Weapon
   - InteractObject
   - EnemyProjectile
+  - MuseumManager
   layers:
   - Default
   - TransparentFX
