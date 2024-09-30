@@ -2,24 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeSkeleton : MonoBehaviour
+public class MeleeSkeleton : Enemy
 {
     #region Public Variables
     public float attackDistance; // Minimum distance to trigger attack
-    public float moveSpeed;
-    public float timer; // Timer for cooldown between attacks
     public Transform leftLimit;
     public Transform rightLimit;
     [HideInInspector] public Transform target;
     [HideInInspector] public bool inRange; // Is the player in attack range?
     public GameObject hotZone;
     public GameObject triggerArea;
-    public int health;
     #endregion
 
     #region Private Variables
     private Animator anim;
-    private float distance; // Distance between enemy and player
     private bool attackMode;
     private bool cooling; // Is the enemy cooling down after an attack?
     private float intTimer; // Initial timer value
@@ -27,10 +23,10 @@ public class MeleeSkeleton : MonoBehaviour
     #endregion
 
     // Initialize variables and find the hitbox on the skeleton
-    void Awake()
+    protected override void setSpeedAndHealth()
     {
-        SelectTarget();
-        intTimer = timer; // Store initial timer value
+        SelectTarget();// Store initial timer value
+        speed = 2;
         anim = GetComponent<Animator>();
         Transform hitboxTransform = transform.Find("Hitbox");
         if (hitboxTransform != null)
@@ -44,11 +40,17 @@ public class MeleeSkeleton : MonoBehaviour
     }
 
     // Main update loop, controls movement and attack logic
-    void Update()
+    protected override void move()
     {
         if (!attackMode)
         {
-            Move();
+            anim.SetBool("canWalk", true);
+
+            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Enemy_attack"))
+            {
+                Vector2 targetPosition = new Vector2(target.position.x, transform.position.y);
+                transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            }
         }
 
         // If not attacking and the player is not in range, select a new target
@@ -62,25 +64,20 @@ public class MeleeSkeleton : MonoBehaviour
         {
             EnemyLogic();
         }
-
-        if (health<=0)
-        {
-            Destroy(gameObject);
-        }
     }
 
     // Handles the attack logic based on distance
     void EnemyLogic()
     {
-        distance = Vector2.Distance(transform.position, target.position);
+        distanceFromPlayer = Vector2.Distance(transform.position, target.position);
 
-        if (distance > attackDistance)
+        if (distanceFromPlayer > attackDistance)
         {
             StopAttack();
         }
-        else if (attackDistance >= distance && !cooling)
+        else if (attackDistance >= distanceFromPlayer && !cooling)
         {
-            Attack();
+            attackMode = true;
         }
 
         if (cooling)
@@ -90,37 +87,21 @@ public class MeleeSkeleton : MonoBehaviour
         }
     }
 
-    public virtual void takeDamage(int damage)
-    {
-        health -= damage;
-        Debug.Log($"{gameObject.name} took {damage} damage. Health is now {health}.");
-    }
-
-    // Move towards the player or target
-    void Move()
-    {
-        anim.SetBool("canWalk", true);
-
-        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Enemy_attack"))
-        {
-            Vector2 targetPosition = new Vector2(target.position.x, transform.position.y);
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-        }
-    }
-
     // Start attack sequence
-    void Attack()
+    protected override void attack()
     {
-        timer = intTimer; // Reset timer when entering attack range
-        attackMode = true; // Enemy is attacking
-
-        anim.SetBool("canWalk", false);
-        anim.SetBool("Attack", true);
-
-        // Activate the hitbox when the attack starts
-        if (weaponHitbox != null)
+        if(attackMode)
         {
-            weaponHitbox.ActivateHitbox();
+            timer = 0; // Reset timer when entering attack range
+
+            anim.SetBool("canWalk", false);
+            anim.SetBool("Attack", true);
+
+            // Activate the hitbox when the attack starts
+            if (weaponHitbox != null)
+            {
+                weaponHitbox.ActivateHitbox();
+            }
         }
     }
 
