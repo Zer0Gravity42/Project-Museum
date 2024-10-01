@@ -12,6 +12,7 @@ TagManager:
   - InteractObject
   - EnemyProjectile
   - MuseumManager
+  - Door
   layers:
   - Default
   - TransparentFX
