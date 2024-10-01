@@ -8,10 +8,11 @@ public class BossEnemy : basicEnemy
 
     protected override void setSpeedAndHealth()
     {
+        base.setSpeedAndHealth(); // Call the base method to initialize common variables
+                                  // Override or adjust properties as needed
         speed = 0.02f; // Adjust as needed
         maxHealth = 15;
         health = maxHealth;
-        anim = GetComponent<Animator>();
     }
 
     protected override void Awake()

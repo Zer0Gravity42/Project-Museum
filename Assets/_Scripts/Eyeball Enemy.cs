@@ -1,68 +1,99 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class basicEnemy : Enemy
 {
     private Vector2 attackDirection;
     protected Animator anim;
+    private float attackCooldown = 1.0f;  // Cooldown time after each attack
+    private float attackDuration = 0.7f;  // Duration of the attack animation
+
+    private bool readyToAttack = true; // New flag to control attack readiness
+    protected SpriteRenderer spriteRenderer; // Added SpriteRenderer variable
+
+    protected override void Update()
+    {
+        base.Update();
+        timer += Time.deltaTime;  // Ensure the timer increments each frame
+        move();
+        attack();
+
+        // Flip sprite to face the player
+        if (directionToPlayer.x > 0)
+        {
+            spriteRenderer.flipX = false;  // Face right
+        }
+        else if (directionToPlayer.x < 0)
+        {
+            spriteRenderer.flipX = true;   // Face left
+        }
+    }
+
     protected override void setSpeedAndHealth()
     {
         anim = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Initialize the SpriteRenderer
         speed = 0.02f;
         health = 5;
     }
 
     protected override void move()
     {
-        if(distanceFromPlayer > 3 && attacking == false)
+        if (distanceFromPlayer > 3 && !attacking)
         {
             transform.position -= (Vector3)(directionToPlayer * speed);
         }
-        else
+        else if (!attacking && readyToAttack)
         {
             attacking = true;
+            timer = 0;  // Reset timer when starting an attack
         }
     }
 
     protected override void attack()
     {
-        bool attackOnCooldown= false;
-        //start attack only if timer is high enough
-        if (timer < 1.0)
+        if (attacking)
         {
-            attackOnCooldown= true;
-        }
-        if(attacking== true) 
-        {
-
-            //this sets the timer to 0 at the first frame of attacking
-            if (attackOnCooldown == false)
+            if (timer < attackDuration)
             {
-                timer = 0;
                 anim.SetBool("attack", true);
+                if (timer == 0)
+                {
+                    attackDirection = directionToPlayer;  // Set attack direction at the start of the attack
+                }
+                // Adjust position based on attack phase
+                if (timer < 0.3)
+                {
+                    transform.position += (Vector3)(attackDirection * (speed / 4));
+                }
+                else
+                {
+                    transform.position -= (Vector3)(attackDirection * (speed * 1));
+                }
+
             }
-            //attack is done
-            if (timer >0.7)
+            else
             {
                 anim.SetBool("attack", false);
-                attacking= false;
             }
-            //set attack direction at start and keep that direction
-            if (timer == 0 && attacking)
+
+            // Wait for the full cooldown to finish before allowing another attack
+            if (timer >= attackCooldown)
             {
-                attackDirection = directionToPlayer;
+                attacking = false;
+                readyToAttack = false;  // Prevent immediate re-attack
+                timer = 0;  // Reset timer to allow for another attack after cooldown
             }
-            //pull back
-            if (timer < 0.3 && attacking)
+        }
+        else if (!attacking && !readyToAttack)
+        {
+            // Ensure there's a delay before setting readyToAttack true again
+            if (timer >= attackCooldown)
             {
-                transform.position += (Vector3)(attackDirection * (speed/4));
-            }
-            //shoot forward
-            if (timer > 0.3 && attacking)
-            {
-                transform.position -= (Vector3)(attackDirection * (speed*2));
+                readyToAttack = true;
             }
         }
     }
