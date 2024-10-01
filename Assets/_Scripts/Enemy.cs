@@ -19,8 +19,8 @@ public abstract class Enemy : MonoBehaviour
     protected bool moving = true;
     protected bool attacking = false;
 
-    public int Health { get { return health; } }
-    public int MaxHealth { get { return maxHealth; } }
+    //public int Health { get { return health; } }
+    //public int MaxHealth { get { return maxHealth; } }
 
     // Start is called before the first frame update
     protected virtual void Awake()
