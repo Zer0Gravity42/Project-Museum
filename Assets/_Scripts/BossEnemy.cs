@@ -11,6 +11,7 @@ public class BossEnemy : basicEnemy
         speed = 0.02f; // Adjust as needed
         maxHealth = 15;
         health = maxHealth;
+        anim = GetComponent<Animator>();
     }
 
     protected override void Awake()

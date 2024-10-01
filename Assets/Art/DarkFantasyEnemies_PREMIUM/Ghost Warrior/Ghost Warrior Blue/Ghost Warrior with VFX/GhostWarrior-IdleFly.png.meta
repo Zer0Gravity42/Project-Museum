@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -95,7 +95,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: GhostWarrior-IdleFly_6
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 11
+        width: 52
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3118635a223aa7743954484ff70568b6
+      internalID: 1920937765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GhostWarrior-IdleFly_1
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 9
+        width: 51
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 564e384c48318624c908d6d98a4f2b01
+      internalID: -901415695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GhostWarrior-IdleFly_2
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 9
+        width: 52
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5445530a69d13741bda59e059d059d6
+      internalID: 2034651729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GhostWarrior-IdleFly_3
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 9
+        width: 52
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70540fad3d91da24e9086f91ed0386b8
+      internalID: -2064430176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GhostWarrior-IdleFly_4
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 10
+        width: 53
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80ea8126fb579984287756557a83e095
+      internalID: 653038834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GhostWarrior-IdleFly_5
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 10
+        width: 52
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23b867d9c771aea4089c572c5eae5049
+      internalID: -643555325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GhostWarrior-IdleFly_7
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 9
+        width: 54
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 766e711be2c3cd5479ccb3f03a10599b
+      internalID: 1478923885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GhostWarrior-IdleFly_8
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 9
+        width: 53
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea156af80196e064ebf0e5e7d0604819
+      internalID: 1266100221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +274,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GhostWarrior-IdleFly_1: -901415695
+      GhostWarrior-IdleFly_10: -1440112007
+      GhostWarrior-IdleFly_11: 914585838
+      GhostWarrior-IdleFly_12: -450280383
+      GhostWarrior-IdleFly_14: -267926499
+      GhostWarrior-IdleFly_2: 2034651729
+      GhostWarrior-IdleFly_3: -2064430176
+      GhostWarrior-IdleFly_4: 653038834
+      GhostWarrior-IdleFly_5: -643555325
+      GhostWarrior-IdleFly_6: 1920937765
+      GhostWarrior-IdleFly_7: 1478923885
+      GhostWarrior-IdleFly_8: 1266100221
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

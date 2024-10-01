@@ -8070,6 +8070,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 6739480182759727176}
+    - target: {fileID: 2574861563356926548, guid: 104acf9c5c866774fbe5ac8be7a567ba, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 83825b9efd928524c88036747080eb69, type: 2}
     - target: {fileID: 5819084057322282483, guid: 104acf9c5c866774fbe5ac8be7a567ba, type: 3}
       propertyPath: m_LocalScale.x
       value: 3
@@ -10817,7 +10821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: artifactActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2234234528322923825, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: m_SortingOrder

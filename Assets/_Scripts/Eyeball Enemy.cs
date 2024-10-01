@@ -6,8 +6,10 @@ using UnityEngine;
 public class basicEnemy : Enemy
 {
     private Vector2 attackDirection;
+    protected Animator anim;
     protected override void setSpeedAndHealth()
     {
+        anim = GetComponent<Animator>();
         speed = 0.02f;
         health = 5;
     }
@@ -39,10 +41,12 @@ public class basicEnemy : Enemy
             if (attackOnCooldown == false)
             {
                 timer = 0;
+                anim.SetBool("attack", true);
             }
             //attack is done
             if (timer >0.7)
             {
+                anim.SetBool("attack", false);
                 attacking= false;
             }
             //set attack direction at start and keep that direction
