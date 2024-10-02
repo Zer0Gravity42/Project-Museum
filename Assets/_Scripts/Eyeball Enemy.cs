@@ -73,7 +73,7 @@ public class basicEnemy : Enemy
                 }
                 else
                 {
-                    transform.position -= (Vector3)(attackDirection * (speed * 1));
+                    transform.position -= (Vector3)(attackDirection * (speed * 1.25f));
                 }
 
             }
