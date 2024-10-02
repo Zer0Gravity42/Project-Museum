@@ -7,19 +7,21 @@ using UnityEngine;
 public class basicEnemy : Enemy
 {
     private Vector2 attackDirection;
-    protected Animator anim;
     private float attackCooldown = 1.0f;  // Cooldown time after each attack
     private float attackDuration = 0.7f;  // Duration of the attack animation
-
     private bool readyToAttack = true; // New flag to control attack readiness
     protected SpriteRenderer spriteRenderer; // Added SpriteRenderer variable
 
     protected override void Update()
     {
         base.Update();
-        timer += Time.deltaTime;  // Ensure the timer increments each frame
-        move();
-        attack();
+        //timer += Time.deltaTime;  // Ensure the timer increments each frame
+        
+        if(awake && alive)
+        {
+            move();
+            attack();
+        }
 
         // Flip sprite to face the player
         if (directionToPlayer.x > 0)

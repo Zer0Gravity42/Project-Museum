@@ -14,6 +14,7 @@ public class DragonEnemy : Enemy
     {
         speed = 0.005f;
         health = 8;
+        anim = GetComponent<Animator>();
         MoveDirection = UnityEngine.Random.insideUnitCircle.normalized;
     }
 

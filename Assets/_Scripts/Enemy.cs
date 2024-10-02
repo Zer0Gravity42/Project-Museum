@@ -10,6 +10,7 @@ public abstract class Enemy : MonoBehaviour
     public GameObject player;
     protected Vector2 directionToPlayer;
     protected float distanceFromPlayer;
+    protected Animator anim;
     //enemy atributes
     protected float speed;
     public int health;
@@ -18,6 +19,8 @@ public abstract class Enemy : MonoBehaviour
     protected float timer;
     protected bool moving = true;
     protected bool attacking = false;
+    protected bool alive = true;
+    protected bool awake = false;
 
     //public int Health { get { return health; } }
     //public int MaxHealth { get { return maxHealth; } }
@@ -39,14 +42,29 @@ public abstract class Enemy : MonoBehaviour
         directionToPlayer = (transform.position - player.transform.position).normalized;
         distanceFromPlayer = MathF.Abs(transform.position.x - player.transform.position.x) + MathF.Abs(transform.position.y - player.transform.position.y);
 
-        //call move and attack with specific ai for each enemy
-        move();
-        attack();
+        if(alive && awake)
+        {
+            //call move and attack with specific ai for each enemy
+            move();
+            attack();
+        }
 
         //if dead then die
-        if(health <= 0)
+        if(health <= 0 && alive)
+        {
+            anim.SetBool("dead", true);
+            alive = false;
+            timer = 0;
+        }
+
+        if (!alive && timer >= 1)
         {
             Destroy(gameObject);
+        }
+        if(!awake && timer >= 1)
+        {
+            awake= true;
+            anim.SetBool("awake", true);
         }
     }
 

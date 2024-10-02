@@ -6,7 +6,6 @@ using UnityEngine;
 public class MeleeSkeleton : Enemy
 { 
     #region Private Variables
-    private Animator anim;
     private bool attackMode;
     private bool cooling; // Is the enemy cooling down after an attack?
     private EnemyWeaponHitbox weaponHitbox;
