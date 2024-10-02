@@ -1213,6 +1213,7 @@ MonoBehaviour:
   health: 15
   healthBar: {fileID: 462805616}
   bossNameLabel: {fileID: 0}
+  enemySpawn: {fileID: 9023326529117949394, guid: 104acf9c5c866774fbe5ac8be7a567ba, type: 3}
 --- !u!1 &749303395
 GameObject:
   m_ObjectHideFlags: 0

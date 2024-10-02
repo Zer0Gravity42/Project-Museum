@@ -17,11 +17,11 @@ public class basicEnemy : Enemy
         base.Update();
         //timer += Time.deltaTime;  // Ensure the timer increments each frame
         
-        if(awake && alive)
-        {
-            move();
-            attack();
-        }
+        //if(awake && alive)
+        //{
+          //  move();
+            //attack();
+        //}
 
         // Flip sprite to face the player
         if (directionToPlayer.x > 0)
@@ -38,7 +38,7 @@ public class basicEnemy : Enemy
     {
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>(); // Initialize the SpriteRenderer
-        speed = 0.02f;
+        speed = 0.035f;
         health = 5;
     }
 
