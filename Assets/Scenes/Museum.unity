@@ -1118,7 +1118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 504475131619767050, guid: 8820e2dcc66bd62418edf990cf99e0bc, type: 3}
       propertyPath: m_TagString
-      value: PinkDiamond
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1666721428501561752, guid: 8820e2dcc66bd62418edf990cf99e0bc, type: 3}
       propertyPath: m_SortingOrder
