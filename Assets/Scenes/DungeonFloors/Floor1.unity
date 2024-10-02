@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 103163693}
   m_Layer: 0
   m_Name: Door1
-  m_TagString: Untagged
+  m_TagString: InteractObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1893,7 +1893,7 @@ GameObject:
   - component: {fileID: 1348188631}
   m_Layer: 0
   m_Name: Key1
-  m_TagString: Untagged
+  m_TagString: InteractObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
