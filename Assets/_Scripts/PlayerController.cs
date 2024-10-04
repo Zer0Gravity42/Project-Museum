@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.tag == "DungeonPortal")
         {
-            Application.LoadLevel("Dungeon"); //loads the dungeon scene
+            Application.LoadLevel("Floor1"); //loads the dungeon scene
         }
 
         if(collision.tag == "MuseumPortal")

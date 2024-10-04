@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Museum.unity
     guid: 5142f5af7bcb0c14992a6ad4481db330
+  - enabled: 1
+    path: Assets/Scenes/DungeonFloors/Floor1.unity
+    guid: 8565e1fa297306a49a3b07ff0178fb1d
   m_configObjects: {}
