@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,9 +11,11 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movementDirection;
     public Animator animator;
-    private int health = 3;
+    public int health = 3;
+    public int maxHealth = 3;
     private GameObject currentInteraction = null; //This controls our interaction system, basically what the interactable object we are currently in contact with
 
+    public event Action<int, int> OnHealthChanged;
 
     #region Dash Variables
     [SerializeField] private float dashSpeed = 10f;
@@ -32,6 +35,9 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        health = maxHealth;
+        OnHealthChanged?.Invoke(health, maxHealth);
     }
 
     // Update is called once per frame
@@ -45,6 +51,17 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && Time.time >= lastDashTime + dashCooldown)
         {
             StartCoroutine(Dash());
+        }
+
+        // Temporary testing: Press 'K' to increase max health by 1
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            IncreaseMaxHealth(1);
+        }
+        // Temporary testing: Press 'H' to heal 1 hp 
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            Heal(1);
         }
     }
     
@@ -60,8 +77,22 @@ public class PlayerController : MonoBehaviour
     public void takeDamage(int damage)
     {
         health -= damage;
+        health = Mathf.Clamp(health, 0, maxHealth);
+        OnHealthChanged?.Invoke(health, maxHealth);
     }
-    
+
+    public void Heal(int amount)
+    {
+        health += amount;
+        health = Mathf.Clamp(health, 0, maxHealth);
+        OnHealthChanged?.Invoke(health, maxHealth);
+    }
+    public void IncreaseMaxHealth(int amount)
+    {
+        maxHealth += amount;
+        health = Mathf.Clamp(health, 0, maxHealth);
+        OnHealthChanged?.Invoke(health, maxHealth);
+    }
     void ProcessInputs()
     {
         float moveX = Input.GetAxisRaw("Horizontal"); //Only 0 and 1. Can be changed to GetAxis for slight movement (controller)
