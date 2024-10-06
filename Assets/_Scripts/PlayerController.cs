@@ -17,10 +17,13 @@ public class PlayerController : MonoBehaviour
 
     public event Action<int, int> OnHealthChanged;
 
+    
+
     #region Dash Variables
     [SerializeField] private float dashSpeed = 10f;
     [SerializeField] private float dashDuration = 0.2f;
     [SerializeField] private float dashCooldown = 1f;  //time before dash can be used again
+    bool canDash = false;
     private bool isDashing = false;
     private float lastDashTime; //timestamp for last dash
 
@@ -38,6 +41,19 @@ public class PlayerController : MonoBehaviour
 
         health = maxHealth;
         OnHealthChanged?.Invoke(health, maxHealth);
+
+        #region Artifact Powers Enables/Disables
+        
+        GameObject tempManager = GameObject.FindGameObjectWithTag("MainManager"); //get temporary access to which artifacts are equipped
+
+        #region Dash: if an Artifact with an ID of 1 is equipped in either slots, allow the player to dash
+        if (tempManager.GetComponent<MainManager>().equippedSlotOneId == 1 || tempManager.GetComponent<MainManager>().equippedSlotTwoId == 1)
+        {
+            canDash = true;
+        }
+        #endregion 
+
+        #endregion
     }
 
     // Update is called once per frame
@@ -70,6 +86,7 @@ public class PlayerController : MonoBehaviour
         Move();
         if(health == 0)
         {
+            ClearTempManagerObjects();
             Application.LoadLevel("Main Menu");
         }
     }
@@ -113,28 +130,32 @@ public class PlayerController : MonoBehaviour
     #region Dash functions
     IEnumerator Dash()
     {
-        isDashing = true;
-        lastDashTime = Time.time;
-        Vector2 dashDirection = movementDirection;
-
-        rb.velocity = dashDirection * dashSpeed;
-
-        float dashTime = 0f;
-        afterImageTimer = 0f;
-        while (dashTime < dashDuration)
+        if (canDash)
         {
-            dashTime += Time.deltaTime;
-            afterImageTimer += Time.deltaTime;
-            if (afterImageTimer >= afterImageInterval)
-            {
-                CreateAfterImage();
-                afterImageTimer = 0f;
-            }
-            yield return null;
-        }
+            isDashing = true;
+            lastDashTime = Time.time;
+            Vector2 dashDirection = movementDirection;
 
-        isDashing = false;
-        rb.velocity = Vector2.zero;
+            rb.velocity = dashDirection * dashSpeed;
+
+            float dashTime = 0f;
+            afterImageTimer = 0f;
+            while (dashTime < dashDuration)
+            {
+                dashTime += Time.deltaTime;
+                afterImageTimer += Time.deltaTime;
+                if (afterImageTimer >= afterImageInterval)
+                {
+                    CreateAfterImage();
+                    afterImageTimer = 0f;
+                }
+                yield return null;
+            }
+
+            isDashing = false;
+            rb.velocity = Vector2.zero;
+        }
+        
     }
 
     void CreateAfterImage()
@@ -171,6 +192,9 @@ public class PlayerController : MonoBehaviour
 
         if(collision.tag == "MuseumPortal")
         {
+            GameObject tempManager = GameObject.FindGameObjectWithTag("MainManager");
+            tempManager.SendMessage("AddAllToPermanents");
+            ClearTempManagerObjects();
             Application.LoadLevel("Museum"); //loads the dungeon system
         }
 
@@ -183,8 +207,8 @@ public class PlayerController : MonoBehaviour
 
     private void ProcessInteracts()
     {
-        if(Input.GetButtonDown("Interact") && currentInteraction && currentInteraction.GetComponent<Artifact>()) //sends a message to object interaction system only if we're interacting with something
-        {
+        if(Input.GetButtonDown("Interact") && currentInteraction && currentInteraction.GetComponent<Artifact>()) //sends a message to object interaction system only if we're interacting with something, and this object has 
+        {                                                                                                        //the Artifact script attached (marking it as an Artifact)
             currentInteraction.SendMessage("DoPickUp"); //the method inside
             currentInteraction = null;
         }
@@ -196,10 +220,30 @@ public class PlayerController : MonoBehaviour
             currentInteraction = null;
         }
 
+        if (Input.GetButtonDown("Interact") && currentInteraction && currentInteraction.GetComponent<DoorController>())
+        {
+            currentInteraction.SendMessage("DoOpenDoor"); //ask to open the door
+            currentInteraction = null;
+        }
+
+        if (Input.GetButtonDown("Interact") && currentInteraction && currentInteraction.GetComponent<KeyController>())
+        {
+            currentInteraction.SendMessage("DoPickUpKey"); //pick up the key
+            currentInteraction = null;
+        }
+
         if (Input.GetButtonDown("Interact"))
         {
             Debug.Log("Interacting");
         }
         
+    }
+
+    private void ClearTempManagerObjects()
+    {
+        GameObject tempManager = GameObject.FindGameObjectWithTag("MainManager");
+        tempManager.GetComponent<MainManager>().doors.Clear(); //clear player progress rip
+        tempManager.GetComponent<MainManager>().keys.Clear(); //clear player progress rip
+        tempManager.GetComponent<MainManager>().tempArtifacts.Clear(); //clear player progress rip
     }
 }

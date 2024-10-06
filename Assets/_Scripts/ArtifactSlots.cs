@@ -64,6 +64,8 @@ public class ArtifactSlots : MonoBehaviour
             imgSlot1.sprite = null; //if we dont have slot 1 (removed by the player), remove sprite reference
            
         }
+
+        LoadEquippedArtifacts();
     }
 
     void AddToSlot2() // same as AddToSlot1()
@@ -105,10 +107,27 @@ public class ArtifactSlots : MonoBehaviour
             
         }
 
+        LoadEquippedArtifacts();
     }
 
     void OnClose() // when the player closes the pop up screen, make it so that it's not constantly referring to the artifact last interacted with
     {
         artifactInteracted = null; 
+    }
+
+    void LoadEquippedArtifacts()
+    {
+        GameObject mainManager = GameObject.FindGameObjectWithTag("MainManager");
+        if (slot1 != null)
+        {
+            mainManager.GetComponent<MainManager>().equippedSlotOneId = slot1.GetComponent<ArtifactDescription>().ArtifactID;
+        }
+        else mainManager.GetComponent<MainManager>().equippedSlotOneId = 0;
+        if (slot2 != null)
+        {
+            mainManager.GetComponent<MainManager>().equippedSlotTwoId = slot2.GetComponent<ArtifactDescription>().ArtifactID;
+        }
+        else mainManager.GetComponent<MainManager>().equippedSlotTwoId = 0;
+        
     }
 }

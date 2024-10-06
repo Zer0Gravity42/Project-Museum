@@ -2229,9 +2229,9 @@ GameObject:
   m_Component:
   - component: {fileID: 765508924}
   - component: {fileID: 765508923}
-  - component: {fileID: 765508922}
   - component: {fileID: 765508921}
   - component: {fileID: 765508920}
+  - component: {fileID: 765508922}
   m_Layer: 0
   m_Name: Golden Diamond
   m_TagString: InteractObject
@@ -2251,7 +2251,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61c54001e275248f788980018d8f77a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainManager: {fileID: 590466826}
 --- !u!58 &765508921
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2299,7 +2298,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ba6d84da1f94bc8b5410f84e1f1616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUp: 'Golden Artifact: Game Dev Obj'
+  popUp: This Golden Artifact was collected from the first floor of the dungeon.
+    It allows the player to dash a few feet in the direction they're facing. [Press
+    Space To Dash]
   receivedMessage: 0
   ArtifactSpriteReference: {fileID: 1797541840, guid: 75477b667145c904590d76eaaf307976, type: 3}
   ArtifactID: 1
@@ -2865,7 +2866,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61c54001e275248f788980018d8f77a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainManager: {fileID: 590466826}
 --- !u!1 &1364195230
 GameObject:
   m_ObjectHideFlags: 0
@@ -2898,7 +2898,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61c54001e275248f788980018d8f77a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainManager: {fileID: 590466826}
 --- !u!58 &1364195233
 CircleCollider2D:
   m_ObjectHideFlags: 0

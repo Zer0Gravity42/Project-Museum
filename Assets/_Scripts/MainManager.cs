@@ -7,7 +7,15 @@ public class MainManager : MonoBehaviour
     public static MainManager Instance;
 
     //All info relating to persisting data
-    public List<string> artifacts;
+    public List<GameObject> tempArtifacts;
+
+    public List<int> permanentArtifactIds;
+
+    public int equippedSlotOneId;
+    public int equippedSlotTwoId;
+
+    public List<GameObject> keys;
+    public List<GameObject> doors;
 
     private void Awake()
     {
@@ -19,5 +27,17 @@ public class MainManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject); //makes a special scene where all info persists
+    }
+
+
+    void AddAllToPermanents()
+    {
+        if (tempArtifacts != null) //check to make sure the temporary list is not empty
+        {
+            foreach (GameObject g in tempArtifacts) //loop through the temporary list and add all artifact ids to the list
+            {
+                permanentArtifactIds.Add(g.GetComponent<Artifact>().ID);
+            }
+        }
     }
 }

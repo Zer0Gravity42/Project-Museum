@@ -9,15 +9,25 @@ public class ArtifactDescription : MonoBehaviour
     public string popUp; //text for artifact description
     public bool receivedMessage = false; //message trigger
     GameObject MuseumManager; //access the museum manager
+    GameObject MainManager;
 
     public Sprite ArtifactSpriteReference; //sprite reference for ArtifactSlots
 
-    [SerializeField]
-    int ArtifactID;
+    public int ArtifactID;
+
+    bool isArtifactActive = false;
 
     private void Start()
     {
         MuseumManager = GameObject.FindGameObjectWithTag("MuseumManager"); //get the museum manager to manage artifact slots and pop up system
+        MainManager = GameObject.FindGameObjectWithTag("MainManager");
+
+        foreach(int i in MainManager.GetComponent<MainManager>().permanentArtifactIds)
+        {
+            if(ArtifactID == i) isArtifactActive = true;
+        }
+
+        this.gameObject.SetActive(isArtifactActive);
     }
 
     private void Update()
