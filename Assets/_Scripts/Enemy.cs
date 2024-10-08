@@ -11,10 +11,12 @@ public abstract class Enemy : MonoBehaviour
     protected Vector2 directionToPlayer;
     protected float distanceFromPlayer;
     protected Animator anim;
+
     //enemy atributes
     protected float speed;
     public int health;
     protected int maxHealth;
+
     //for use in ai behaviour
     protected float timer;
     protected bool moving = true;
@@ -22,6 +24,12 @@ public abstract class Enemy : MonoBehaviour
     protected bool alive = true;
     protected bool awake = false;
 
+    // Health bar variables
+    public bool showHealthBar = true;         // Controls whether to show the health bar
+    public GameObject healthBarPrefab;        // Assign the HealthBar prefab via the Inspector
+    public Vector3 healthBarOffset = new Vector3(0, -1, 0); // Offset position of the health bar
+    protected HealthBar healthBar;            // Reference to the HealthBar script
+    public Vector3 healthBarScale = Vector3.one;  //scale for the health bar
     //public int Health { get { return health; } }
     //public int MaxHealth { get { return maxHealth; } }
 
@@ -30,6 +38,23 @@ public abstract class Enemy : MonoBehaviour
     {
         //sets the attributes for the specific enemy type
         setSpeedAndHealth();
+
+        if (showHealthBar && healthBarPrefab != null)
+        {
+            // Instantiate the health bar as a child of the enemy
+            GameObject hb = Instantiate(healthBarPrefab, transform);
+            hb.transform.localPosition = healthBarOffset; // Position it relative to the enemy
+
+            // Apply the custom scale to the health bar
+            hb.transform.localScale = healthBarScale;
+
+            // Get the HealthBar component
+            healthBar = hb.GetComponentInChildren<HealthBar>();
+
+            // Initialize the health bar
+            maxHealth = health; // Ensure maxHealth is set
+            healthBar.SetMaxHealth(maxHealth);
+        }
     }
 
     // Update is called once per frame
@@ -57,8 +82,20 @@ public abstract class Enemy : MonoBehaviour
             timer = 0;
         }
 
+        if (!alive)
+        {
+            if (showHealthBar && healthBar != null)
+            {
+                Destroy(healthBar.gameObject);
+            }
+        }
+
         if (!alive && timer >= 1)
         {
+            if (showHealthBar && healthBar != null)
+            {
+                Destroy(healthBar.gameObject);
+            }
             Destroy(gameObject);
         }
         if(!awake && timer >= 1)
@@ -72,6 +109,11 @@ public abstract class Enemy : MonoBehaviour
     {
         health -= damage;
         Debug.Log($"{gameObject.name} took {damage} damage. Health is now {health}.");
+
+        if (showHealthBar && healthBar != null)
+        {
+            healthBar.SetHealth(health);
+        }
     }
 
     protected abstract void setSpeedAndHealth();

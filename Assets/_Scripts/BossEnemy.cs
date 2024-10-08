@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class BossEnemy : basicEnemy
 {
-    public GameObject healthBar; // Assign the health bar UI element in the Inspector
+    public new GameObject healthBar; // Assign the health bar UI element in the Inspector
     public Text bossNameLabel;
     public GameObject enemySpawn;
     private float spawnTimer;
