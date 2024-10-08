@@ -2093,6 +2093,13 @@ MonoBehaviour:
   audioSourceOnce: {fileID: 590466827}
   audioSourceLoop: {fileID: 590466828}
   museumMusicLoop: {fileID: 8300000, guid: 12812a6f83d9378458f79f7829a635ef, type: 3}
+  displayedArtifacts: []
+  museumScore: 0
+  scorePerArtifact: 10
+  conditionIndicatorIcon: {fileID: 1556406823}
+  conditionIndicatorText: {fileID: 1941175490}
+  scoreIndicatorIcon: {fileID: 1194746452}
+  scoreIndicatorText: {fileID: 842362921}
 --- !u!4 &590466830
 Transform:
   m_ObjectHideFlags: 0
@@ -2287,7 +2294,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 474.23}
+  m_AnchoredPosition: {x: -34, y: 474.23}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &712761378
@@ -2343,7 +2350,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -2373,7 +2380,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.5073242, y: 0, z: 0.505188, w: 0.24859619}
+  m_margin: {x: 0.5073242, y: 0, z: -68.02716, w: 0.24859619}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2654,8 +2661,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 58, y: -0.000011146}
-  m_SizeDelta: {x: 81.649, y: 21.6571}
+  m_AnchoredPosition: {x: 110.51361, y: -0.000011146}
+  m_SizeDelta: {x: 186.665, y: 21.6571}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &842362921
 MonoBehaviour:
@@ -2899,7 +2906,7 @@ GameObject:
   - component: {fileID: 1194746455}
   - component: {fileID: 1194746454}
   m_Layer: 5
-  m_Name: Gold
+  m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6828,7 +6835,7 @@ GameObject:
   - component: {fileID: 1941175491}
   - component: {fileID: 1941175490}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: ConditionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6850,8 +6857,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 92.74568, y: -0.000011444}
-  m_SizeDelta: {x: 151.7403, y: 21.6571}
+  m_AnchoredPosition: {x: 112.51454, y: -0.000011444}
+  m_SizeDelta: {x: 191.278, y: 21.6571}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1941175490
 MonoBehaviour:
