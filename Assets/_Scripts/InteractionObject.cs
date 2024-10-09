@@ -35,7 +35,7 @@ public class InteractionObject : MonoBehaviour
     void DoOpenDoor()
     {
         //for now im making the keys generic (as in one key can unlock any door)
-        if(mainManager.GetComponent<MainManager>().keys != null)
+        if(mainManager.GetComponent<MainManager>().keys.Count != 0)
         {
             gameObject.SetActive(false);
             mainManager.GetComponent<MainManager>().keys.RemoveAt(0);
