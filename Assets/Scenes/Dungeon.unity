@@ -231,6 +231,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 6739480182759727176}
   health: 0
+  showHealthBar: 1
+  healthBarPrefab: {fileID: 0}
+  healthBarOffset: {x: 0, y: -1, z: 0}
+  healthBarScale: {x: 1, y: 1, z: 1}
 --- !u!114 &251967607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -778,6 +782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boss: {fileID: 567894315}
   bossSpawnPosition: {x: 28.36, y: -6.09, z: 0}
+  dungeonController: {fileID: 0}
 --- !u!61 &543145641
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -857,6 +862,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 6739480182759727176}
   health: 15
+  showHealthBar: 1
+  healthBarPrefab: {fileID: 0}
+  healthBarOffset: {x: 0, y: -1, z: 0}
+  healthBarScale: {x: 1, y: 1, z: 1}
   healthBar: {fileID: 462805616}
   bossNameLabel: {fileID: 0}
   enemySpawn: {fileID: 9023326529117949394, guid: 104acf9c5c866774fbe5ac8be7a567ba, type: 3}
@@ -1061,6 +1070,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 6739480182759727176}
   health: 0
+  showHealthBar: 1
+  healthBarPrefab: {fileID: 0}
+  healthBarOffset: {x: 0, y: -1, z: 0}
+  healthBarScale: {x: 1, y: 1, z: 1}
 --- !u!114 &1262515524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1410,7 +1423,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSourceOnce: {fileID: 1291409925}
   audioSourceLoop: {fileID: 1291409924}
+  dungeonBossIntro: {fileID: 8300000, guid: efb3824dfe586294a842ab0fbb6d9d1e, type: 3}
   dungeonMusicLoop: {fileID: 8300000, guid: 8a5a40ae8143e1946b64d82e9afb05f8, type: 3}
+  dungeonBossVoiceLine: {fileID: 8300000, guid: ccadde6fd54385449bdf0b313b7a74ca, type: 3}
 --- !u!4 &1291409927
 Transform:
   m_ObjectHideFlags: 0
@@ -1529,6 +1544,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 6739480182759727176}
   health: 0
+  showHealthBar: 1
+  healthBarPrefab: {fileID: 0}
+  healthBarOffset: {x: 0, y: -1, z: 0}
+  healthBarScale: {x: 1, y: 1, z: 1}
 --- !u!114 &1355115701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7775,6 +7794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fbe2dccc6657476bb513dccaf207ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ID: 0
 --- !u!212 &1779755393
 SpriteRenderer:
   m_ObjectHideFlags: 0

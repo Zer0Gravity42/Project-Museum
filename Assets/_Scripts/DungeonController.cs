@@ -7,9 +7,13 @@ public class DungeonController : MonoBehaviour
     //Audio
     public AudioSource audioSourceOnce;
     public AudioSource audioSourceLoop;
-
-    public AudioClip dungeonMusicLoop;
     
+    public AudioClip dungeonMusicLoop;
+
+    public AudioClip dungeonBossIntro;
+    public AudioClip dungeonBossLoop;
+    public AudioClip dungeonBossVoiceLine;
+    public AudioClip dungeonBossDeath;
     
     // Start is called before the first frame update
     void Start()
@@ -35,4 +39,32 @@ public class DungeonController : MonoBehaviour
         audioSourceLoop.clip = clip;
         audioSourceLoop.Play();
     }
+    
+    public void StopAllSound()
+    {
+        audioSourceLoop.Stop();
+        audioSourceOnce.Stop();
+    }
+    
+    public void ActivateBossAudio()
+    {
+        // Start the coroutine to play audio in the right order
+        StartCoroutine(PlayBossAudioSequence());
+    }
+    
+    
+    // Coroutine to handle the audio sequence
+    private IEnumerator PlayBossAudioSequence()
+    {
+        StopAllSound(); // Stop the current music
+        PlaySound(dungeonBossIntro); // Plays the music intro
+        PlaySound(dungeonBossVoiceLine); // Plays Paul's voice
+
+        // Wait for the intro to finish before loading the level (so the music doesn't overlap with the boss music)
+        yield return new WaitForSeconds(dungeonBossIntro.length);
+
+        PlaySoundLoop(dungeonBossLoop); // Loops boss music
+    }
+
+    
 }

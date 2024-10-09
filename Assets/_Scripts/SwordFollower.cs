@@ -8,6 +8,10 @@ public class SwordFollower : Follower
     public bool artifactActive = false; // Set this in the Inspector
     public float flyingDistance = 1.0f;
     public float rotateSpeed = 2.0f;
+    
+    //Audio
+    [SerializeField] AudioSource audioSourceOnce;
+    [SerializeField] AudioClip swordSwing;
     // Override the HandleAttack method for sword attack behavior
 
     void Start()
@@ -45,6 +49,7 @@ public class SwordFollower : Follower
 
                 transform.position = playerPosition + direction * flyingDistance;
                 slash.SetActive(true);
+
             }
 
             else if (Input.GetMouseButtonUp(0) && attack)
@@ -78,6 +83,9 @@ public class SwordFollower : Follower
                 attack = true;
                 attackTimer = 0.0f;
                 slash.SetActive(true);
+                
+                //play audio every swing
+                PlaySound(swordSwing);
             }
 
             if (attackTimer > 0.1f)
@@ -104,5 +112,11 @@ public class SwordFollower : Follower
 
         // Update attack timer
         attackTimer += Time.deltaTime;
+    }
+    
+    public void PlaySound(AudioClip clip)
+    {
+        audioSourceOnce.loop = false;
+        audioSourceOnce.PlayOneShot(clip);
     }
 }

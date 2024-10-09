@@ -1,13 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BossEnemy : basicEnemy
 {
+    [SerializeField] DungeonController dungeonController; // Reference to the DungeonController (for audio)
     public new GameObject healthBar; // Assign the health bar UI element in the Inspector
     public Text bossNameLabel;
     public GameObject enemySpawn;
     private float spawnTimer;
+    private bool isDead = false; // Flag to track if the boss is dead
 
     protected override void setSpeedAndHealth()
     {
@@ -20,6 +24,7 @@ public class BossEnemy : basicEnemy
 
     protected override void Awake()
     {
+        isDead = false; //Reset the dead flag. Why? Who knows. It's a mystery.
         base.Awake();
         if (healthBar != null)
         {
@@ -52,8 +57,13 @@ public class BossEnemy : basicEnemy
         }
 
         // If the boss is dead, deactivate the health bar and text label
-        if (health <= 0)
+        if (health <= 0 && !isDead)
         {
+            isDead = true; //Mark the boss as dead so the audio doesn't 
+            
+            StartCoroutine(PlayBossDeathAudio());
+            
+            //Update Health Bar
             if (healthBar != null)
             {
                 healthBar.SetActive(false);
@@ -97,6 +107,15 @@ public class BossEnemy : basicEnemy
                 slider.value = health;
             }
         }
+    }
+
+    private IEnumerator PlayBossDeathAudio()
+    {
+        //Update Audio
+        dungeonController.StopAllSound();
+        dungeonController.PlaySound(dungeonController.dungeonBossDeath);
+        
+        yield return new WaitForSeconds(dungeonController.dungeonBossDeath.length);
     }
 }
 

@@ -1,9 +1,17 @@
+using System;
 using UnityEngine;
 
 public class BossActivator : MonoBehaviour
 {
-    public GameObject boss;              // Assign the BossEnemy GameObject in the Inspector
-    public Vector3 bossSpawnPosition;    // Set the position where the boss should appear
+    public GameObject boss; // Assign the BossEnemy GameObject in the Inspector
+    public Vector3 bossSpawnPosition; // Set the position where the boss should appear
+    [SerializeField] DungeonController dungeonController; // Reference to the DungeonController (for audio)
+
+    private void Start()
+    {
+        // Find the DungeonController in the parent object
+        dungeonController = GetComponentInParent<DungeonController>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,7 +29,10 @@ public class BossActivator : MonoBehaviour
             {
                 bossEnemy.ActivateHealthBar();
             }
-
+            
+            //Play the boss music
+            dungeonController.ActivateBossAudio();
+            
             // Optionally, destroy the trigger so it doesn't activate again
             Destroy(gameObject);
         }
