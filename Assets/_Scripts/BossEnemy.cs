@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ public class BossEnemy : basicEnemy
     [SerializeField] DungeonController dungeonController; // Reference to the DungeonController (for audio)
     public new GameObject healthBar; // Assign the health bar UI element in the Inspector
     public Text bossNameLabel;
+    public TextMeshProUGUI bossQuoteLabel;
     public GameObject enemySpawn;
     private float spawnTimer;
     private bool isDead = false; // Flag to track if the boss is dead
@@ -34,6 +36,8 @@ public class BossEnemy : basicEnemy
         {
             bossNameLabel.gameObject.SetActive(false); // Ensure the boss name label is inactive initially
         }
+
+        StartCoroutine(ShowBossCaption());
     }
 
     public override void takeDamage(int damage)
@@ -45,6 +49,7 @@ public class BossEnemy : basicEnemy
     protected override void Update()
     {
         base.Update();
+        UpdateBossQuotePosition();
 
         spawnTimer += Time.deltaTime;
 
@@ -116,6 +121,32 @@ public class BossEnemy : basicEnemy
         dungeonController.PlaySound(dungeonController.dungeonBossDeath);
         
         yield return new WaitForSeconds(dungeonController.dungeonBossDeath.length);
+    }
+
+    private IEnumerator ShowBossCaption()
+    {
+        //Show the boss caption
+        bossQuoteLabel.gameObject.SetActive(true);
+        
+        yield return new WaitForSeconds(dungeonController.dungeonBossVoiceLine.length);
+        
+        //Hide the boss caption
+        bossQuoteLabel.gameObject.SetActive(false);
+    }
+    
+    private void UpdateBossQuotePosition()
+    {
+        if (bossQuoteLabel != null && bossQuoteLabel.gameObject.activeSelf)
+        {
+            // Get the boss's world position
+            Vector3 bossPosition = transform.position;
+
+            // Calculate the offset in world space
+            Vector3 offset = new Vector3(-2, 1, 0); // Adjust this value as needed for height above the boss
+
+            // Set the position of the quote label to be above the boss
+            bossQuoteLabel.transform.position = bossPosition + offset;
+        }
     }
 }
 
