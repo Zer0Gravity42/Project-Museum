@@ -255,5 +255,6 @@ public class PlayerController : MonoBehaviour
         tempManager.GetComponent<MainManager>().doors.Clear(); //clear player progress rip
         tempManager.GetComponent<MainManager>().keys.Clear(); //clear player progress rip
         tempManager.GetComponent<MainManager>().tempArtifacts.Clear(); //clear player progress rip
+        tempManager.GetComponent<MainManager>().artifactsInScene.Clear(); //changing scene so we need a different list of current artifacts
     }
 }

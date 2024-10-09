@@ -16,6 +16,7 @@ public class MainManager : MonoBehaviour
 
     public List<GameObject> keys;
     public List<GameObject> doors;
+    public List<GameObject> artifactsInScene;
 
     private void Awake()
     {

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DungeonController : MonoBehaviour
-{ 
+{
+    //manager
+    GameObject mainManager;
     //Audio
     public AudioSource audioSourceOnce;
     public AudioSource audioSourceLoop;
@@ -18,7 +20,20 @@ public class DungeonController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        mainManager = GameObject.FindGameObjectWithTag("MainManager");
         PlaySoundLoop(dungeonMusicLoop);
+
+        //remove any game objects already collected
+        foreach(GameObject a in mainManager.GetComponent<MainManager>().artifactsInScene)
+        {
+            foreach(int i in mainManager.GetComponent<MainManager>().permanentArtifactIds)
+            {
+                if (i == a.GetComponent<Artifact>().ID)
+                {
+                    a.SetActive(false);
+                }
+            }
+        }
     }
 
     // Update is called once per frame
