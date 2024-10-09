@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    
+
     [SerializeField] private float movementSpeed = 2.0f;
     private Rigidbody2D rb;
     private Vector2 movementDirection;
@@ -17,23 +17,25 @@ public class PlayerController : MonoBehaviour
 
     public event Action<int, int> OnHealthChanged;
 
-    
+
 
     #region Dash Variables
     [SerializeField] private float dashSpeed = 10f;
     [SerializeField] private float dashDuration = 0.2f;
     [SerializeField] private float dashCooldown = 1f;  //time before dash can be used again
-    bool canDash = false;
+    [SerializeField] private bool canDash = false;
     private bool isDashing = false;
     private float lastDashTime; //timestamp for last dash
 
     private SpriteRenderer spriteRenderer;
     public float afterImageInterval = 0.05f;
     private float afterImageTimer = 0f;
+    private bool isInvulnerable = false;  // Indicates if the player is invulnerable
+
     #endregion
 
     // Start is called before the first frame update
-    void Start() 
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
@@ -43,7 +45,7 @@ public class PlayerController : MonoBehaviour
         OnHealthChanged?.Invoke(health, maxHealth);
 
         #region Artifact Powers Enables/Disables
-        
+
         GameObject tempManager = GameObject.FindGameObjectWithTag("MainManager"); //get temporary access to which artifacts are equipped
 
         #region Dash: if an Artifact with an ID of 1 is equipped in either slots, allow the player to dash
@@ -80,11 +82,11 @@ public class PlayerController : MonoBehaviour
             Heal(1);
         }
     }
-    
+
     void FixedUpdate()
     {
         Move();
-        if(health == 0)
+        if (health == 0)
         {
             ClearTempManagerObjects();
             Application.LoadLevel("Main Menu");
@@ -93,9 +95,15 @@ public class PlayerController : MonoBehaviour
 
     public void takeDamage(int damage)
     {
-        health -= damage;
-        health = Mathf.Clamp(health, 0, maxHealth);
-        OnHealthChanged?.Invoke(health, maxHealth);
+        if (isInvulnerable)
+            return;
+
+        else
+        {
+            health -= damage;
+            health = Mathf.Clamp(health, 0, maxHealth);
+            OnHealthChanged?.Invoke(health, maxHealth);
+        }
     }
 
     public void Heal(int amount)
@@ -115,11 +123,11 @@ public class PlayerController : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal"); //Only 0 and 1. Can be changed to GetAxis for slight movement (controller)
         float moveY = Input.GetAxisRaw("Vertical");
 
-        
-        
+
+
         movementDirection = new Vector2(moveX, moveY).normalized; //Normalizing this keeps the speed consistent on diagonals
     }
-    
+
     void Move()
     {
         if (isDashing)
@@ -133,6 +141,7 @@ public class PlayerController : MonoBehaviour
         if (canDash)
         {
             isDashing = true;
+            isInvulnerable = true;
             lastDashTime = Time.time;
             Vector2 dashDirection = movementDirection;
 
@@ -153,9 +162,10 @@ public class PlayerController : MonoBehaviour
             }
 
             isDashing = false;
+            isInvulnerable = false;
             rb.velocity = Vector2.zero;
         }
-        
+
     }
 
     void CreateAfterImage()
@@ -190,7 +200,7 @@ public class PlayerController : MonoBehaviour
             Application.LoadLevel("Floor1"); //loads the dungeon scene
         }
 
-        if(collision.tag == "MuseumPortal")
+        if (collision.tag == "MuseumPortal")
         {
             GameObject tempManager = GameObject.FindGameObjectWithTag("MainManager");
             tempManager.SendMessage("AddAllToPermanents");
@@ -198,7 +208,7 @@ public class PlayerController : MonoBehaviour
             Application.LoadLevel("Museum"); //loads the dungeon system
         }
 
-        if(collision.CompareTag("InteractObject"))
+        if (collision.CompareTag("InteractObject"))
         {
             //Debug.Log(collision.name);
             currentInteraction = collision.gameObject; //Assing interaction object (usable for both dialogue and pickups)          
@@ -207,13 +217,13 @@ public class PlayerController : MonoBehaviour
 
     private void ProcessInteracts()
     {
-        if(Input.GetButtonDown("Interact") && currentInteraction && currentInteraction.GetComponent<Artifact>()) //sends a message to object interaction system only if we're interacting with something, and this object has 
+        if (Input.GetButtonDown("Interact") && currentInteraction && currentInteraction.GetComponent<Artifact>()) //sends a message to object interaction system only if we're interacting with something, and this object has 
         {                                                                                                        //the Artifact script attached (marking it as an Artifact)
             currentInteraction.SendMessage("DoPickUp"); //the method inside
             currentInteraction = null;
         }
 
-        if(Input.GetButtonDown("Interact") && currentInteraction && currentInteraction.GetComponent<ArtifactDescription>())
+        if (Input.GetButtonDown("Interact") && currentInteraction && currentInteraction.GetComponent<ArtifactDescription>())
         {
             //Debug.Log("Interacted with Museum object");
             currentInteraction.SendMessage("DoDescriptionPopUp"); //artifact description interact (museum)
@@ -236,7 +246,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Interacting");
         }
-        
+
     }
 
     private void ClearTempManagerObjects()

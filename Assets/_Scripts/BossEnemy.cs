@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class BossEnemy : basicEnemy
 {
     [SerializeField] DungeonController dungeonController; // Reference to the DungeonController (for audio)
-    public new GameObject healthBar; // Assign the health bar UI element in the Inspector
+    public GameObject bossHealthBar; // Assign the health bar UI element in the Inspector
     public Text bossNameLabel;
     public TextMeshProUGUI bossQuoteLabel;
     public GameObject enemySpawn;
@@ -28,9 +28,9 @@ public class BossEnemy : basicEnemy
     {
         isDead = false; //Reset the dead flag. Why? Who knows. It's a mystery.
         base.Awake();
-        if (healthBar != null)
+        if (bossHealthBar != null)
         {
-            healthBar.SetActive(false); // Ensure the health bar is inactive initially
+            bossHealthBar.SetActive(false); // Ensure the health bar is inactive initially
         }
         if (bossNameLabel != null)
         {
@@ -69,9 +69,9 @@ public class BossEnemy : basicEnemy
             StartCoroutine(PlayBossDeathAudio());
             
             //Update Health Bar
-            if (healthBar != null)
+            if (bossHealthBar != null)
             {
-                healthBar.SetActive(false);
+                bossHealthBar.SetActive(false);
             }
 
             if (bossNameLabel != null)
@@ -83,12 +83,12 @@ public class BossEnemy : basicEnemy
 
     public void ActivateHealthBar()
     {
-        if (healthBar != null)
+        if (bossHealthBar != null)
         {
-            healthBar.SetActive(true);
+            bossHealthBar.SetActive(true);
 
             // Initialize the health bar value
-            Slider slider = healthBar.GetComponent<Slider>();
+            Slider slider = bossHealthBar.GetComponent<Slider>();
             if (slider != null)
             {
                 slider.maxValue = maxHealth;
@@ -104,9 +104,9 @@ public class BossEnemy : basicEnemy
 
     private void UpdateHealthBar()
     {
-        if (healthBar != null)
+        if (bossHealthBar != null)
         {
-            Slider slider = healthBar.GetComponent<Slider>();
+            Slider slider = bossHealthBar.GetComponent<Slider>();
             if (slider != null)
             {
                 slider.value = health;
