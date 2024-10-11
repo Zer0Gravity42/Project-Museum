@@ -34,6 +34,18 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
+    #region TransformationEffect Variables
+    [SerializeField] private float transformationDuration = 15f;
+    [SerializeField] private float transformationCooldown = 20f;
+    [SerializeField] private bool canTransform = false;
+    private bool isTransformed = false;
+    private float lastTransformationTime = 0f;
+    private Sprite originalSprite; // For reverting back to the normal player sprite
+    public Sprite golemSprite; // Golem form sprite
+    private float originalSpeed; // Save original speed to restore later
+
+    #endregion
+
     // Start is called before the first frame update
     void Start()
     {
@@ -81,6 +93,7 @@ public class PlayerController : MonoBehaviour
         {
             Heal(1);
         }
+
     }
 
     void FixedUpdate()
