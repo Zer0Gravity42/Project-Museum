@@ -2,49 +2,78 @@ using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
 
+    [Header("Movement Settings")]
     [SerializeField] private float movementSpeed = 2.0f;
     private Rigidbody2D rb;
     private Vector2 movementDirection;
+    private bool isFacingRight = true; // Tracks the player's current facing direction
+
+
+    [Header("Animation Settings")]
     public Animator animator;
+
+    [Header("Health Settings")]
     public int health = 3;
     public int maxHealth = 3;
-    private GameObject currentInteraction = null; //This controls our interaction system, basically what the interactable object we are currently in contact with
-
-    public event Action<int, int> OnHealthChanged;
-
-
+    public event System.Action<int, int> OnHealthChanged;
 
     #region Dash Variables
+    [Header("Dash Settings")]
     [SerializeField] private float dashSpeed = 10f;
     [SerializeField] private float dashDuration = 0.2f;
-    [SerializeField] private float dashCooldown = 1f;  //time before dash can be used again
+    [SerializeField] private float dashCooldown = 1f;  // Time before dash can be used again
     [SerializeField] private bool canDash = false;
     private bool isDashing = false;
-    private float lastDashTime; //timestamp for last dash
+    private float lastDashTime; // Timestamp for last dash
 
     private SpriteRenderer spriteRenderer;
     public float afterImageInterval = 0.05f;
     private float afterImageTimer = 0f;
     private bool isInvulnerable = false;  // Indicates if the player is invulnerable
-
+    // Public Getter for isInvulnerable
+    public bool IsInvulnerable
+    {
+        get { return isInvulnerable; }
+    }
     #endregion
 
-    #region TransformationEffect Variables
-    [SerializeField] private float transformationDuration = 15f;
-    [SerializeField] private float transformationCooldown = 20f;
+    #region Transformation Variables
+    [Header("Transformation Settings")]
+    public Sprite golemSprite;          // Golem sprite
+    private Sprite originalSprite;      // Store the original player sprite
+    private Vector3 originalScale;      // Store the player's original scale
+    private bool isTransformed = false; // Track if the player is currently transformed
+    private bool canMove = true;        // Player can move when not transformed
     [SerializeField] private bool canTransform = false;
-    private bool isTransformed = false;
-    private float lastTransformationTime = 0f;
-    private Sprite originalSprite; // For reverting back to the normal player sprite
-    public Sprite golemSprite; // Golem form sprite
-    private float originalSpeed; // Save original speed to restore later
+    private GameObject activeWeapon = null; // Currently active weapon
+    public AnimationClip golemAttackClip;
+    [SerializeField] private GameObject golemHitbox; // Reference to the golem's hitbox collider
 
     #endregion
+
+    #region Audio Variables
+    [Header("Audio Settings")]
+    //[SerializeField] private AudioClip transformSound; // Assign in Inspector
+    [SerializeField] private AudioClip attackSound;   // Assign in Inspector
+    private AudioSource audioSource;                 // Reference to AudioSource component
+    #endregion
+
+    #region UI Variables
+    [Header("UI Settings")]
+    [SerializeField] private Image cooldownBar;          // Assign in Inspector
+    //[SerializeField] private TextMeshProUGUI cooldownText; // Assign in Inspector (Optional)
+    [SerializeField] private float attackCooldown = 5f;  // Cooldown duration in seconds
+    private bool isAttackOnCooldown = false;             // Tracks if attack is on cooldown
+    #endregion
+
+    private GameObject currentInteraction = null; //This controls our interaction system, basically what the interactable object we are currently in contact with
 
     // Start is called before the first frame update
     void Start()
@@ -52,7 +81,14 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        // Initialize AudioSource
+        audioSource = GetComponent<AudioSource>();
 
+        // Save the original player sprite at the start
+        originalSprite = spriteRenderer.sprite;
+        originalScale = transform.localScale;
+
+        //Initialize health
         health = maxHealth;
         OnHealthChanged?.Invoke(health, maxHealth);
 
@@ -61,19 +97,40 @@ public class PlayerController : MonoBehaviour
         GameObject tempManager = GameObject.FindGameObjectWithTag("MainManager"); //get temporary access to which artifacts are equipped
 
         #region Dash: if an Artifact with an ID of 1 is equipped in either slots, allow the player to dash
-        if (tempManager.GetComponent<MainManager>().equippedSlotOneId == 1 || tempManager.GetComponent<MainManager>().equippedSlotTwoId == 1)
+        if (tempManager.GetComponent<MainManager>().equippedSlotOneId == 1 || tempManager.GetComponent<MainManager>().equippedSlotTwoId == 1)    
         {
             canDash = true;
         }
-        #endregion 
+        #endregion
+        #region GolemTransform: if an Artifact with an ID of 2 is equipped in either slots, allow the player to transform
+        if (tempManager.GetComponent<MainManager>().equippedSlotOneId == 2 || tempManager.GetComponent<MainManager>().equippedSlotTwoId == 2)
+        {
+            canTransform = true;
+        }
+        #endregion
+        //#region SuperSword: if an Artifact with an ID of 3 is equipped in either slots, allow the player to use the super sword
+        //if (tempManager.GetComponent<MainManager>().equippedSlotOneId == 3 || tempManager.GetComponent<MainManager>().equippedSlotTwoId == 3)
+        //{
+        //    canDash = true;
+        //}
+        //#endregion
+
 
         #endregion
+
+        // Initialize cooldown bar visibility based on canTransform
+        if (cooldownBar != null)
+        {
+            cooldownBar.gameObject.SetActive(canTransform);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        ProcessInputs();
+        if (canMove)
+            ProcessInputs();
+
         UpdateAnimation();
         ProcessInteracts(); //interaction system
 
@@ -94,11 +151,19 @@ public class PlayerController : MonoBehaviour
             Heal(1);
         }
 
+        // Handle transformation when 'T' is pressed
+        if (Input.GetKeyDown(KeyCode.T) && !isTransformed)
+        {
+            StartCoroutine(TransformIntoGolem());
+        }
+
+
     }
 
     void FixedUpdate()
     {
-        Move();
+        if (canMove)
+               Move();
         if (health == 0)
         {
             ClearTempManagerObjects();
@@ -136,10 +201,18 @@ public class PlayerController : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal"); //Only 0 and 1. Can be changed to GetAxis for slight movement (controller)
         float moveY = Input.GetAxisRaw("Vertical");
 
-
-
         movementDirection = new Vector2(moveX, moveY).normalized; //Normalizing this keeps the speed consistent on diagonals
+                                                                  // Update facing direction based on horizontal input
+        if (moveX > 0)
+        {
+            isFacingRight = true;
+        }
+        else if (moveX < 0)
+        {
+            isFacingRight = false;
+        }
     }
+
 
     void Move()
     {
@@ -197,6 +270,7 @@ public class PlayerController : MonoBehaviour
         afterImage.AddComponent<AfterImageFade>();
     }
     #endregion
+
 
     void UpdateAnimation()
     {
@@ -270,4 +344,132 @@ public class PlayerController : MonoBehaviour
         tempManager.GetComponent<MainManager>().tempArtifacts.Clear(); //clear player progress rip
         tempManager.GetComponent<MainManager>().artifactsInScene.Clear(); //changing scene so we need a different list of current artifacts
     }
+
+    // Coroutine to handle the transformation and attack animation
+    IEnumerator TransformIntoGolem()
+    {
+        if (canTransform == false)
+            yield break;
+        // Prevent transformation if already on cooldown
+        if (isAttackOnCooldown)
+        {
+            Debug.Log("Golem attack is on cooldown.");
+            yield break;
+        }
+
+        // Reset player's velocity to stop movement
+        rb.velocity = Vector2.zero;
+        isTransformed = true; // Prevent spamming the transformation
+        canMove = false;
+
+        //Store the currently active weapon
+        activeWeapon = GetActiveWeapon();
+        SetChildrenActive(false);
+
+        // Determine the current facing direction and preserve it during scaling
+        float newScaleX = isFacingRight ? originalScale.x * 2.5f : -originalScale.x * 2.5f;
+        transform.localScale = new Vector3(newScaleX, originalScale.y * 2.5f, originalScale.z); // Scale up while preserving directions
+        // Swap the player's sprite to the golem sprite
+        spriteRenderer.sprite = golemSprite;
+        isInvulnerable = true;
+        // Trigger the golem's attack animation
+        animator.SetTrigger("GolemAttack");
+
+        // Start the cooldown
+        StartCoroutine(GolemCooldown());
+
+        // Wait for the exact length of the animation clip
+        yield return new WaitForSeconds(golemAttackClip.length);
+        Debug.Log(golemAttackClip.length);
+
+        
+
+        animator.SetBool("isGolemAttacking", false);
+
+        spriteRenderer.sprite = originalSprite;
+        transform.localScale = originalScale;
+        // Optionally, revert back to the player's original sprite after the animation finishes
+        // Re-enable only the previously active weapon
+        if (activeWeapon != null)
+        {
+            activeWeapon.SetActive(true);
+        }
+
+        canMove = true;
+        isTransformed = false; // Allow transformation again
+        isInvulnerable = false;
+    }
+
+    // Coroutine to handle the attack cooldown
+    IEnumerator GolemCooldown()
+    {
+       
+        isAttackOnCooldown = true;
+
+        // Reset and activate the cooldown bar
+        if (cooldownBar != null)
+        {
+            cooldownBar.fillAmount = 1f; // Start full
+        }
+
+        // Update the cooldown bar over time
+        float cooldownTimer = attackCooldown;
+        while (cooldownTimer > 0)
+        {
+            cooldownTimer -= Time.deltaTime;
+            float fillAmount = cooldownTimer / attackCooldown;
+            if (cooldownBar != null)
+            {
+                cooldownBar.fillAmount = fillAmount;
+            }
+
+            yield return null;
+        }
+
+        // Ensure the cooldown bar is empty
+        if (cooldownBar != null)
+        {
+            cooldownBar.fillAmount = 1f;
+        }
+
+        isAttackOnCooldown = false;
+    }
+
+
+    // Function to enable/disable all child objects of the player (like weapons)
+    void SetChildrenActive(bool isActive)
+    {
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(isActive);
+        }
+        
+    }
+
+    // Function to get the currently active weapon
+    GameObject GetActiveWeapon()
+    {
+        foreach (Transform child in transform)
+        {
+            if (child.gameObject.activeSelf)
+            {
+                return child.gameObject;
+            }
+        }
+        return null; // No active weapon found
+    }
+
+    // Method to be called by the Animation Event
+    public void PlayAttackSound()
+    {
+        if (audioSource != null && attackSound != null)
+        {
+            audioSource.PlayOneShot(attackSound);
+        }
+        else
+        {
+            Debug.LogWarning("Attack sound or AudioSource is not assigned.");
+        }
+    }
+
 }

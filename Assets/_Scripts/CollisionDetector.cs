@@ -9,17 +9,17 @@ public class CollisionDetector : MonoBehaviour
         //if enemy collides with the weapon
         if (collision.gameObject.tag == "Enemy")
         {
-            if (tag == "Weapon")
+            if (tag == "Weapon" || tag == "GolemWeapon")
             {
                 //deal damage based on the damge of the weapon set enemy to red while taking damage
                 collision.gameObject.GetComponent<Enemy>().takeDamage(GetComponent<DamageManager>().damage);
-                if(collision.gameObject.GetComponent<SpriteRenderer>() != null)
+                if (collision.gameObject.GetComponent<SpriteRenderer>() != null)
                 {
                     collision.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
                 }
                 else
                 {
-                   collision.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+                    collision.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
                 }
             }
         }
@@ -28,9 +28,12 @@ public class CollisionDetector : MonoBehaviour
         {
             if (tag == "Enemy" || tag == "EnemyProjectile")
             {
-                //deal damage based on the damge of the enemy set player to red while taking damage
-                collision.gameObject.GetComponent<PlayerController>().takeDamage(GetComponent<DamageManager>().damage);
-                collision.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                if (!collision.gameObject.GetComponent<PlayerController>().IsInvulnerable)
+                {
+                    //deal damage based on the damge of the enemy set player to red while taking damage
+                    collision.gameObject.GetComponent<PlayerController>().takeDamage(GetComponent<DamageManager>().damage);
+                    collision.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                }
             }
         }
     }
@@ -56,5 +59,5 @@ public class CollisionDetector : MonoBehaviour
         }
     }
 
-   
+
 }
