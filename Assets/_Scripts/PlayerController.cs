@@ -3,8 +3,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -115,7 +117,11 @@ public class PlayerController : MonoBehaviour
         //}
         //#endregion
 
-
+        //IF THE SCENE IS IN THE MUSEUM NO ARTIFACT POWERS WE DONT WANT OUR CUSTOMERS TO DIE
+        if(SceneManager.GetActiveScene().name == "Museum")
+        {
+            DisableAllArtifacts();
+        }
         #endregion
 
         // Initialize cooldown bar visibility based on canTransform
@@ -170,6 +176,13 @@ public class PlayerController : MonoBehaviour
             Application.LoadLevel("Main Menu");
         }
     }
+
+    private void DisableAllArtifacts()
+    {
+        canDash = false;
+        canTransform = false;
+    }
+
 
     public void takeDamage(int damage)
     {
