@@ -40,7 +40,7 @@ public class InteractionObject : MonoBehaviour
             mainManager.GetComponent<MainManager>().keys.RemoveAt(0);
 
             // Get the DoubleDoorController and open the door
-            DoorController doubleDoorController = GetComponentInParent<DoorController>();
+            DoorController doubleDoorController = GetComponent<DoorController>();
             if (doubleDoorController != null)
             {
                 doubleDoorController.isOpen = true; // This will trigger the door to open

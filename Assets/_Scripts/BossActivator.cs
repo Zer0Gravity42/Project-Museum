@@ -22,6 +22,8 @@ public class BossActivator : MonoBehaviour
 
             // Activate the boss
             boss.SetActive(true);
+            
+
 
             // Activate the boss's health bar
             BossEnemy bossEnemy = boss.GetComponent<BossEnemy>();

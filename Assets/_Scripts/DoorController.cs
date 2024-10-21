@@ -79,7 +79,9 @@ public class DoorController : MonoBehaviour
         doorCoroutine = StartCoroutine(MoveDoors(leftOpenPos, rightOpenPos));
 
         // Disable box collider on the right door
-        rightDoor.GetComponent<BoxCollider2D>().enabled = false;
+        DisableAllBoxColliders(rightDoor);
+        
+        
     }
 
     public void CloseDoor()
@@ -91,7 +93,7 @@ public class DoorController : MonoBehaviour
         doorCoroutine = StartCoroutine(MoveDoors(leftClosedPos, rightClosedPos));
 
         // Enable box collider on the right door
-        rightDoor.GetComponent<BoxCollider2D>().enabled = true;
+        EnableAllBoxColliders(rightDoor);
     }
 
     IEnumerator MoveDoors(Vector3 leftTargetPos, Vector3 rightTargetPos)
@@ -114,5 +116,30 @@ public class DoorController : MonoBehaviour
         rightDoor.transform.localPosition = rightTargetPos;
 
         doorCoroutine = null;
+    }
+    /// <summary>
+    /// Disables all BoxCollider2D components on the specified door.
+    /// </summary>
+    /// <param name="door">The door GameObject whose colliders will be disabled.</param>
+    private void DisableAllBoxColliders(GameObject door)
+    {
+        BoxCollider2D[] colliders = door.GetComponents<BoxCollider2D>();
+        foreach (BoxCollider2D collider in colliders)
+        {
+            collider.enabled = false;
+        }
+    }
+
+    /// <summary>
+    /// Enables all BoxCollider2D components on the specified door.
+    /// </summary>
+    /// <param name="door">The door GameObject whose colliders will be enabled.</param>
+    private void EnableAllBoxColliders(GameObject door)
+    {
+        BoxCollider2D[] colliders = door.GetComponents<BoxCollider2D>();
+        foreach (BoxCollider2D collider in colliders)
+        {
+            collider.enabled = true;
+        }
     }
 }

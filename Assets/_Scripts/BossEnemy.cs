@@ -36,6 +36,7 @@ public class BossEnemy : basicEnemy
         {
             bossNameLabel.gameObject.SetActive(false); // Ensure the boss name label is inactive initially
         }
+        GameObject.Find("BossDoor").transform.Find("RightDoor").GetComponent<DoorController>().CloseDoor();
 
         StartCoroutine(ShowBossCaption());
     }
@@ -67,7 +68,8 @@ public class BossEnemy : basicEnemy
             isDead = true; //Mark the boss as dead so the audio doesn't 
             
             StartCoroutine(PlayBossDeathAudio());
-            
+            GameObject.Find("BossDoor").transform.Find("RightDoor").GetComponent<DoorController>().OpenDoor();
+
             //Update Health Bar
             if (bossHealthBar != null)
             {
