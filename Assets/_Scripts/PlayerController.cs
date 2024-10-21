@@ -173,11 +173,18 @@ public class PlayerController : MonoBehaviour
     {
         if (canMove)
                Move();
-        if (health == 0)
+        if (health <= 0)
         {
-            ClearTempManagerObjects();
-            Application.LoadLevel("Main Menu");
+            die();
         }
+    }
+
+
+    //im moving this to a public method so i can call it if timer hits 0
+    public void die()
+    {
+        ClearTempManagerObjects();
+        Application.LoadLevel("Main Menu");
     }
 
     private void DisableAllArtifacts()

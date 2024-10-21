@@ -30,9 +30,17 @@ public class CollisionDetector : MonoBehaviour
             {
                 if (!collision.gameObject.GetComponent<PlayerController>().IsInvulnerable)
                 {
-                    //deal damage based on the damge of the enemy set player to red while taking damage
-                    collision.gameObject.GetComponent<PlayerController>().takeDamage(GetComponent<DamageManager>().damage);
-                    collision.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                    //so enemies dont damage you while in death animation
+                    if(tag == "Enemy" && gameObject.GetComponent<Enemy>().alive == false)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        //deal damage based on the damge of the enemy set player to red while taking damage
+                        collision.gameObject.GetComponent<PlayerController>().takeDamage(GetComponent<DamageManager>().damage);
+                        collision.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                    }
                 }
             }
         }

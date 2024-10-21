@@ -21,7 +21,7 @@ public abstract class Enemy : MonoBehaviour
     protected float timer;
     protected bool moving = true;
     protected bool attacking = false;
-    protected bool alive = true;
+    public bool alive = true;
     protected bool awake = false;
 
     // Health bar variables
