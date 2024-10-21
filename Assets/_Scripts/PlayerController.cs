@@ -137,6 +137,9 @@ public class PlayerController : MonoBehaviour
         if (canMove)
             ProcessInputs();
 
+        if (canTransform)
+            cooldownBar.gameObject.SetActive(true);
+
         UpdateAnimation();
         ProcessInteracts(); //interaction system
 

@@ -34,11 +34,17 @@ public class InteractionObject : MonoBehaviour
 
     void DoOpenDoor()
     {
-        //for now im making the keys generic (as in one key can unlock any door)
-        if(mainManager.GetComponent<MainManager>().keys.Count != 0)
+        // For now, we're making the keys generic (one key can unlock any door)
+        if (mainManager.GetComponent<MainManager>().keys.Count != 0)
         {
-            gameObject.SetActive(false);
             mainManager.GetComponent<MainManager>().keys.RemoveAt(0);
+
+            // Get the DoubleDoorController and open the door
+            DoorController doubleDoorController = GetComponentInParent<DoorController>();
+            if (doubleDoorController != null)
+            {
+                doubleDoorController.isOpen = true; // This will trigger the door to open
+            }
         }
 
         //if we want a specific key to open a specific door, uncomment this code and comment out the code above
