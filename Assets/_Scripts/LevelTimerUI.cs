@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class LevelTimerUI : MonoBehaviour
 {
-    private float timer = 600;
+    public float timer;
     public GameObject player;
 
     
