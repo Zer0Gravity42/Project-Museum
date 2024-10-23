@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float speed = 10f;   // Speed of the projectile
+    public float speed = 400f;   // Speed of the projectile
     public float lifetime = 5f; // How long the projectile lasts before being destroyed
 
     private Rigidbody2D rb;

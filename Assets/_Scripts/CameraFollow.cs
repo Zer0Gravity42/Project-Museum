@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     // The speed at which the camera follows the target.
-    public float FollowSpeed = 2f;
+    public float FollowSpeed = 1.5f;
 
     // The vertical offset between the camera and the target.
     public float yOffset = 1f;

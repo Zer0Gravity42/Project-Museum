@@ -694,6 +694,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 729914815}
+    - target: {fileID: 8452144706355131449, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: movementSpeed
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 8532650879984556750, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: m_SortingOrder
       value: 5

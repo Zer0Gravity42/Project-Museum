@@ -7,12 +7,13 @@ using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
 
     [Header("Movement Settings")]
-    [SerializeField] private float movementSpeed = 2.0f;
+    [SerializeField] private float movementSpeed = 300.0f;
     private Rigidbody2D rb;
     private Vector2 movementDirection;
     private bool isFacingRight = true; // Tracks the player's current facing direction
@@ -69,7 +70,7 @@ public class PlayerController : MonoBehaviour
 
     #region UI Variables
     [Header("UI Settings")]
-    [SerializeField] private Image cooldownBar;          // Assign in Inspector
+    [SerializeField] private UnityEngine.UI.Image cooldownBar;          // Assign in Inspector
     //[SerializeField] private TextMeshProUGUI cooldownText; // Assign in Inspector (Optional)
     [SerializeField] private float attackCooldown = 5f;  // Cooldown duration in seconds
     private bool isAttackOnCooldown = false;             // Tracks if attack is on cooldown
@@ -241,7 +242,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isDashing)
             return; // Skip movement during dash
-        rb.velocity = new Vector2(movementDirection.x * movementSpeed, movementDirection.y * movementSpeed);
+        rb.velocity = new Vector2(movementDirection.x * movementSpeed * Time.deltaTime, movementDirection.y * movementSpeed * Time.deltaTime);
     }
 
     #region Dash functions

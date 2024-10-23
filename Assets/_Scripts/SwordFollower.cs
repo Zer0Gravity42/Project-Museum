@@ -32,7 +32,7 @@ public class SwordFollower : Follower
                 attack = true;
                 attackTimer = 0.0f;
                 // Make the sword fly forward to a certain distance
-                distanceFromPlayer += 1.5f; // Adjust as needed
+                distanceFromPlayer += 45f * Time.deltaTime; // Adjust as needed
                 GetComponent<Collider2D>().enabled = true;
                 flyingDistance = distanceFromPlayer;
             }
@@ -65,7 +65,7 @@ public class SwordFollower : Follower
                 // Return the sword to its original position
                 if (distanceFromPlayer > 1.0f)
                 {
-                    distanceFromPlayer -= 0.05f; // Adjust speed as needed
+                    distanceFromPlayer -= 1.5f * Time.deltaTime; // Adjust speed as needed
                 }
                 else
                 {

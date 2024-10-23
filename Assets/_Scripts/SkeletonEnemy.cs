@@ -7,7 +7,7 @@ public class SkeletonEnemy : Enemy
     private Vector2 attackDirection;
     protected override void setSpeedAndHealth()
     {
-        speed = 0.005f;
+        speed = 1.5f;
         //he needs twice the health because he has 2 colliders lol
         health = 20;
     }
@@ -17,7 +17,7 @@ public class SkeletonEnemy : Enemy
         if (distanceFromPlayer > 3 && attacking == false)
         {
             //move closer
-            transform.position -= (Vector3)(directionToPlayer * speed);
+            transform.position -= (Vector3)(directionToPlayer * speed * Time.deltaTime);
         }
         else
         {
@@ -54,12 +54,12 @@ public class SkeletonEnemy : Enemy
             //shoot forward
             if (timer > 0.2 && timer < 0.3 && attacking)
             {
-                transform.position -= (Vector3)(attackDirection * (speed * 8));
+                transform.position -= (Vector3)(attackDirection * (speed * 8) * Time.deltaTime);
             }
             //pull back
             else
             {
-                transform.position += (Vector3)(attackDirection * (speed / 4));
+                transform.position += (Vector3)(attackDirection * (speed / 4) * Time.deltaTime);
             }
         }
     }
