@@ -12,7 +12,7 @@ public class DragonEnemy : Enemy
 
     protected override void setSpeedAndHealth()
     {
-        speed = 0.005f;
+        speed = 1f;
         health = 8;
         anim = GetComponent<Animator>();
         MoveDirection = UnityEngine.Random.insideUnitCircle.normalized;
@@ -23,17 +23,17 @@ public class DragonEnemy : Enemy
         //move further if too close
         if (distanceFromPlayer < 6)
         {
-            transform.position += (Vector3)(directionToPlayer * speed);
+            transform.position += (Vector3)(directionToPlayer * speed * Time.deltaTime);
         }
         //move closer if too far
         else if (distanceFromPlayer > 12) 
         {
-            transform.position -= (Vector3)(directionToPlayer * speed);
+            transform.position -= (Vector3)(directionToPlayer * speed * Time.deltaTime);
         }
         //move randomly
         else
         {
-            transform.position += (Vector3)(MoveDirection * speed);
+            transform.position += (Vector3)(MoveDirection * speed * Time.deltaTime);
         }
         //change direction
         if(justAttacked)

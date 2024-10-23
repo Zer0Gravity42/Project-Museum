@@ -19,7 +19,7 @@ public class BossEnemy : basicEnemy
     {
         base.setSpeedAndHealth(); // Call the base method to initialize common variables
                                   // Override or adjust properties as needed
-        speed = 0.04f; // Adjust as needed
+        speed = 10f; // Adjust as needed
         maxHealth = 30;
         health = maxHealth;
     }

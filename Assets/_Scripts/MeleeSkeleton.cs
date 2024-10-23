@@ -14,7 +14,7 @@ public class MeleeSkeleton : Enemy
     // Initialize variables and find the hitbox on the skeleton
     protected override void setSpeedAndHealth()
     {
-        speed = 0.005f;
+        speed = 1f;
         anim = GetComponent<Animator>();
         Transform hitboxTransform = transform.Find("Hitbox");
         if (hitboxTransform != null)
@@ -37,7 +37,7 @@ public class MeleeSkeleton : Enemy
         if(distanceFromPlayer >2) 
         {
             anim.SetBool("canWalk", true);
-            transform.position -= (Vector3)(directionToPlayer * speed);
+            transform.position -= (Vector3)(directionToPlayer * speed * Time.deltaTime);
             Flip();
         }
         if (cooling)

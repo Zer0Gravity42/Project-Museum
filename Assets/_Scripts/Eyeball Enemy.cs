@@ -38,7 +38,7 @@ public class basicEnemy : Enemy
     {
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>(); // Initialize the SpriteRenderer
-        speed = 0.035f;
+        speed = 9f;
         health = 5;
     }
 
@@ -46,7 +46,7 @@ public class basicEnemy : Enemy
     {
         if (distanceFromPlayer > 3 && !attacking)
         {
-            transform.position -= (Vector3)(directionToPlayer * speed);
+            transform.position -= (Vector3)(directionToPlayer * speed * Time.deltaTime);
         }
         else if (!attacking && readyToAttack)
         {
@@ -69,11 +69,11 @@ public class basicEnemy : Enemy
                 // Adjust position based on attack phase
                 if (timer < 0.3)
                 {
-                    transform.position += (Vector3)(attackDirection * (speed / 4));
+                    transform.position += (Vector3)(attackDirection * (speed / 4) * Time.deltaTime);
                 }
                 else
                 {
-                    transform.position -= (Vector3)(attackDirection * (speed * 1.25f));
+                    transform.position -= (Vector3)(attackDirection * (speed * 1.25f) * Time.deltaTime);
                 }
 
             }
