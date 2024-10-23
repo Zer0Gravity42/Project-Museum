@@ -20,6 +20,9 @@ public class DoorController : MonoBehaviour
     //optimized door and key classes to manage a larger amount of keys/doors
     public int doorID;
 
+    [SerializeField] private AudioClip openSound;
+    private AudioSource audioSource;
+
     private void Awake()
     {
         GameObject mainManager = GameObject.FindGameObjectWithTag("MainManager");
@@ -37,6 +40,8 @@ public class DoorController : MonoBehaviour
         rightOpenPos = rightClosedPos + new Vector3(openDistance, 0, 0);
 
         previousIsOpen = isOpen;
+        // Initialize AudioSource
+        audioSource = GetComponent<AudioSource>();
 
         // Set initial door state
         if (isOpen)
@@ -77,6 +82,7 @@ public class DoorController : MonoBehaviour
             StopCoroutine(doorCoroutine);
         }
         doorCoroutine = StartCoroutine(MoveDoors(leftOpenPos, rightOpenPos));
+        PlayOpenSound();
 
         // Disable box collider on the right door
         DisableAllBoxColliders(rightDoor);
@@ -140,6 +146,18 @@ public class DoorController : MonoBehaviour
         foreach (BoxCollider2D collider in colliders)
         {
             collider.enabled = true;
+        }
+    }
+
+    public void PlayOpenSound()
+    {
+        if (audioSource != null && openSound != null)
+        {
+            audioSource.PlayOneShot(openSound);
+        }
+        else
+        {
+            Debug.LogWarning("Open sound or AudioSource is not assigned.");
         }
     }
 }

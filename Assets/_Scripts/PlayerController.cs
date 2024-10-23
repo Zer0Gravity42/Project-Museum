@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour
     [Header("Audio Settings")]
     //[SerializeField] private AudioClip transformSound; // Assign in Inspector
     [SerializeField] private AudioClip attackSound;   // Assign in Inspector
+    [SerializeField] private AudioClip transformSound; 
     private AudioSource audioSource;                 // Reference to AudioSource component
     #endregion
 
@@ -488,6 +489,18 @@ public class PlayerController : MonoBehaviour
         if (audioSource != null && attackSound != null)
         {
             audioSource.PlayOneShot(attackSound);
+        }
+        else
+        {
+            Debug.LogWarning("Attack sound or AudioSource is not assigned.");
+        }
+    }
+
+    public void PlayTransformSound()
+    {
+        if (audioSource != null && transformSound != null)
+        {
+            audioSource.PlayOneShot(transformSound);
         }
         else
         {
