@@ -359,6 +359,12 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Interacting");
         }
 
+        if (Input.GetButtonDown("Interact") && currentInteraction && currentInteraction.GetComponent<ElevatorController>())
+        {
+            currentInteraction.SendMessage("DoElevator"); //ask to open the door
+            currentInteraction = null;
+        }
+
     }
 
     private void ClearTempManagerObjects()
