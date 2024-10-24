@@ -6,6 +6,7 @@ public class InteractionObject : MonoBehaviour
 {
     //get access to the main manager artifact list
     GameObject mainManager;
+    public string message;
 
     private void Awake()
     {
@@ -45,6 +46,11 @@ public class InteractionObject : MonoBehaviour
             {
                 doubleDoorController.isOpen = true; // This will trigger the door to open
             }
+            SetText("");
+        }
+        else
+        {
+            SetText("Locked");
         }
 
         //if we want a specific key to open a specific door, uncomment this code and comment out the code above
@@ -57,6 +63,12 @@ public class InteractionObject : MonoBehaviour
             }
         }*/
 
+    }
+
+    public void SetText(string text)
+    {
+        gameObject.GetComponent<TMPro.TextMeshProUGUI>().text = text;
+        Debug.Log(text);
     }
 
     
