@@ -2308,7 +2308,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.102
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2610,6 +2610,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3446510653627340069, guid: 00b2a50648cd22c4ea8ee403d65fe32e, type: 3}
       propertyPath: isOpen
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4973716991005205272, guid: 00b2a50648cd22c4ea8ee403d65fe32e, type: 3}
+      propertyPath: Priority
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5749342840419578918, guid: 00b2a50648cd22c4ea8ee403d65fe32e, type: 3}
@@ -4800,8 +4804,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: de2d2449c23c5c24e9d320595b3eae2e, type: 3}
-  m_Color: {r: 0.8805031, g: 0.44578925, b: 0.71343666, a: 0.7019608}
+  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Color: {r: 0.4528302, g: 0, b: 0.1066164, a: 0.7019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4823,7 +4827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabb9a0591560854ca6f96983a0c6232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pulseColor: {r: 1, g: 0.54509807, b: 0, a: 1}
+  pulseColor: {r: 0.2, g: 0.02745098, b: 0.015686275, a: 1}
   pulseSpeed: 2
   minAlpha: 0.5
   maxAlpha: 1
@@ -9576,7 +9580,7 @@ PrefabInstance:
     - target: {fileID: 8452144706355131449, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: attackSound
       value: 
-      objectReference: {fileID: 8300000, guid: e3e81a4febc2be2489c272e5a728ac45, type: 3}
+      objectReference: {fileID: 8300000, guid: b7f8695cf65a4f24eb37544298821146, type: 3}
     - target: {fileID: 8452144706355131449, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: cooldownBar
       value: 
@@ -9601,6 +9605,10 @@ PrefabInstance:
       propertyPath: attackCooldown
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8452144706355131449, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: transformSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e9e9d697afbbda843ad0b3dbfd4ecbbd, type: 3}
     - target: {fileID: 8452144706355131449, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: golemAttackClip
       value: 
