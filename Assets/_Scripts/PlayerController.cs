@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
     private Sprite originalSprite;      // Store the original player sprite
     private Vector3 originalScale;      // Store the player's original scale
     private bool isTransformed = false; // Track if the player is currently transformed
+    public bool IsTransformed => isTransformed; // getter for IsTransformed
     private bool canMove = true;        // Player can move when not transformed
     [SerializeField] private bool canTransform = false;
     private GameObject activeWeapon = null; // Currently active weapon

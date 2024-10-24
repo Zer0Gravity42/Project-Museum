@@ -10,9 +10,13 @@ public class WeaponManager : MonoBehaviour
     private Follower currentWeapon; // The currently equipped weapon
     private int currentWeaponIndex = 0; // 0 for Sword, 1 for Ranged
 
+    private PlayerController playerController;
+
     // Start is called before the first frame update
     void Start()
     {
+
+        playerController = FindObjectOfType<PlayerController>();
         // Start with the sword by default
         currentWeapon = swordFollower;
         SwitchWeapon(0); // Equip sword initially
@@ -22,6 +26,10 @@ public class WeaponManager : MonoBehaviour
     void Update()
     {
         // Handle weapon switching via keys (1 for sword, 2 for ranged)
+        if (playerController != null && playerController.IsTransformed)
+        {
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SwitchWeapon(0); // Switch to sword

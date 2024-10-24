@@ -3116,7 +3116,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.102
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3218,7 +3218,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 143
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -11318,9 +11318,13 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8609405474803777289, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: m_Volume
+      value: 0.501
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609405474803777289, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: e3e81a4febc2be2489c272e5a728ac45, type: 3}
+      objectReference: {fileID: 8300000, guid: e9e9d697afbbda843ad0b3dbfd4ecbbd, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5097401811125208445, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
