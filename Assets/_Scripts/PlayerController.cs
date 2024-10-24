@@ -323,7 +323,16 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("InteractObject"))
         {
             //Debug.Log(collision.name);
-            currentInteraction = collision.gameObject; //Assing interaction object (usable for both dialogue and pickups)          
+            currentInteraction = collision.gameObject; //Assing interaction object (usable for both dialogue and pickups)
+            string message = collision.gameObject.GetComponent<InteractionObject>().message;
+            collision.gameObject.GetComponent<InteractionObject>().SetText(message);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("InteractObject"))
+        {
+            collision.gameObject.GetComponent<InteractionObject>().SetText("");
         }
     }
 
