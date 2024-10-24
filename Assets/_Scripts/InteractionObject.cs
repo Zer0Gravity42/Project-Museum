@@ -15,7 +15,6 @@ public class InteractionObject : MonoBehaviour
 
     void DoPickUp()
     {
-        
         mainManager.GetComponent<MainManager>().tempArtifacts.Add(gameObject); //add the artifact to the global temporary artifact list
         gameObject.SetActive(false); //disables the interacted item
     }
@@ -63,6 +62,12 @@ public class InteractionObject : MonoBehaviour
             }
         }*/
 
+    }
+    
+    //Elevator
+    void DoElevator()
+    {
+        this.GetComponent<ElevatorController>().OpenElevatorUI();
     }
 
     public void SetText(string text)
