@@ -138,6 +138,7 @@ MonoBehaviour:
   isOpen: 0
   doorID: 0
   openSound: {fileID: 0}
+  declineSound: {fileID: 0}
 --- !u!114 &473717121325253624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,6 +267,7 @@ MonoBehaviour:
   isOpen: 0
   doorID: 0
   openSound: {fileID: 8300000, guid: b83615394eb41a547a55ea2eed59ea8e, type: 3}
+  declineSound: {fileID: 8300000, guid: 1ed8fb76fc64e4e46847348138782234, type: 3}
 --- !u!114 &5437832412192672897
 MonoBehaviour:
   m_ObjectHideFlags: 0

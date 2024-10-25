@@ -3116,7 +3116,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.325
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3313,7 +3313,7 @@ MonoBehaviour:
   dungeonMusicLoop: {fileID: 8300000, guid: 8a5a40ae8143e1946b64d82e9afb05f8, type: 3}
   dungeonBossIntro: {fileID: 8300000, guid: efb3824dfe586294a842ab0fbb6d9d1e, type: 3}
   dungeonBossLoop: {fileID: 8300000, guid: 230b4cb610355a24c82c50513ebfc4ba, type: 3}
-  dungeonBossVoiceLine: {fileID: 8300000, guid: ccadde6fd54385449bdf0b313b7a74ca, type: 3}
+  dungeonBossVoiceLine: {fileID: 8300000, guid: b9400908bc31ba54f8921167c490abe8, type: 3}
   dungeonBossDeath: {fileID: 8300000, guid: a0775647652ac864c91520f9aad7996f, type: 3}
 --- !u!4 &1291409927
 Transform:
@@ -6212,8 +6212,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0.50952554
+        time: 0.009185791
+        value: 0.52423096
         inSlope: -1.7036519
         outSlope: -1.7036519
         tangentMode: 0
@@ -6221,8 +6221,8 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.28071293
       - serializedVersion: 3
-        time: 0.3298086
-        value: 0
+        time: 0.47795618
+        value: 0.028503418
         inSlope: -0.29747003
         outSlope: -0.29747003
         tangentMode: 0
@@ -6230,8 +6230,17 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.7941893
+        time: 0.5527711
         value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.9911792
+        value: -0.0019669884
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -11118,6 +11127,10 @@ PrefabInstance:
       value: 0.7319354
       objectReference: {fileID: 0}
     - target: {fileID: 364265887116960399, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 364265887116960399, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: m_Offset.x
       value: -0.024594791
       objectReference: {fileID: 0}
@@ -11150,8 +11163,16 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: swingDuration
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: artifactActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: thrustDuration
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: audioSourceOnce

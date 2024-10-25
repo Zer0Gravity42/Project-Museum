@@ -21,6 +21,7 @@ public class DoorController : MonoBehaviour
     public int doorID;
 
     [SerializeField] private AudioClip openSound;
+    [SerializeField] private AudioClip declineSound;
     private AudioSource audioSource;
 
     private void Awake()
@@ -158,6 +159,18 @@ public class DoorController : MonoBehaviour
         else
         {
             Debug.LogWarning("Open sound or AudioSource is not assigned.");
+        }
+    }
+
+    public void PlayDeclineSound()
+    {
+        if (audioSource != null && declineSound != null)
+        {
+            audioSource.PlayOneShot(declineSound);
+        }
+        else
+        {
+            Debug.LogWarning("Decline sound or AudioSource is not assigned.");
         }
     }
 }

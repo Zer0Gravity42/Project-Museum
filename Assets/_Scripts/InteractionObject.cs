@@ -49,6 +49,8 @@ public class InteractionObject : MonoBehaviour
         }
         else
         {
+            DoorController doubleDoorController = GetComponent<DoorController>();
+            doubleDoorController.PlayDeclineSound();
             SetText("Locked");
         }
 

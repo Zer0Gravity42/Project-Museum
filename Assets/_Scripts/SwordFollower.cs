@@ -11,7 +11,8 @@ public class SwordFollower : Follower
     public float flyingDistance = 1.0f;
     public float rotateSpeed = 2.0f;
     TrailRenderer trail;
-
+    // Particle System for thrust speed lines
+    private ParticleSystem speedLines;
     // Scaling
     public float maxScale = 20.5f; // Maximum scale multiplier during attacks
 
@@ -22,6 +23,8 @@ public class SwordFollower : Follower
     // Combo tracking
     private int comboStep = 0;
     private float lastSwingTime = 0f;
+
+   
 
     new void Start()
     {
@@ -101,7 +104,7 @@ public class SwordFollower : Follower
                 comboStep = 0;
             }
 
-            if (Input.GetMouseButtonDown(0) && attackTimer > 0.2f)
+            if (Input.GetMouseButton(0) && attackTimer > 0.2f &!attack)
             {
                 attack = true;
                 attackTimer = 0.0f;
@@ -132,6 +135,7 @@ public class SwordFollower : Follower
             // Swing attack
             yield return StartCoroutine(SwingSword());
         }
+        attack = false;
     }
 
     private IEnumerator SwingSword()
@@ -148,8 +152,12 @@ public class SwordFollower : Follower
         float arcAngle = 180f; // Increased total arc angle (modify as needed)
 
         float startAngle, endAngle;
-        trail.emitting = true;
 
+        if (trail != null)
+        {
+            trail.Clear();
+            trail.emitting = true;
+        }
         if (comboStep == 0)
         {
             // First swing: upward arc
@@ -175,8 +183,12 @@ public class SwordFollower : Follower
             timeElapsed += Time.deltaTime;
             float t = timeElapsed / swingDuration;
 
+            // Use an animation curve for smoothness
+            float smoothT = Mathf.SmoothStep(0f, 1f, t);
+
             // Interpolate the angle
-            float currentAngle = Mathf.Lerp(startAngle, endAngle, t);
+            float currentAngle = Mathf.Lerp(startAngle, endAngle, smoothT);
+
 
             // Apply rotation around the player
             Vector3 offset = new Vector3(
@@ -188,21 +200,14 @@ public class SwordFollower : Follower
             transform.position = playerTransform.position + offset;
             transform.rotation = Quaternion.Euler(0, 0, currentAngle + rotation);
 
-            //// Smooth scaling
-            //float scale;
-            //if (t <= 0.5f)
-            //{
-            //    // Scale up during the first half
-            //    scale = Mathf.Lerp(1f, maxScale, t * 2);
-            //}
-            //else
-            //{
-            //    // Scale down during the second half
-            //    scale = Mathf.Lerp(maxScale, 1f, (t - 0.5f) * 2);
-            //}
-            //transform.localScale = new Vector3(scale, scale, 1f);
+    
 
             yield return null;
+        }
+        // Disable trail renderer
+        if (trail != null)
+        {
+            trail.emitting = false;
         }
 
         // Disable collider after the swing
@@ -214,9 +219,6 @@ public class SwordFollower : Follower
         // Reset sword position and rotation after swing
         transform.position = playerTransform.position + (Vector3)(direction * distanceFromPlayer);
         transform.rotation = Quaternion.Euler(0, 0, rotation);
-        //transform.localScale = Vector3.one; // Reset scale
-        attack = false;
-        trail.emitting = false;
     }
 
     private IEnumerator ThrustAttack()
@@ -237,6 +239,11 @@ public class SwordFollower : Follower
             collider.enabled = true;
         }
 
+        if (speedLines != null)
+        {
+            speedLines.Play();
+        }
+
         float initialDistance = distanceFromPlayer;
         float thrustDistance = initialDistance + 1.0f; // Adjust thrust distance
 
@@ -246,8 +253,11 @@ public class SwordFollower : Follower
             timeElapsed += Time.deltaTime;
             float t = timeElapsed / thrustDuration;
 
+            // Use an animation curve for smoothness
+            float smoothT = Mathf.SmoothStep(0f, 1f, t);
+
             // Interpolate the distance
-            float currentDistance = Mathf.Lerp(initialDistance, thrustDistance, t);
+            float currentDistance = Mathf.Lerp(initialDistance, thrustDistance, smoothT);
 
             // Update position
             Vector3 offset = directionToMouse * currentDistance;
@@ -270,8 +280,12 @@ public class SwordFollower : Follower
             timeElapsed += Time.deltaTime;
             float t = timeElapsed / thrustDuration;
 
+            // Use an animation curve for smoothness
+            float smoothT = Mathf.SmoothStep(0f, 1f, t);
+
             // Interpolate the distance back to initial
-            float currentDistance = Mathf.Lerp(thrustDistance, initialDistance, t);
+            float currentDistance = Mathf.Lerp(thrustDistance, initialDistance, smoothT);
+
 
             // Update position
             Vector3 offset = directionToMouse * currentDistance;
@@ -291,12 +305,15 @@ public class SwordFollower : Follower
             collider.enabled = false;
         }
 
+        if (speedLines != null)
+        {
+            speedLines.Stop();
+        }
+
         // Reset sword position and rotation after thrust
         transform.position = playerTransform.position + (Vector3)(direction * distanceFromPlayer);
         transform.rotation = Quaternion.Euler(0, 0, rotation);
-        //transform.localScale = Vector3.one; // Reset scale
-        //slash.SetActive(false);
-        attack = false;
+
     }
 
     public void PlaySound(AudioClip clip)
