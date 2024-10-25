@@ -40,9 +40,10 @@ public class RangedFollower : Follower
         // Set the velocity of the projectile's Rigidbody2D to make it move
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint.up * projectileSpeed; // Adjust projectile speed as needed
-        
+
         //correct the direction
-        projectile.transform.rotation *= Quaternion.Euler(0, 0, 45);
+        float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
+        projectile.transform.rotation *= Quaternion.Euler(0, 0, angle-90);
     }
 }
 
