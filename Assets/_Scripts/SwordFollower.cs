@@ -12,9 +12,8 @@ public class SwordFollower : Follower
     public float rotateSpeed = 2.0f;
     TrailRenderer trail;
     // Particle System for thrust speed lines
-    private ParticleSystem speedLines;
+    [SerializeField]private ParticleSystem speedLines;
     // Scaling
-    public float maxScale = 20.5f; // Maximum scale multiplier during attacks
 
     // Audio
     [SerializeField] AudioSource audioSourceOnce;
