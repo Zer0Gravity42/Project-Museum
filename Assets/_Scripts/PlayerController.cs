@@ -78,6 +78,9 @@ public class PlayerController : MonoBehaviour
     private bool isAttackOnCooldown = false;             // Tracks if attack is on cooldown
     #endregion
 
+    //Camera shake
+    private CameraFollow cameraFollow;
+
     private GameObject currentInteraction = null; //This controls our interaction system, basically what the interactable object we are currently in contact with
 
     // Start is called before the first frame update
@@ -132,6 +135,8 @@ public class PlayerController : MonoBehaviour
         {
             cooldownBar.gameObject.SetActive(canTransform);
         }
+
+        cameraFollow = Camera.main.GetComponent<CameraFollow>();
     }
 
     // Update is called once per frame
@@ -207,6 +212,7 @@ public class PlayerController : MonoBehaviour
             health -= damage;
             health = Mathf.Clamp(health, 0, maxHealth);
             OnHealthChanged?.Invoke(health, maxHealth);
+            cameraFollow.TriggerShake();
         }
     }
 
