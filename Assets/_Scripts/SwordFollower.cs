@@ -23,7 +23,15 @@ public class SwordFollower : Follower
     private int comboStep = 0;
     private float lastSwingTime = 0f;
 
-   
+    void OnEnable()
+    {
+        attack = false;
+        attackTimer = 0.0f;
+        comboStep = 0;
+        lastSwingTime = Time.time;
+        // Reset any other necessary variables here
+    }
+
 
     new void Start()
     {
@@ -320,4 +328,7 @@ public class SwordFollower : Follower
         audioSourceOnce.loop = false;
         audioSourceOnce.PlayOneShot(clip);
     }
+
+   
+
 }
