@@ -323,6 +323,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+        if (isTransformed)
+            return;
         if (collision.tag == "DungeonPortal")
         {
             Application.LoadLevel("Floor1"); //loads the dungeon scene
