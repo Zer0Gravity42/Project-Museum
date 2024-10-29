@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashDuration = 0.2f;
     [SerializeField] private float dashCooldown = 1f;  // Time before dash can be used again
     [SerializeField] private bool canDash = false;
-    private bool isDashing = false;
+    public bool isDashing = false;
     private float lastDashTime; // Timestamp for last dash
 
     private SpriteRenderer spriteRenderer;

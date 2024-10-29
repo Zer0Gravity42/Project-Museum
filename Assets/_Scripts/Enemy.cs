@@ -16,6 +16,7 @@ public abstract class Enemy : MonoBehaviour
     protected float speed;
     public int health;
     protected int maxHealth;
+    protected bool isAnEnemy = true; //dont question it
 
     //for use in ai behaviour
     protected float timer;
@@ -77,9 +78,17 @@ public abstract class Enemy : MonoBehaviour
         //if dead then die
         if(health <= 0 && alive)
         {
-            anim.SetBool("dead", true);
-            alive = false;
-            timer = 0;
+            if(isAnEnemy)
+            {
+                anim.SetBool("dead", true);
+                alive = false;
+                timer = 0;
+            }
+            else
+            {
+                Destroy(healthBar.gameObject);
+                Destroy(gameObject);
+            }
         }
 
         if (!alive)
@@ -98,10 +107,14 @@ public abstract class Enemy : MonoBehaviour
             }
             Destroy(gameObject);
         }
-        if(!awake && timer >= 1)
+        if(!awake && timer >= 1 && isAnEnemy)
         {
             awake= true;
             anim.SetBool("awake", true);
+        }
+        if(!isAnEnemy)
+        {
+            showHealthBar = true;
         }
     }
 
