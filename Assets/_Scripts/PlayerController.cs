@@ -148,6 +148,15 @@ public class PlayerController : MonoBehaviour
         if (canTransform)
             cooldownBar.gameObject.SetActive(true);
 
+        if (isTransformed)
+        {
+            cameraFollow.ZoomOut();
+        }
+        else
+        {
+            cameraFollow.ZoomIn();
+        }
+
         UpdateAnimation();
         ProcessInteracts(); //interaction system
 
@@ -421,6 +430,7 @@ public class PlayerController : MonoBehaviour
         isInvulnerable = true;
         // Trigger the golem's attack animation
         animator.SetTrigger("GolemAttack");
+        
 
         // Start the cooldown
         StartCoroutine(GolemCooldown());
