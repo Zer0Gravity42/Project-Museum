@@ -423,8 +423,8 @@ public class PlayerController : MonoBehaviour
         SetChildrenActive(false);
 
         // Determine the current facing direction and preserve it during scaling
-        float newScaleX = isFacingRight ? originalScale.x * 2.5f : -originalScale.x * 2.5f;
-        transform.localScale = new Vector3(newScaleX, originalScale.y * 2.5f, originalScale.z); // Scale up while preserving directions
+        float newScaleX = isFacingRight ? originalScale.x * 3.5f : -originalScale.x * 3.5f;
+        transform.localScale = new Vector3(newScaleX, originalScale.y * 3.5f, originalScale.z); // Scale up while preserving directions
         // Swap the player's sprite to the golem sprite
         spriteRenderer.sprite = golemSprite;
         isInvulnerable = true;
