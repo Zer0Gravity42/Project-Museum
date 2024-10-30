@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1715931609, guid: 75477b667145c904590d76eaaf307976, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 390a2f319cf32bb46b91bcb09447ebed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,7 +101,8 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7152693338403217308, guid: 306d918dfc98b5645916a3a465a17218, type: 3}
   firePoint: {fileID: 0}
   projectileSpeed: 10
-  attackCooldown: 0.3
+  attackCooldown: 2
+  numProjectiles: 4
 --- !u!1 &1405818482754741938
 GameObject:
   m_ObjectHideFlags: 0

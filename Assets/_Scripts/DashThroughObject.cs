@@ -9,7 +9,6 @@ public class DashThroughObject : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            Debug.Log("hello");
             if(collision.GetComponent<PlayerController>().isDashing == true)
             {
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;

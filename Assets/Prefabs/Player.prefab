@@ -177,6 +177,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 10
   animator: {fileID: 0}
+  health: 3
+  maxHealth: 3
+  dashSpeed: 10
+  dashDuration: 0.2
+  dashCooldown: 1
+  canDash: 0
+  isDashing: 0
+  afterImageInterval: 0.05
+  golemSprite: {fileID: 0}
+  canTransform: 0
+  golemAttackClip: {fileID: 0}
+  golemHitbox: {fileID: 0}
+  attackSound: {fileID: 0}
+  transformSound: {fileID: 0}
+  cooldownBar: {fileID: 0}
+  attackCooldown: 5
 --- !u!82 &8609405474803777289
 AudioSource:
   m_ObjectHideFlags: 0
@@ -395,7 +411,8 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7152693338403217308, guid: 306d918dfc98b5645916a3a465a17218, type: 3}
   firePoint: {fileID: 571728017784480758}
   projectileSpeed: 10
-  attackCooldown: 0.3
+  attackCooldown: 2
+  numProjectiles: 4
 --- !u!1 &5097401811125208445
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,10 +683,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b340f26b30459a4da48d1902d073d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slash: {fileID: 5097401811125208445}
   artifactActive: 0
+  swingDuration: 0.15
+  thrustDuration: 0.15
+  comboResetTime: 1
   flyingDistance: 1
   rotateSpeed: 2
+  speedLines: {fileID: 0}
+  audioSourceOnce: {fileID: 0}
+  swordSwing: {fileID: 0}
 --- !u!114 &3430574100151773556
 MonoBehaviour:
   m_ObjectHideFlags: 0
