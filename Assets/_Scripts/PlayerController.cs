@@ -146,7 +146,12 @@ public class PlayerController : MonoBehaviour
             ProcessInputs();
 
         if (canTransform)
-            cooldownBar.gameObject.SetActive(true);
+        {
+            if (cooldownBar != null)
+            {
+                cooldownBar.gameObject.SetActive(true);
+            }
+        }
 
         if (isTransformed)
         {
