@@ -16098,8 +16098,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7152693338403217308, guid: 306d918dfc98b5645916a3a465a17218, type: 3}
     - target: {fileID: 2234234528322923825, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 390a2f319cf32bb46b91bcb09447ebed, type: 3}
+    - target: {fileID: 2234234528322923825, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: m_SortingOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326613998732321925, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326613998732321925, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2930854210364986151, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: m_Mass
