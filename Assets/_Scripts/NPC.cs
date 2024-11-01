@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.IO.Compression;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -25,30 +23,19 @@ public class NPC : MonoBehaviour
     void Start()
     {
         dialogueText.text = "";
-        
-        //Get animalese rreference
         _animalese = GetComponent<Animalese>();
-        //InvokeRepeating ("ChangeWhoIsSpeaking", 0.0f, 3.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerIsClose)
+        // Check if E is pressed and the dialogue panel is active - meaning the conversation has started via the interaction manager
+        if (Input.GetKeyDown(KeyCode.E) && dialoguePanel.activeInHierarchy)
         {
-            if (!dialoguePanel.activeInHierarchy)
-            {
-                dialoguePanel.SetActive(true);
-                dialoguePortrait.sprite = myPortrait;
-                dialogueName.text = myName;
-                conversationOver = false; // Reset flag
-                _animalese.Speak(dialogue[index]);
-                StartCoroutine(Typing());
-            }
-            else if (dialogueText.text == dialogue[index] && !conversationOver)
+            if (dialogueText.text == dialogue[index] && !conversationOver)
             {
                 NextLine();
-                if (!conversationOver) // Check if conversation isn't over
+                if (!conversationOver) // Check if the conversation isn't over
                 {
                     _animalese.Speak(dialogue[index]);
                 }
@@ -72,9 +59,9 @@ public class NPC : MonoBehaviour
 
     IEnumerator Typing()
     {
-        foreach(char letter in dialogue[index].ToCharArray())
+        foreach (char letter in dialogue[index].ToCharArray())
         {
-            if (playerIsClose == false)
+            if (!playerIsClose)
             {
                 _animalese.StopSpeaking();
                 Reset();
@@ -99,7 +86,7 @@ public class NPC : MonoBehaviour
         else
         {
             _animalese.StopSpeaking();
-            conversationOver = true; //Redundant but just in case
+            conversationOver = true; // Redundant but just in case
             Reset();
         }
     }
@@ -118,6 +105,19 @@ public class NPC : MonoBehaviour
         {
             playerIsClose = false;
             Reset();
+        }
+    }
+
+    public void StartDialogue()
+    {
+        if (!dialoguePanel.activeInHierarchy)
+        {
+            dialoguePanel.SetActive(true);
+            dialoguePortrait.sprite = myPortrait;
+            dialogueName.text = myName;
+            conversationOver = false; // Reset flag
+            _animalese.Speak(dialogue[index]);
+            StartCoroutine(Typing());
         }
     }
 }

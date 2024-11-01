@@ -69,7 +69,16 @@ public class InteractionObject : MonoBehaviour
     //Elevator
     void DoElevator()
     {
+        Debug.Log("Interaction Manager: DoElevator");
         this.GetComponent<ElevatorController>().OpenElevatorUI();
+    }
+    
+    //NPCs
+    void DoNPC()
+    {
+        Debug.Log("Interaction Manager: DoNPC");
+        NPC npc = GetComponent<NPC>();
+        npc.StartDialogue();
     }
 
     public void SetText(string text)
