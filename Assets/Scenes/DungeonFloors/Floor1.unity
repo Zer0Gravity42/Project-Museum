@@ -3240,7 +3240,7 @@ MonoBehaviour:
   dialogueName: {fileID: 501543861}
   dialoguePortrait: {fileID: 1386099224}
   dialogue:
-  - First time down here huh? Well good luck.
+  - First time down here? Well good luck.
   - Paul is waiting for you at the end. Let's see if you got what it takes.
   - Grab the key to the East before you head in.
   - Good luck.
