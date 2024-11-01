@@ -400,7 +400,7 @@ public class PlayerController : MonoBehaviour
             currentInteraction = null;
         }
         
-        if (Input.GetButtonDown("Interact") && currentInteraction && currentInteraction.GetComponent<NPC>())
+        if (Input.GetButtonDown("Interact")  && currentInteraction && currentInteraction.GetComponent<NPC>())
         {
             currentInteraction.SendMessage("DoNPC"); //ask to talk to NPC
             Debug.Log("Player sending DoNPC");

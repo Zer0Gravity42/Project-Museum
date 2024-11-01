@@ -29,7 +29,7 @@ public class NPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Check if E is pressed and the dialogue panel is active - meaning the conversation has started via the interaction manager
+        // Check if E is pressed and the dialogue panel is active
         if (Input.GetKeyDown(KeyCode.E) && dialoguePanel.activeInHierarchy)
         {
             if (dialogueText.text == dialogue[index] && !conversationOver)
