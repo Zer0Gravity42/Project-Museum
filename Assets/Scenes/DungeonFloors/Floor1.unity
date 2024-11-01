@@ -4099,7 +4099,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.165
+  m_Volume: 0.217
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4197,7 +4197,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -4293,7 +4293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSourceOnce: {fileID: 1291409925}
   audioSourceLoop: {fileID: 1291409924}
-  dungeonMusicLoop: {fileID: 8300000, guid: 8a5a40ae8143e1946b64d82e9afb05f8, type: 3}
+  dungeonMusicLoop: {fileID: 8300000, guid: 51698520fc6ea3c44bf612d6ac0fae49, type: 3}
   dungeonBossIntro: {fileID: 8300000, guid: efb3824dfe586294a842ab0fbb6d9d1e, type: 3}
   dungeonBossLoop: {fileID: 8300000, guid: 230b4cb610355a24c82c50513ebfc4ba, type: 3}
   dungeonBossVoiceLine: {fileID: 8300000, guid: b9400908bc31ba54f8921167c490abe8, type: 3}
@@ -25227,7 +25227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8609405474803777289, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: m_Volume
-      value: 0.501
+      value: 0.176
       objectReference: {fileID: 0}
     - target: {fileID: 8609405474803777289, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: m_audioClip
