@@ -395,6 +395,15 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Interact") && currentInteraction && currentInteraction.GetComponent<ElevatorController>())
         {
             currentInteraction.SendMessage("DoElevator"); //ask to open the door
+            
+            Debug.Log("Player sending DoElevator");
+            currentInteraction = null;
+        }
+        
+        if (Input.GetButtonDown("Interact") && currentInteraction && currentInteraction.GetComponent<NPC>())
+        {
+            currentInteraction.SendMessage("DoNPC"); //ask to talk to NPC
+            Debug.Log("Player sending DoNPC");
             currentInteraction = null;
         }
 
