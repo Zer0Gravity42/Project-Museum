@@ -30,7 +30,7 @@ public abstract class Follower : MonoBehaviour
         // Handle weapon-specific attack logic (to be defined in child classes)
         HandleAttack();
     }
-
+    
     // Method to update position and direction of the follower based on player input
     protected void UpdatePositionAndDirection()
     {
@@ -58,6 +58,7 @@ public abstract class Follower : MonoBehaviour
 
             // Apply the rotation to the follower 
             transform.rotation = Quaternion.AngleAxis(angle + rotation, Vector3.forward);
+            Flip();
         }
 
         // Update the position of the follower relative to the player
@@ -68,5 +69,7 @@ public abstract class Follower : MonoBehaviour
     protected abstract void HandleAttack();
 
     protected abstract void SetRotation();
+
+    protected abstract void Flip();
 }
 

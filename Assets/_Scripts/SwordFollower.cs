@@ -329,6 +329,9 @@ public class SwordFollower : Follower
         audioSourceOnce.PlayOneShot(clip);
     }
 
-   
+    protected override void Flip()
+    {
+        //not needed here
+    }
 
 }

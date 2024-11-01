@@ -11,7 +11,7 @@ public class RangedFollower : Follower
     public float projectileSpeed = 10f;  // Speed of the projectile
     public float attackCooldown = 3.0f;  // Cooldown time between shots (lower this to increase fire rate)
     public int numProjectiles = 4;
-
+    private bool flipped = false;
     // Override the HandleAttack method for ranged attack behavior
     protected override void HandleAttack()
     {
@@ -29,6 +29,24 @@ public class RangedFollower : Follower
     protected override void SetRotation()
     {
         rotation = 0f;
+    }
+
+    protected override void Flip()
+    {
+        if (Mathf.Abs(transform.rotation.z) > 0.7f && flipped == false)
+        {
+            Vector3 localScale = transform.localScale;
+            localScale.y = -localScale.y;
+            transform.localScale = localScale;
+            flipped = true;
+        }
+        else if (Mathf.Abs(transform.rotation.z) < 0.7f && flipped == true)
+        {
+            Vector3 localScale = transform.localScale;
+            localScale.y = -localScale.y;
+            transform.localScale = localScale;
+            flipped = false;
+        }
     }
 
     // Method to instantiate and fire a projectile
