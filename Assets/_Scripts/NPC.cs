@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO.Compression;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -18,10 +19,16 @@ public class NPC : MonoBehaviour
     public float wordSpeed;
     public bool playerIsClose;
 
-
+    private Animalese _animalese;
+    private bool conversationOver = false; // Flag
+    
     void Start()
     {
         dialogueText.text = "";
+        
+        //Get animalese rreference
+        _animalese = GetComponent<Animalese>();
+        //InvokeRepeating ("ChangeWhoIsSpeaking", 0.0f, 3.0f);
     }
 
     // Update is called once per frame
@@ -34,16 +41,23 @@ public class NPC : MonoBehaviour
                 dialoguePanel.SetActive(true);
                 dialoguePortrait.sprite = myPortrait;
                 dialogueName.text = myName;
+                conversationOver = false; // Reset flag
+                _animalese.Speak(dialogue[index]);
                 StartCoroutine(Typing());
             }
-            else if (dialogueText.text == dialogue[index])
+            else if (dialogueText.text == dialogue[index] && !conversationOver)
             {
                 NextLine();
+                if (!conversationOver) // Check if conversation isn't over
+                {
+                    _animalese.Speak(dialogue[index]);
+                }
             }
-
         }
+
         if (Input.GetKeyDown(KeyCode.Q) && dialoguePanel.activeInHierarchy)
         {
+            _animalese.StopSpeaking();
             Reset();
         }
     }
@@ -53,6 +67,7 @@ public class NPC : MonoBehaviour
         dialogueText.text = "";
         index = 0;
         dialoguePanel.SetActive(false);
+        conversationOver = true; // Set flag
     }
 
     IEnumerator Typing()
@@ -61,6 +76,7 @@ public class NPC : MonoBehaviour
         {
             if (playerIsClose == false)
             {
+                _animalese.StopSpeaking();
                 Reset();
                 yield break;
             }
@@ -82,6 +98,8 @@ public class NPC : MonoBehaviour
         }
         else
         {
+            _animalese.StopSpeaking();
+            conversationOver = true; //Redundant but just in case
             Reset();
         }
     }
