@@ -24887,6 +24887,10 @@ PrefabInstance:
       propertyPath: dialoguePortrait
       value: 
       objectReference: {fileID: 1386099224}
+    - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
+      propertyPath: dialogue.Array.data[3]
+      value: Try not to die.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
