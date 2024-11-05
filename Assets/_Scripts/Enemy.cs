@@ -11,6 +11,7 @@ public abstract class Enemy : MonoBehaviour
     protected Vector2 directionToPlayer;
     protected float distanceFromPlayer;
     protected Animator anim;
+    
 
     //enemy atributes
     protected float speed;
@@ -127,7 +128,10 @@ public abstract class Enemy : MonoBehaviour
         {
             healthBar.SetHealth(health);
         }
+        anim.SetTrigger("hurt"); 
+
     }
+  
 
     protected abstract void setSpeedAndHealth();
 

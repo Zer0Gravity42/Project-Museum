@@ -15,7 +15,7 @@ public class CollisionDetector : MonoBehaviour
                 collision.gameObject.GetComponent<Enemy>().takeDamage(GetComponent<DamageManager>().damage);
                 if (collision.gameObject.GetComponent<SpriteRenderer>() != null)
                 {
-                    collision.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                    //collision.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
                 }
                 else
                 {
