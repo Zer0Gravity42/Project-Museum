@@ -21,4 +21,10 @@ public class AfterImageFade : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    // Add a public method to set alphaDecay
+    public void SetAlphaDecay(float newAlphaDecay)
+    {
+        alphaDecay = newAlphaDecay;
+    }
 }

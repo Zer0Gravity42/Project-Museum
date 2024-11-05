@@ -12,6 +12,12 @@ public class basicEnemy : Enemy
     private bool readyToAttack = true; // New flag to control attack readiness
     protected SpriteRenderer spriteRenderer; // Added SpriteRenderer variable
 
+    private float afterImageTimer = 0f;
+    private float afterImageInterval = 0.15f; // Interval between afterimages
+    private float enemyAfterImageFadeSpeed = 3f; // Adjust this value as needed
+
+
+
     protected override void Update()
     {
         base.Update();
@@ -65,9 +71,10 @@ public class basicEnemy : Enemy
                 if (timer == 0)
                 {
                     attackDirection = directionToPlayer;  // Set attack direction at the start of the attack
+                    afterImageTimer = 0f; // Reset afterImageTimer
                 }
                 // Adjust position based on attack phase
-                if (timer < 0.3)
+                if (timer < 0.3f)
                 {
                     transform.position += (Vector3)(attackDirection * (speed / 4) * Time.deltaTime);
                 }
@@ -76,6 +83,13 @@ public class basicEnemy : Enemy
                     transform.position -= (Vector3)(attackDirection * (speed * 1.25f) * Time.deltaTime);
                 }
 
+                // Create afterimages at intervals
+                afterImageTimer += Time.deltaTime;
+                if (afterImageTimer >= afterImageInterval)
+                {
+                    CreateAfterImage();
+                    afterImageTimer = 0f;
+                }
             }
             else
             {
@@ -99,4 +113,40 @@ public class basicEnemy : Enemy
             }
         }
     }
+
+    void CreateAfterImage()
+    {
+        // Create a new GameObject for the afterimage
+        GameObject afterImage = new GameObject("AfterImage");
+        afterImage.transform.position = transform.position;
+        afterImage.transform.rotation = transform.rotation;
+        afterImage.transform.localScale = transform.localScale;
+
+        // Add a SpriteRenderer component
+        SpriteRenderer sr = afterImage.AddComponent<SpriteRenderer>();
+
+        // Copy the sprite and settings from the enemy's SpriteRenderer
+        sr.sprite = spriteRenderer.sprite;
+        sr.flipX = spriteRenderer.flipX;
+        sr.flipY = spriteRenderer.flipY;
+        sr.color = spriteRenderer.color;
+
+        // Match the sorting layer and order
+        sr.sortingLayerID = spriteRenderer.sortingLayerID;
+        sr.sortingOrder = spriteRenderer.sortingOrder - 1; // Ensure afterimage appears behind the enemy
+
+        // Disable any colliders (if any are added by default, which they aren't in this case)
+        Collider2D collider = afterImage.GetComponent<Collider2D>();
+        if (collider != null)
+        {
+            collider.enabled = false;
+        }
+
+        // Add the AfterImageFade script
+        AfterImageFade afterImageFade = afterImage.AddComponent<AfterImageFade>();
+
+        // Set the fade speed for this afterimage
+        afterImageFade.SetAlphaDecay(enemyAfterImageFadeSpeed);
+    }
+
 }
