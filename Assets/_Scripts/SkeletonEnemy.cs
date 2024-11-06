@@ -5,6 +5,11 @@ using UnityEngine;
 public class SkeletonEnemy : Enemy
 {
     private Vector2 attackDirection;
+    protected override void Awake()
+    {
+        
+        hurtTriggerName = "hurt"; // Set specific trigger name for SkeletonEnemy
+    }
     protected override void setSpeedAndHealth()
     {
         speed = 1.5f;

@@ -19,7 +19,7 @@ public class CollisionDetector : MonoBehaviour
                 }
                 else
                 {
-                    collision.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+                    //collision.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
                 }
             }
         }

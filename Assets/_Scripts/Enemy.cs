@@ -18,6 +18,8 @@ public abstract class Enemy : MonoBehaviour
     public int health;
     protected int maxHealth;
     protected bool isAnEnemy = true; //dont question it
+    protected string hurtTriggerName = "hurt";
+
 
     //for use in ai behaviour
     protected float timer;
@@ -128,7 +130,7 @@ public abstract class Enemy : MonoBehaviour
         {
             healthBar.SetHealth(health);
         }
-        anim.SetTrigger("hurt"); 
+        anim.SetTrigger(hurtTriggerName); 
 
     }
   
