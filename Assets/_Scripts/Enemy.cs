@@ -79,7 +79,7 @@ public abstract class Enemy : MonoBehaviour
         }
 
         //if dead then die
-        if(health <= 0 && alive)
+        if(health <= 0 && alive && !GetComponent<testEnemy>())
         {
             if(isAnEnemy)
             {
@@ -94,7 +94,7 @@ public abstract class Enemy : MonoBehaviour
             }
         }
 
-        if (!alive)
+        if (!alive && !GetComponent<testEnemy>())
         {
             if (showHealthBar && healthBar != null)
             {
@@ -102,7 +102,7 @@ public abstract class Enemy : MonoBehaviour
             }
         }
 
-        if (!alive && timer >= 1)
+        if (!alive && timer >= 1 && !GetComponent<testEnemy>())
         {
             if (showHealthBar && healthBar != null)
             {
@@ -110,14 +110,19 @@ public abstract class Enemy : MonoBehaviour
             }
             Destroy(gameObject);
         }
-        if(!awake && timer >= 1 && isAnEnemy)
+        if(!awake && timer >= 1 && isAnEnemy && !GetComponent<testEnemy>())
         {
             awake= true;
             anim.SetBool("awake", true);
         }
-        if(!isAnEnemy)
+        if(!isAnEnemy && !GetComponent<testEnemy>())
         {
             showHealthBar = true;
+        }
+
+        if (GetComponent<testEnemy>() && health <= 0)
+        {
+            health = 20;
         }
     }
 
@@ -130,8 +135,11 @@ public abstract class Enemy : MonoBehaviour
         {
             healthBar.SetHealth(health);
         }
-        anim.SetTrigger(hurtTriggerName); 
 
+        if (!GetComponent<testEnemy>())
+        {
+            anim.SetTrigger(hurtTriggerName); 
+        }
     }
   
 

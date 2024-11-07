@@ -14,6 +14,8 @@ TagManager:
   - Door
   - MainManager
   - GolemWeapon
+  - TrainingRoomExit
+  - TrainingRoomEnter
   layers:
   - Default
   - TransparentFX

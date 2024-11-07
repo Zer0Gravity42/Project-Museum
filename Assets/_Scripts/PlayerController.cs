@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
         //IF THE SCENE IS IN THE MUSEUM NO ARTIFACT POWERS WE DONT WANT OUR CUSTOMERS TO DIE
         if(SceneManager.GetActiveScene().name == "Museum")
         {
-            DisableAllArtifacts();
+            ToggleAllArtifacts(false);
         }
         #endregion
 
@@ -209,10 +209,10 @@ public class PlayerController : MonoBehaviour
         Application.LoadLevel("Main Menu");
     }
 
-    private void DisableAllArtifacts()
+    private void ToggleAllArtifacts(bool x)
     {
-        canDash = false;
-        canTransform = false;
+        canDash = x;
+        canTransform = x;
     }
 
 
@@ -350,6 +350,15 @@ public class PlayerController : MonoBehaviour
             currentInteraction = collision.gameObject; //Assing interaction object (usable for both dialogue and pickups)
             string message = collision.gameObject.GetComponent<InteractionObject>().message;
             collision.gameObject.GetComponent<InteractionObject>().SetText(message);
+        }
+
+        if (collision.CompareTag("TrainingRoomExit"))
+        {
+            ToggleAllArtifacts(false);
+        }
+        if (collision.CompareTag("TrainingRoomEnter"))
+        {
+            ToggleAllArtifacts(true);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

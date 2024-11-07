@@ -11,7 +11,7 @@ public class testEnemy : Enemy
     {
         //test enemy is immobile, high hp 
         speed = 0.0f;
-        health = 99;
+        health = 20;
         
     }
 
