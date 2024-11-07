@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -95,7 +95,280 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: EvilCreature-Spawn-Teleport_0
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 2
+        width: 133
+        height: 5
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b6b8bbd814d86543a5fa559e8de3d2b
+      internalID: 1637739617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Spawn-Teleport_1
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 2
+        width: 63
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4638816cee996d344826b501df449385
+      internalID: 384259907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Spawn-Teleport_2
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 2
+        width: 69
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 070826b43cace4e44b5c698a7b49ab0e
+      internalID: 885587120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Spawn-Teleport_3
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 2
+        width: 70
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f742b8432d1f104391897058eb0654f
+      internalID: 810563220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Spawn-Teleport_4
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 2
+        width: 69
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bd7ccc92865f814aaf9da986a57cf65
+      internalID: -2093027531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Spawn-Teleport_5
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 2
+        width: 61
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da01949897e263343974e370710e9674
+      internalID: 900495120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Spawn-Teleport_6
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 2
+        width: 49
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0aaa1a2b5489e14da83c6607b266d92
+      internalID: -1324655351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Spawn-Teleport_7
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 2
+        width: 35
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cec87e2dc981c847984726054180988
+      internalID: -710955447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Spawn-Teleport_8
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 3
+        width: 27
+        height: 51
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a2b9eaaff664394e865abc4713fae02
+      internalID: 891008357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Spawn-Teleport_9
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 5
+        width: 37
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 736bde8b11ad3544884e479019d1e55a
+      internalID: 718725571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Spawn-Teleport_10
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 5
+        width: 43
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33e2ab44b2e33b54497d0e8f05bf4468
+      internalID: -1303109144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Spawn-Teleport_11
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 5
+        width: 47
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2787f20bb5a48704cb9786d0f1e376b2
+      internalID: -1488256142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Spawn-Teleport_12
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 5
+        width: 22
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f25516ac2b19741964f782aad1b234
+      internalID: -1596004103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +379,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      EvilCreature-Spawn-Teleport_0: 1637739617
+      EvilCreature-Spawn-Teleport_1: 384259907
+      EvilCreature-Spawn-Teleport_10: -1303109144
+      EvilCreature-Spawn-Teleport_11: -1488256142
+      EvilCreature-Spawn-Teleport_12: -1596004103
+      EvilCreature-Spawn-Teleport_2: 885587120
+      EvilCreature-Spawn-Teleport_3: 810563220
+      EvilCreature-Spawn-Teleport_4: -2093027531
+      EvilCreature-Spawn-Teleport_5: 900495120
+      EvilCreature-Spawn-Teleport_6: -1324655351
+      EvilCreature-Spawn-Teleport_7: -710955447
+      EvilCreature-Spawn-Teleport_8: 891008357
+      EvilCreature-Spawn-Teleport_9: 718725571
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
