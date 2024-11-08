@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
@@ -10,8 +11,17 @@ public class RangedFollower : Follower
     public Transform firePoint;          // The point from where projectiles are fired
     public float projectileSpeed = 10f;  // Speed of the projectile
     public float attackCooldown = 3.0f;  // Cooldown time between shots (lower this to increase fire rate)
-    public int numProjectiles = 4;
+    public int numProjectiles = 5;
     private bool flipped = false;
+
+    //audio
+    [SerializeField] AudioSource audioSourceOnce;
+    [SerializeField] AudioClip shotgun;
+
+    //artifact
+    public bool fireArtifactActive;
+    public GameObject fireBallPrefab;  
+
     // Override the HandleAttack method for ranged attack behavior
     protected override void HandleAttack()
     {
@@ -21,6 +31,7 @@ public class RangedFollower : Follower
         // You can hold down the button for continuous firing
         if (Input.GetMouseButton(0) && attackTimer >= attackCooldown)
         {
+            PlaySound(shotgun);
             FireProjectile();
             attackTimer = 0.0f; // Reset the attack timer after shooting
         }
@@ -33,6 +44,7 @@ public class RangedFollower : Follower
 
     protected override void Flip()
     {
+        //this code flips the gun so it is always oriented correctly
         if (Mathf.Abs(transform.rotation.z) > 0.7f && flipped == false)
         {
             Vector3 localScale = transform.localScale;
@@ -62,11 +74,26 @@ public class RangedFollower : Follower
             rb.velocity = firePoint.up * projectileSpeed; // Adjust projectile speed as needed
 
             //correct the direction
-            float random = UnityEngine.Random.Range(-20, 20);
+            float random = UnityEngine.Random.Range(-30, 30);
             projectile.transform.rotation *= Quaternion.Euler(0, 0, -90 + random);
         }
+        if(fireArtifactActive)
+        {
+            GameObject fireball = Instantiate(fireBallPrefab,firePoint.position, firePoint.rotation);
+
+            // Set the velocity of the projectile's Rigidbody2D to make it move
+            Rigidbody2D rb = fireball.GetComponent<Rigidbody2D>();
+            rb.velocity = firePoint.up * projectileSpeed; // Adjust projectile speed as needed
+
+            fireball.transform.rotation *= Quaternion.Euler(0, 0, -90);
+        }
     }
+
+    public void PlaySound(AudioClip clip)
+    {
+        audioSourceOnce.loop = false;
+        audioSourceOnce.PlayOneShot(clip);
+    }
+
 }
-
-
 
