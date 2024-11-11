@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 originalScale;      // Store the player's original scale
     private bool isTransformed = false; // Track if the player is currently transformed
     public bool IsTransformed => isTransformed; // getter for IsTransformed
-    private bool canMove = true;        // Player can move when not transformed
+    public bool canMove = true;        // Player can move when not transformed
     [SerializeField] private bool canTransform = false;
     private GameObject activeWeapon = null; // Currently active weapon
     public AnimationClip golemAttackClip;
@@ -201,7 +201,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void LockMovement()
+    {
+        canMove = false;
+        rb.velocity = Vector2.zero; // Stop the player immediately
+    }
 
+    public void UnlockMovement()
+    {
+        canMove = true;
+    }
     //im moving this to a public method so i can call it if timer hits 0
     public void die()
     {

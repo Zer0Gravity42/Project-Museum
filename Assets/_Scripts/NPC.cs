@@ -19,7 +19,14 @@ public class NPC : MonoBehaviour
 
     private Animalese _animalese;
     private bool conversationOver = false; // Flag
-    
+
+    // New serialized fields
+    public DoorController doorController;
+    [SerializeField] private PlayerController playerController;
+    [SerializeField] private CameraFollow cameraFollow;
+    [SerializeField] private Transform doorTransform;
+    [SerializeField] private Transform cutsceneCameraTarget;
+
     void Start()
     {
         dialogueText.text = "";
@@ -88,6 +95,7 @@ public class NPC : MonoBehaviour
             _animalese.StopSpeaking();
             conversationOver = true; // Redundant but just in case
             Reset();
+            StartCoroutine(Cutscene());
         }
     }
 
@@ -120,4 +128,33 @@ public class NPC : MonoBehaviour
             StartCoroutine(Typing());
         }
     }
+
+    // New coroutine for the cutscene
+    private IEnumerator Cutscene()
+    {
+        // Lock player input
+        playerController.LockMovement();
+
+        // Move the camera to the cutscene target
+        cameraFollow.StartCutscene(cutsceneCameraTarget, 1.0f);
+
+        // Wait for the camera to reach the target
+        yield return new WaitForSeconds(1.0f);
+
+        // Open the door
+        doorController.OpenDoor();
+
+        // Wait for the door to open
+        yield return new WaitForSeconds(2.0f);
+
+        // Return the camera to the player
+        cameraFollow.ReturnToPlayer(1.0f);
+
+        // Wait for the camera to return
+        yield return new WaitForSeconds(1.0f);
+
+        // Unlock player input
+        playerController.UnlockMovement();
+    }
+
 }

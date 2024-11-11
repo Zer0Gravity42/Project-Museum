@@ -22,6 +22,8 @@ public class CameraFollow : MonoBehaviour
     private float targetSize;    // The desired orthographic size
     private Coroutine zoomCoroutine; // Reference to the current zoom coroutine
 
+    private bool isCutscene = false;
+
     void Start()
     {
         cam = GetComponent<Camera>();
@@ -31,9 +33,12 @@ public class CameraFollow : MonoBehaviour
 
     void Update()
     {
-        // Follow the player
-        Vector3 newPos = new Vector3(target.position.x, target.position.y + yOffset, -10f);
-        transform.position = Vector3.Slerp(transform.position, newPos, FollowSpeed * Time.deltaTime);
+        if (!isCutscene)
+        {
+            // Normal camera follow
+            Vector3 newPos = new Vector3(target.position.x, target.position.y + yOffset, -10f);
+            transform.position = Vector3.Slerp(transform.position, newPos, FollowSpeed * Time.deltaTime);
+        }
 
         // Smoothly adjust the camera's orthographic size to the targetSize
         if (cam.orthographicSize != targetSize)
@@ -41,7 +46,56 @@ public class CameraFollow : MonoBehaviour
             cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetSize, Time.deltaTime * zoomSpeed);
         }
     }
+    // Method to start the cutscene camera movement
+    public void StartCutscene(Transform targetTransform, float duration)
+    {
+        if (!isCutscene)
+        {
+            StartCoroutine(CutsceneRoutine(targetTransform, duration));
+        }
+    }
+    // Method to return the camera to the player
+    public void ReturnToPlayer(float duration)
+    {
+        if (isCutscene)
+        {
+            StartCoroutine(ReturnToPlayerRoutine(duration));
+        }
+    }
 
+    private IEnumerator CutsceneRoutine(Transform targetTransform, float duration)
+    {
+        isCutscene = true;
+        Vector3 startPosition = transform.position;
+        Vector3 targetPosition = new Vector3(targetTransform.position.x, targetTransform.position.y, -10f);
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = targetPosition;
+    }
+
+    private IEnumerator ReturnToPlayerRoutine(float duration)
+    {
+        Vector3 startPosition = transform.position;
+        Vector3 targetPosition = new Vector3(target.position.x, target.position.y + yOffset, -10f);
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = targetPosition;
+        isCutscene = false;
+    }
     // Call this method to zoom out
     public void ZoomOut()
     {
