@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2519659105516825497}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.201, y: 0.604, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -64,7 +64,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.017882481, y: 0.08941209}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -75,7 +75,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.84, y: 1.8}
+  m_Size: {x: 0.7237643, y: 1.4423516}
   m_EdgeRadius: 0
 --- !u!1 &4090963091378336864
 GameObject:
@@ -366,9 +366,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   health: 10
+  alive: 1
   showHealthBar: 1
   healthBarPrefab: {fileID: 8422584329745288152, guid: 1d0033636d9b6e348b17e94d7887c08e, type: 3}
-  healthBarOffset: {x: 0, y: -1, z: 0}
+  healthBarOffset: {x: 0, y: -0.2, z: 0}
   healthBarScale: {x: 1, y: 1, z: 1}
 --- !u!61 &2329532681505562519
 BoxCollider2D:
@@ -402,7 +403,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.010137171}
+  m_Offset: {x: 0.20341253, y: 0.68743384}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -413,5 +414,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.9461243}
+  m_Size: {x: 0.67364573, y: 1.4588282}
   m_EdgeRadius: 0
