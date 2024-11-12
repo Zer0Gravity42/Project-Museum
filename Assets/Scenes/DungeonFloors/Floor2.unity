@@ -2024,6 +2024,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 7
+--- !u!20 &914959368 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 952585764555906106, guid: bedc60413b7acdc419492368ad93d745, type: 3}
+  m_PrefabInstance: {fileID: 1641229097}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &930904273
 GameObject:
   m_ObjectHideFlags: 0
@@ -4064,7 +4069,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 03a37b5c5054fa24b91599554635b3f4, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 99683d80dbdd1574598739ca8ed0255e, type: 2}
 --- !u!4 &1571418210
 Transform:
   m_ObjectHideFlags: 0
@@ -4327,7 +4332,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 914959368}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
