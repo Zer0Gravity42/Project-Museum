@@ -40,7 +40,7 @@ public class MuseumController : MonoBehaviour
     #endregion
     
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         // Fetch the MainManager instance
         mainManager = MainManager.Instance;

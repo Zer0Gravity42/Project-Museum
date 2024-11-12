@@ -78,6 +78,10 @@ public class PlayerController : MonoBehaviour
     private bool isAttackOnCooldown = false;             // Tracks if attack is on cooldown
     #endregion
 
+    //unfortunatley the player needs this in order to activate weapons in the museum test room
+    public GameObject weaponManager;
+    public GameObject rangedFollower;
+
     //Camera shake
     private CameraFollow cameraFollow;
 
@@ -364,10 +368,17 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("TrainingRoomExit"))
         {
             ToggleAllArtifacts(false);
+            weaponManager.SetActive(false);
+            SetChildrenActive(false);
         }
         if (collision.CompareTag("TrainingRoomEnter"))
         {
             ToggleAllArtifacts(true);
+            weaponManager.SetActive(true);
+            if (!rangedFollower.activeInHierarchy)
+            {
+                weaponManager.GetComponent<WeaponManager>().SwitchWeapon(0);
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

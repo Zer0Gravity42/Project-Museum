@@ -173,10 +173,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b340f26b30459a4da48d1902d073d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slash: {fileID: 4112901398799786003}
   artifactActive: 0
+  swingDuration: 0.15
+  thrustDuration: 0.15
+  comboResetTime: 1
   flyingDistance: 1
   rotateSpeed: 2
+  speedLines: {fileID: 0}
+  audioSourceOnce: {fileID: 0}
+  swordSwing: {fileID: 0}
 --- !u!114 &4166519703965145131
 MonoBehaviour:
   m_ObjectHideFlags: 0

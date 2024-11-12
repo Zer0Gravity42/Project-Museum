@@ -72,7 +72,7 @@ public class WeaponManager : MonoBehaviour
     }
 
     // Method to switch between weapons based on index
-    void SwitchWeapon(int weaponIndex)
+    public void SwitchWeapon(int weaponIndex)
     {
         // Disable all weapons initially
         swordFollower.gameObject.SetActive(false);
