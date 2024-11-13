@@ -3,7 +3,11 @@ guid: 84645730d2bd8b9458d7dc83f600e189
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - player: {instanceID: 0}
+  - healthBarPrefab: {instanceID: 0}
+  - mainCanvas: {instanceID: 0}
+  - damagePopup: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

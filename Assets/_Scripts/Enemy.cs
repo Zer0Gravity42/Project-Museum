@@ -37,9 +37,17 @@ public abstract class Enemy : MonoBehaviour
     //public int Health { get { return health; } }
     //public int MaxHealth { get { return maxHealth; } }
 
-    // Start is called before the first frame update
+    // for use in damage number UI popup
+    public Canvas mainCanvas; //reference to main canvas, you can use this elsewhere too
+    public Transform damagePopup;
+    public DungeonController dungeonController; // Reference to DungeonController
+    
     protected virtual void Awake()
     {
+        //Find and set main canvas
+        mainCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+        dungeonController = GameObject.Find("DungeonController").GetComponent<DungeonController>();
+        
         //sets the attributes for the specific enemy type
         setSpeedAndHealth();
 
@@ -128,8 +136,14 @@ public abstract class Enemy : MonoBehaviour
 
     public virtual void takeDamage (int damage)
     {
-        health -= damage;
+        health -= damage; //Subtract damage from health
         Debug.Log($"{gameObject.name} took {damage} damage. Health is now {health}.");
+        
+        
+        if (dungeonController != null) // Find Dcontroller to tell it to make a popup
+        {
+            dungeonController.ShowDamagePopup(transform, damage);
+        }
 
         if (showHealthBar && healthBar != null)
         {

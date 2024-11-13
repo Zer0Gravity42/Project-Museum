@@ -6,6 +6,7 @@ public class DungeonController : MonoBehaviour
 {
     //manager
     GameObject mainManager;
+    
     //Audio
     public AudioSource audioSourceOnce;
     public AudioSource audioSourceLoop;
@@ -16,6 +17,9 @@ public class DungeonController : MonoBehaviour
     public AudioClip dungeonBossLoop;
     public AudioClip dungeonBossVoiceLine;
     public AudioClip dungeonBossDeath;
+    
+    public Canvas mainCanvas; // Reference to the canvas for UI elements
+    public Transform damagePopupPrefab; // Prefab for the damage number popup
     
     // Start is called before the first frame update
     void Start()
@@ -79,6 +83,19 @@ public class DungeonController : MonoBehaviour
         yield return new WaitForSeconds(dungeonBossIntro.length);
 
         PlaySoundLoop(dungeonBossLoop); // Loops boss music
+    }
+    
+    public void ShowDamagePopup(Transform enemyTransform, int damage)
+    {
+            // Instantiate the damage popup at the enemy's position
+        Transform damagePopupInstance = Instantiate(damagePopupPrefab, enemyTransform.position, Quaternion.identity, mainCanvas.transform);
+        
+        // Set the text value to display the damage amount
+        DamagePopup damagePopup = damagePopupInstance.GetComponent<DamagePopup>();
+        if (damagePopup != null)
+        {
+            damagePopup.SetDamage(damage);
+        }
     }
 
     

@@ -558,6 +558,9 @@ MonoBehaviour:
   healthBarPrefab: {fileID: 0}
   healthBarOffset: {x: 0, y: -1, z: 0}
   healthBarScale: {x: 1, y: 1, z: 1}
+  mainCanvas: {fileID: 0}
+  damagePopup: {fileID: 0}
+  dungeonController: {fileID: 0}
 --- !u!114 &251967607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -999,6 +1002,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BreakableWall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1904339311474945546, guid: 497f638ec6eb19c46bbb2a8c98130ecb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4101450155387738139, guid: 497f638ec6eb19c46bbb2a8c98130ecb, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1051,6 +1058,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 6739480182759727176}
+    - target: {fileID: 4919479632642997544, guid: 497f638ec6eb19c46bbb2a8c98130ecb, type: 3}
+      propertyPath: mainCanvas
+      value: 
+      objectReference: {fileID: 2056412263}
+    - target: {fileID: 4919479632642997544, guid: 497f638ec6eb19c46bbb2a8c98130ecb, type: 3}
+      propertyPath: damagePopup
+      value: 
+      objectReference: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+    - target: {fileID: 4919479632642997544, guid: 497f638ec6eb19c46bbb2a8c98130ecb, type: 3}
+      propertyPath: dungeonController
+      value: 
+      objectReference: {fileID: 1291409926}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1687,6 +1706,9 @@ MonoBehaviour:
   healthBarPrefab: {fileID: 0}
   healthBarOffset: {x: 0, y: -1, z: 0}
   healthBarScale: {x: 1, y: 1, z: 1}
+  mainCanvas: {fileID: 0}
+  damagePopup: {fileID: 0}
+  dungeonController: {fileID: 1291409926}
   dungeonController: {fileID: 1291409926}
   bossHealthBar: {fileID: 462805616}
   bossNameLabel: {fileID: 0}
@@ -2645,7 +2667,7 @@ GameObject:
   - component: {fileID: 987220857}
   - component: {fileID: 987220856}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: BossQuote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2667,7 +2689,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 787, y: 738}
+  m_AnchoredPosition: {x: 2143, y: 382}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &987220856
@@ -2805,6 +2827,103 @@ Transform:
   - {fileID: 1763600725}
   m_Father: {fileID: 2056412264}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1008869062
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2056412264}
+    m_Modifications:
+    - target: {fileID: 816052794011336398, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+      propertyPath: m_Name
+      value: DamagePopup
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2956
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 99.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
 --- !u!1 &1020185929
 GameObject:
   m_ObjectHideFlags: 0
@@ -3701,6 +3820,9 @@ MonoBehaviour:
   healthBarPrefab: {fileID: 0}
   healthBarOffset: {x: 0, y: -1, z: 0}
   healthBarScale: {x: 1, y: 1, z: 1}
+  mainCanvas: {fileID: 0}
+  damagePopup: {fileID: 0}
+  dungeonController: {fileID: 0}
 --- !u!114 &1262515524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4056,6 +4178,8 @@ MonoBehaviour:
   dungeonBossLoop: {fileID: 8300000, guid: 230b4cb610355a24c82c50513ebfc4ba, type: 3}
   dungeonBossVoiceLine: {fileID: 8300000, guid: b9400908bc31ba54f8921167c490abe8, type: 3}
   dungeonBossDeath: {fileID: 8300000, guid: a0775647652ac864c91520f9aad7996f, type: 3}
+  mainCanvas: {fileID: 2056412263}
+  damagePopupPrefab: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
 --- !u!4 &1291409927
 Transform:
   m_ObjectHideFlags: 0
@@ -4500,6 +4624,9 @@ MonoBehaviour:
   healthBarPrefab: {fileID: 0}
   healthBarOffset: {x: 0, y: -1, z: 0}
   healthBarScale: {x: 1, y: 1, z: 1}
+  mainCanvas: {fileID: 0}
+  damagePopup: {fileID: 0}
+  dungeonController: {fileID: 0}
 --- !u!114 &1355115701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5140,6 +5267,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BreakableWall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1904339311474945546, guid: 497f638ec6eb19c46bbb2a8c98130ecb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4101450155387738139, guid: 497f638ec6eb19c46bbb2a8c98130ecb, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -5192,6 +5323,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 6739480182759727176}
+    - target: {fileID: 4919479632642997544, guid: 497f638ec6eb19c46bbb2a8c98130ecb, type: 3}
+      propertyPath: mainCanvas
+      value: 
+      objectReference: {fileID: 2056412263}
+    - target: {fileID: 4919479632642997544, guid: 497f638ec6eb19c46bbb2a8c98130ecb, type: 3}
+      propertyPath: damagePopup
+      value: 
+      objectReference: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+    - target: {fileID: 4919479632642997544, guid: 497f638ec6eb19c46bbb2a8c98130ecb, type: 3}
+      propertyPath: dungeonController
+      value: 
+      objectReference: {fileID: 1291409926}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5390,6 +5533,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BreakableWall
       objectReference: {fileID: 0}
+    - target: {fileID: 1904339311474945546, guid: 497f638ec6eb19c46bbb2a8c98130ecb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4101450155387738139, guid: 497f638ec6eb19c46bbb2a8c98130ecb, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -5442,11 +5589,28 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 6739480182759727176}
+    - target: {fileID: 4919479632642997544, guid: 497f638ec6eb19c46bbb2a8c98130ecb, type: 3}
+      propertyPath: mainCanvas
+      value: 
+      objectReference: {fileID: 2056412263}
+    - target: {fileID: 4919479632642997544, guid: 497f638ec6eb19c46bbb2a8c98130ecb, type: 3}
+      propertyPath: damagePopup
+      value: 
+      objectReference: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+    - target: {fileID: 4919479632642997544, guid: 497f638ec6eb19c46bbb2a8c98130ecb, type: 3}
+      propertyPath: dungeonController
+      value: 
+      objectReference: {fileID: 1291409926}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 497f638ec6eb19c46bbb2a8c98130ecb, type: 3}
+--- !u!224 &1525986814 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
+  m_PrefabInstance: {fileID: 1008869062}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1571418208
 GameObject:
   m_ObjectHideFlags: 0
@@ -6308,7 +6472,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 0.6
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -6360,8 +6524,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
+      minMaxState: 2
+      minColor: {r: 1, g: 0.13215782, b: 0, a: 1}
       maxColor: {r: 0.990566, g: 0.36165354, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
@@ -6426,7 +6590,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.25
+      scalar: 0.08
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -6803,7 +6967,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 0
+    type: 5
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -6811,7 +6975,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 1, y: 1, z: 1}
+    m_Scale: {x: -82.99, y: 1, z: 51.86}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -6886,7 +7050,7 @@ ParticleSystem:
     m_TextureColorAffectsParticles: 1
     m_TextureAlphaAffectsParticles: 1
     m_TextureBilinearFiltering: 0
-    randomDirectionAmount: 0
+    randomDirectionAmount: 1
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
@@ -7009,7 +7173,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 33.8
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -7439,7 +7603,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 0
+    enabled: 1
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -7447,34 +7611,34 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 0}
-        key3: {r: 0, g: 0, b: 0, a: 0}
+        key0: {r: 0, g: 0, b: 0, a: 0}
+        key1: {r: 1, g: 0.17255503, b: 0, a: 1}
+        key2: {r: 1, g: 1, b: 1, a: 0}
+        key3: {r: 0, g: 0, b: 0, a: 1}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 65535
-        ctime2: 0
+        ctime1: 33153
+        ctime2: 65535
         ctime3: 0
         ctime4: 0
         ctime5: 0
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 65535
-        atime2: 0
-        atime3: 0
+        atime1: 33025
+        atime2: 65535
+        atime3: 65535
         atime4: 0
         atime5: 0
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_ColorSpace: -1
-        m_NumColorKeys: 2
-        m_NumAlphaKeys: 2
+        m_ColorSpace: 0
+        m_NumColorKeys: 3
+        m_NumAlphaKeys: 3
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -8715,7 +8879,7 @@ ParticleSystem:
     magnitude:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -10904,7 +11068,7 @@ Transform:
   m_GameObject: {fileID: 1679847566}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.8778346, y: 14.350784, z: -0.09870131}
+  m_LocalPosition: {x: 3.96, y: 14.350784, z: -0.09870131}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16247,6 +16411,7 @@ RectTransform:
   - {fileID: 1698843389}
   - {fileID: 987220855}
   - {fileID: 194273657}
+  - {fileID: 1525986814}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.455}
   m_AnchorMin: {x: 0, y: 0}
@@ -16666,7 +16831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4713160907097683786, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.03
+      value: -10.08
       objectReference: {fileID: 0}
     - target: {fileID: 4713160907097683786, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17055,11 +17220,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3807756296809479664, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 4.08
+      value: 4.01
       objectReference: {fileID: 0}
     - target: {fileID: 3807756296809479664, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.04
+      value: 2.13
       objectReference: {fileID: 0}
     - target: {fileID: 3807756296809479664, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
