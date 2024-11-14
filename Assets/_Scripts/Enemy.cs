@@ -42,6 +42,10 @@ public abstract class Enemy : MonoBehaviour
     public Transform damagePopup;
     public DungeonController dungeonController; // Reference to DungeonController
     
+    //golem exclusive but needed in this file
+    protected bool isAGolem = false;
+    protected bool golemSpawn = false;
+    
     protected virtual void Awake()
     {
         //Find and set main canvas
@@ -51,7 +55,7 @@ public abstract class Enemy : MonoBehaviour
         //sets the attributes for the specific enemy type
         setSpeedAndHealth();
 
-        if (showHealthBar && healthBarPrefab != null)
+        if (showHealthBar && healthBarPrefab != null && !isAGolem)
         {
             // Instantiate the health bar as a child of the enemy
             GameObject hb = Instantiate(healthBarPrefab, transform);
@@ -72,8 +76,12 @@ public abstract class Enemy : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        //for use in enemy ai
-        timer += Time.deltaTime;
+        //dont increment timer before the golem spawns
+        if (!isAGolem || golemSpawn)
+        {
+            //for use in enemy ai
+            timer += Time.deltaTime;
+        }
 
         //every enemy type will probably need these
         directionToPlayer = (transform.position - player.transform.position).normalized;
