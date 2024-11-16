@@ -14,7 +14,7 @@ public abstract class Enemy : MonoBehaviour
     
 
     //enemy atributes
-    protected float speed;
+    public float speed;
     public int health;
     protected int maxHealth;
     protected bool isAnEnemy = true; //dont question it

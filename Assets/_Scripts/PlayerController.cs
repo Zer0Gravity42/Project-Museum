@@ -356,6 +356,11 @@ public class PlayerController : MonoBehaviour
             ClearTempManagerObjects();
             Application.LoadLevel("Museum"); //loads the dungeon system
         }
+        if(collision.tag == "Level2Portal")
+        {
+            //do something here to open level 2 on the elevator ex if level 2 = false level2 = true and mainmanager.setelevatorlevel(2))
+            Application.LoadLevel("Floor2");
+        }
 
         if (collision.CompareTag("InteractObject"))
         {

@@ -4,25 +4,26 @@ using UnityEngine;
 
 public class GolemEnemy : Enemy
 {
-    private float attackCooldown = 1.5f;  // Cooldown time after each attack
-    private float attackDuration = 0.7f;  // Duration of the attack animation
     private bool readyToAttack = true; // New flag to control attack readiness
     protected SpriteRenderer spriteRenderer; // Added SpriteRenderer variable
-    private BoxCollider2D activateTrigger;
+    private BoxCollider2D golemHitbox;
 
 
     protected override void Update()
     {
         base.Update();
 
-        // Flip sprite to face the player
-        if (directionToPlayer.x > 0)
+        if(golemSpawn)
         {
-            spriteRenderer.flipX = true;  // Face right
-        }
-        else if (directionToPlayer.x < 0)
-        {
-            spriteRenderer.flipX = false;   // Face left
+            // Flip sprite to face the player
+            if (directionToPlayer.x > 0)
+            {
+                spriteRenderer.flipX = true;  // Face right
+            }
+            else if (directionToPlayer.x < 0)
+            {
+                spriteRenderer.flipX = false;   // Face left
+            }
         }
     }
 
@@ -30,10 +31,9 @@ public class GolemEnemy : Enemy
     {
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>(); // Initialize the SpriteRenderer
-        speed = 1f;
-        health = 20;
-        activateTrigger= GetComponentInChildren<BoxCollider2D>();
         isAGolem= true;
+        golemHitbox= GetComponent<BoxCollider2D>();
+        golemHitbox.enabled= false;
     }
 
     protected override void move()
@@ -79,6 +79,8 @@ public class GolemEnemy : Enemy
     {
         anim.SetBool("spawn", true);
         golemSpawn= true;
+
+        golemHitbox.enabled= true;
 
         // Instantiate the health bar as a child of the enemy
         GameObject hb = Instantiate(healthBarPrefab, transform);

@@ -6,6 +6,7 @@ public class CollisionDetector : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("hey");
         //if enemy collides with the weapon
         if (collision.gameObject.tag == "Enemy")
         {
