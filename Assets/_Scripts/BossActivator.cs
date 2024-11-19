@@ -31,6 +31,11 @@ public class BossActivator : MonoBehaviour
             {
                 bossEnemy.ActivateHealthBar();
             }
+            else
+            {
+                GolemBoss golemBoss = boss.GetComponent<GolemBoss>();
+                golemBoss.ActivateHealthBar();
+            }
             
             //Play the boss music
             dungeonController.ActivateBossAudio();

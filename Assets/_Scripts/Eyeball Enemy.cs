@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEditor;
 using UnityEditor.Tilemaps;
 using UnityEngine;
@@ -15,6 +16,9 @@ public class basicEnemy : Enemy
     private float afterImageTimer = 0f;
     private float afterImageInterval = 0.15f; // Interval between afterimages
     private float enemyAfterImageFadeSpeed = 3f; // Adjust this value as needed
+
+    protected float speedMultiplyer = 1.25f;
+    protected UnityEngine.Color afterImageColor = UnityEngine.Color.white;
 
 
 
@@ -80,7 +84,7 @@ public class basicEnemy : Enemy
                 }
                 else
                 {
-                    transform.position -= (Vector3)(attackDirection * (speed * 1.25f) * Time.deltaTime);
+                    transform.position -= (Vector3)(attackDirection * (speed * speedMultiplyer) * Time.deltaTime);
                 }
 
                 // Create afterimages at intervals
@@ -129,7 +133,7 @@ public class basicEnemy : Enemy
         sr.sprite = spriteRenderer.sprite;
         sr.flipX = spriteRenderer.flipX;
         sr.flipY = spriteRenderer.flipY;
-        sr.color = spriteRenderer.color;
+        sr.color = afterImageColor;
 
         // Match the sorting layer and order
         sr.sortingLayerID = spriteRenderer.sortingLayerID;
