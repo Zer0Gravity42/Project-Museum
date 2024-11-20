@@ -158,10 +158,10 @@ public abstract class Enemy : MonoBehaviour
             healthBar.SetHealth(health);
         }
 
-        if (!GetComponent<testEnemy>())
-        {
-            anim.SetTrigger(hurtTriggerName); 
-        }
+        //if (!GetComponent<testEnemy>())
+        //{
+        //    anim.SetTrigger(hurtTriggerName); 
+        //}
     }
   
 

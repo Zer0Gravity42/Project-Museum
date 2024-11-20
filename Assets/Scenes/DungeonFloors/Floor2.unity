@@ -19405,7 +19405,7 @@ MonoBehaviour:
   dungeonMusicLoop: {fileID: 8300000, guid: 16e9048555cf96e48b44c383afc640f8, type: 3}
   dungeonBossIntro: {fileID: 8300000, guid: efb3824dfe586294a842ab0fbb6d9d1e, type: 3}
   dungeonBossLoop: {fileID: 8300000, guid: 230b4cb610355a24c82c50513ebfc4ba, type: 3}
-  dungeonBossVoiceLine: {fileID: 8300000, guid: ccadde6fd54385449bdf0b313b7a74ca, type: 3}
+  dungeonBossVoiceLine: {fileID: 8300000, guid: b9400908bc31ba54f8921167c490abe8, type: 3}
   dungeonBossDeath: {fileID: 8300000, guid: a0775647652ac864c91520f9aad7996f, type: 3}
   mainCanvas: {fileID: 1768137075}
   damagePopupPrefab: {fileID: 6076907738829302306, guid: 3e07343b367e3fc41910f972ada5797b, type: 3}
