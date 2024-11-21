@@ -150,8 +150,8 @@ MonoBehaviour:
   alive: 1
   showHealthBar: 1
   healthBarPrefab: {fileID: 8422584329745288152, guid: 1d0033636d9b6e348b17e94d7887c08e, type: 3}
-  healthBarOffset: {x: 0, y: -0.25, z: 0}
-  healthBarScale: {x: 0.25, y: 0.25, z: 1}
+  healthBarOffset: {x: 0, y: -1, z: 0}
+  healthBarScale: {x: 1, y: 1, z: 1}
   mainCanvas: {fileID: 0}
   damagePopup: {fileID: 0}
   dungeonController: {fileID: 0}

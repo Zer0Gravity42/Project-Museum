@@ -375,6 +375,11 @@ public class PlayerController : MonoBehaviour
             //do something here to open level 2 on the elevator ex if level 2 = false level2 = true and mainmanager.setelevatorlevel(2))
             Application.LoadLevel("Floor2");
         }
+        if (collision.tag == "Level3Portal")
+        {
+            //do something here to open level 2 on the elevator ex if level 2 = false level2 = true and mainmanager.setelevatorlevel(2))
+            Application.LoadLevel("Floor3");
+        }
 
         if (collision.CompareTag("InteractObject"))
         {
