@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -95,7 +95,280 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Skeleton_02_Yellow_Die_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 0
+        width: 33
+        height: 50
+      alignment: 9
+      pivot: {x: 0.10826689, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1957536bd99e86e42ae5eb3bd0ecc964
+      internalID: -122244745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_02_Yellow_Die_1
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 33
+        height: 52
+      alignment: 9
+      pivot: {x: 0.120903246, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8881055ad774a84aa464eda06a14354
+      internalID: 1084527924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_02_Yellow_Die_2
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 0
+        width: 34
+        height: 51
+      alignment: 9
+      pivot: {x: 0.11742446, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dee2e9b90327b39498e2e5a1a958d2cb
+      internalID: 1161938918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_02_Yellow_Die_3
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 0
+        width: 40
+        height: 52
+      alignment: 9
+      pivot: {x: 0.159198, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73dcfbcb200a18444a409a4b441f27e4
+      internalID: -373438823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_02_Yellow_Die_4
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 0
+        width: 43
+        height: 53
+      alignment: 9
+      pivot: {x: 0.17854841, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b32ae50e2a938d14492131500730b75c
+      internalID: -291420487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_02_Yellow_Die_5
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 0
+        width: 43
+        height: 51
+      alignment: 9
+      pivot: {x: 0.17213404, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5ea6ce0bc7638c4e8927deabc0f4419
+      internalID: 983001904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_02_Yellow_Die_6
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 0
+        width: 47
+        height: 49
+      alignment: 9
+      pivot: {x: 0.30108774, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a937cf4ae956d4499ce1d8c67574881
+      internalID: -1618944020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_02_Yellow_Die_7
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 0
+        width: 44
+        height: 45
+      alignment: 9
+      pivot: {x: 0.23675953, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4b4a5bbb7d445b49a900a0ae6198bd4
+      internalID: 1450079635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_02_Yellow_Die_8
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 0
+        width: 46
+        height: 23
+      alignment: 9
+      pivot: {x: 0.049149223, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dc52a0176f7ddd49a01b689dd0da0f1
+      internalID: 1393887207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_02_Yellow_Die_9
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 0
+        width: 57
+        height: 9
+      alignment: 9
+      pivot: {x: 0.02464, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b43761cf217c964f8a1c24cf23963ae
+      internalID: 559700826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_02_Yellow_Die_10
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 0
+        width: 57
+        height: 13
+      alignment: 9
+      pivot: {x: 0.026340418, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8081276418930944fa642917dc87ab81
+      internalID: 492949375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_02_Yellow_Die_11
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 0
+        width: 58
+        height: 9
+      alignment: 9
+      pivot: {x: 0.025521114, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15945b364cb115f41aa90ebec80266ca
+      internalID: -1840799784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_02_Yellow_Die_12
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 0
+        width: 58
+        height: 9
+      alignment: 9
+      pivot: {x: 0.020128973, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00f336fb71472a84a85b402b637fce1f
+      internalID: 2042082587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +379,48 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Skeleton_02_Yellow_Die_0: -122244745
+      Skeleton_02_Yellow_Die_1: 1084527924
+      Skeleton_02_Yellow_Die_10: 492949375
+      Skeleton_02_Yellow_Die_11: -1840799784
+      Skeleton_02_Yellow_Die_12: 2042082587
+      Skeleton_02_Yellow_Die_13: -1622862641
+      Skeleton_02_Yellow_Die_14: 1275883981
+      Skeleton_02_Yellow_Die_15: 352241747
+      Skeleton_02_Yellow_Die_16: 622077970
+      Skeleton_02_Yellow_Die_17: -1734709715
+      Skeleton_02_Yellow_Die_18: 1334355926
+      Skeleton_02_Yellow_Die_19: 1216801031
+      Skeleton_02_Yellow_Die_2: 1161938918
+      Skeleton_02_Yellow_Die_20: -420076041
+      Skeleton_02_Yellow_Die_21: -1979497434
+      Skeleton_02_Yellow_Die_22: 304518498
+      Skeleton_02_Yellow_Die_23: -1395209380
+      Skeleton_02_Yellow_Die_24: -1659601328
+      Skeleton_02_Yellow_Die_25: -153933159
+      Skeleton_02_Yellow_Die_26: -906456900
+      Skeleton_02_Yellow_Die_27: 644416224
+      Skeleton_02_Yellow_Die_28: -1002684115
+      Skeleton_02_Yellow_Die_29: -745405302
+      Skeleton_02_Yellow_Die_3: -373438823
+      Skeleton_02_Yellow_Die_30: 1279821731
+      Skeleton_02_Yellow_Die_31: 331554018
+      Skeleton_02_Yellow_Die_32: -995003669
+      Skeleton_02_Yellow_Die_33: 1838644168
+      Skeleton_02_Yellow_Die_34: -545256398
+      Skeleton_02_Yellow_Die_35: 1648219835
+      Skeleton_02_Yellow_Die_36: -10055188
+      Skeleton_02_Yellow_Die_37: -1014485175
+      Skeleton_02_Yellow_Die_38: 1574924749
+      Skeleton_02_Yellow_Die_39: 1850544319
+      Skeleton_02_Yellow_Die_4: -291420487
+      Skeleton_02_Yellow_Die_40: -1653869575
+      Skeleton_02_Yellow_Die_5: 983001904
+      Skeleton_02_Yellow_Die_6: -1618944020
+      Skeleton_02_Yellow_Die_7: 1450079635
+      Skeleton_02_Yellow_Die_8: 1393887207
+      Skeleton_02_Yellow_Die_9: 559700826
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

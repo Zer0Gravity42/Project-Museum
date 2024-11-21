@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -95,7 +95,217 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Walk_0
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 0
+        width: 37
+        height: 47
+      alignment: 9
+      pivot: {x: 0.2527437, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3e8b1d3652b05649a6a76513d500dcf
+      internalID: 2044459231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Walk_1
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 0
+        width: 38
+        height: 48
+      alignment: 9
+      pivot: {x: 0.2527437, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a72b13347ef6fca45b1c5c68629de9c5
+      internalID: 499777970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 0
+        width: 40
+        height: 49
+      alignment: 9
+      pivot: {x: 0.2527437, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1a701f477e54b34f95fb6b67a525e72
+      internalID: 1796665117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Walk_3
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 0
+        width: 42
+        height: 50
+      alignment: 9
+      pivot: {x: 0.2527437, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d631316146fda7b43a645de20e47d176
+      internalID: 1629744450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Walk_4
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 0
+        width: 42
+        height: 48
+      alignment: 9
+      pivot: {x: 0.2527437, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ad637e9882085e4f8ace4c4739ed7df
+      internalID: 350994928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Walk_5
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 0
+        width: 43
+        height: 47
+      alignment: 9
+      pivot: {x: 0.2527437, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd5267dc1cce1f04b94761025613963f
+      internalID: 674768194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Walk_6
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 0
+        width: 42
+        height: 48
+      alignment: 9
+      pivot: {x: 0.2527437, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b740d2c50ec0aa45a8e6cdef2c373ec
+      internalID: -1929363001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Walk_7
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 0
+        width: 42
+        height: 49
+      alignment: 9
+      pivot: {x: 0.2527437, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b11af02d1ac55a145baef326cf4ba418
+      internalID: 1112841931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Walk_8
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 0
+        width: 40
+        height: 50
+      alignment: 9
+      pivot: {x: 0.2527437, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6042625ff5afe254f976442ec45c9adc
+      internalID: -2129480810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Walk_9
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 0
+        width: 38
+        height: 48
+      alignment: 9
+      pivot: {x: 0.2527437, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29b308a8c1156064aa754900b51f94e9
+      internalID: -1104327137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +316,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Skeleton_03_Yellow_Walk_0: 2044459231
+      Skeleton_03_Yellow_Walk_1: 499777970
+      Skeleton_03_Yellow_Walk_2: 1796665117
+      Skeleton_03_Yellow_Walk_3: 1629744450
+      Skeleton_03_Yellow_Walk_4: 350994928
+      Skeleton_03_Yellow_Walk_5: 674768194
+      Skeleton_03_Yellow_Walk_6: -1929363001
+      Skeleton_03_Yellow_Walk_7: 1112841931
+      Skeleton_03_Yellow_Walk_8: -2129480810
+      Skeleton_03_Yellow_Walk_9: -1104327137
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

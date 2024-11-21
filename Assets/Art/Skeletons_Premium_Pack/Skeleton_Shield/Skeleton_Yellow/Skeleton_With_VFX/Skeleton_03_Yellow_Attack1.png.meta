@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -95,7 +95,217 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Attack1_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 0
+        width: 39
+        height: 48
+      alignment: 9
+      pivot: {x: 0.2489509, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b0d593cbc1457245b3d703875025617
+      internalID: 1184506381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Attack1_1
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 0
+        width: 28
+        height: 48
+      alignment: 9
+      pivot: {x: 0.4035759, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6d3df772a4036d4babb7c43e77918ab
+      internalID: -1853603439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Attack1_2
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 0
+        width: 33
+        height: 47
+      alignment: 9
+      pivot: {x: 0.4998511, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d739d259ea24ec94496e9e6b17426fcd
+      internalID: 1453680738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Attack1_3
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 0
+        width: 38
+        height: 46
+      alignment: 9
+      pivot: {x: 0.53315175, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c92aa285ebd0a5e46b68138cefb77cbb
+      internalID: 213130002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Attack1_4
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 38
+        height: 45
+      alignment: 9
+      pivot: {x: 0.53788835, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3f5ba8af80682840a3549217c62cc20
+      internalID: 757658235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Attack1_5
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 0
+        width: 69
+        height: 48
+      alignment: 9
+      pivot: {x: 0.19547614, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd22423b3b0b8564abae1ada1d36ebb2
+      internalID: 1877390345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Attack1_6
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 0
+        width: 68
+        height: 50
+      alignment: 9
+      pivot: {x: 0.17880787, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0084b68690907bc4598e464d2985b245
+      internalID: -1517623694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Attack1_7
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 0
+        width: 65
+        height: 49
+      alignment: 9
+      pivot: {x: 0.22126183, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3594388f5d3ae2f4e8c0048da2365000
+      internalID: 1757084622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Attack1_8
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 0
+        width: 47
+        height: 49
+      alignment: 9
+      pivot: {x: 0.20108227, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dc408700707ddf428f3f322a5185d12
+      internalID: 1941914168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Attack1_9
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 0
+        width: 39
+        height: 48
+      alignment: 9
+      pivot: {x: 0.24433938, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5241c3afa382aa42bbe0b48d773f57c
+      internalID: 925457959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +316,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Skeleton_03_Yellow_Attack1_0: 1184506381
+      Skeleton_03_Yellow_Attack1_1: -1853603439
+      Skeleton_03_Yellow_Attack1_2: 1453680738
+      Skeleton_03_Yellow_Attack1_3: 213130002
+      Skeleton_03_Yellow_Attack1_4: 757658235
+      Skeleton_03_Yellow_Attack1_5: 1877390345
+      Skeleton_03_Yellow_Attack1_6: -1517623694
+      Skeleton_03_Yellow_Attack1_7: 1757084622
+      Skeleton_03_Yellow_Attack1_8: 1941914168
+      Skeleton_03_Yellow_Attack1_9: 925457959
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -95,7 +95,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 0
+        width: 39
+        height: 48
+      alignment: 9
+      pivot: {x: 0.2527437, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52606b7a212813f40bfbeed19d68da82
+      internalID: -2052569886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 0
+        width: 39
+        height: 48
+      alignment: 9
+      pivot: {x: 0.2527437, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f34c3f91dd41ede4cb123c635fb136e2
+      internalID: 293176535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 0
+        width: 39
+        height: 47
+      alignment: 9
+      pivot: {x: 0.2527437, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86be02bdd48cede4594fe5c6355b9da3
+      internalID: -244767721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 0
+        width: 39
+        height: 46
+      alignment: 9
+      pivot: {x: 0.2527437, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78c6169b093e2b846a4f862ccdd11145
+      internalID: -1353897207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 0
+        width: 39
+        height: 46
+      alignment: 9
+      pivot: {x: 0.2527437, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 045c58c46175bdc4ca938bbf233e75db
+      internalID: 1952856952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 0
+        width: 39
+        height: 47
+      alignment: 9
+      pivot: {x: 0.2527437, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f77c078037c5a5e4980886b710f1c7e5
+      internalID: 1107528180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 0
+        width: 39
+        height: 48
+      alignment: 9
+      pivot: {x: 0.2527437, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f1ab7696ca98464cb4b41f15cc6bd54
+      internalID: 1561537105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_03_Yellow_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 0
+        width: 39
+        height: 48
+      alignment: 9
+      pivot: {x: 0.2527437, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f28a95bccd5118c46a42f373328070f6
+      internalID: -769251662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +274,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Skeleton_03_Yellow_Idle_0: -2052569886
+      Skeleton_03_Yellow_Idle_1: 293176535
+      Skeleton_03_Yellow_Idle_2: -244767721
+      Skeleton_03_Yellow_Idle_3: -1353897207
+      Skeleton_03_Yellow_Idle_4: 1952856952
+      Skeleton_03_Yellow_Idle_5: 1107528180
+      Skeleton_03_Yellow_Idle_6: 1561537105
+      Skeleton_03_Yellow_Idle_7: -769251662
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
