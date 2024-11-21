@@ -40,8 +40,8 @@ public class DoorController : MonoBehaviour
         // Calculate open positions based on the sliding direction
         if (slideVertically)
         {
-            leftOpenPos = leftClosedPos + new Vector3(0, openDistance, 0);
-            rightOpenPos = rightClosedPos + new Vector3(0, -openDistance, 0);
+            leftOpenPos = leftClosedPos + new Vector3(0, -openDistance, 0);
+            rightOpenPos = rightClosedPos + new Vector3(0, openDistance, 0);
         }
         else
         {
