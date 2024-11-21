@@ -962,20 +962,48 @@ PrefabInstance:
       value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 1805691880239274664, guid: 00b2a50648cd22c4ea8ee403d65fe32e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805691880239274664, guid: 00b2a50648cd22c4ea8ee403d65fe32e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805691880239274664, guid: 00b2a50648cd22c4ea8ee403d65fe32e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805691880239274664, guid: 00b2a50648cd22c4ea8ee403d65fe32e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805691880239274664, guid: 00b2a50648cd22c4ea8ee403d65fe32e, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 14.97
       objectReference: {fileID: 0}
     - target: {fileID: 1805691880239274664, guid: 00b2a50648cd22c4ea8ee403d65fe32e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 7.98
+      value: 6.942
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805691880239274664, guid: 00b2a50648cd22c4ea8ee403d65fe32e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3446510653627340069, guid: 00b2a50648cd22c4ea8ee403d65fe32e, type: 3}
+      propertyPath: isOpen
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3446510653627340069, guid: 00b2a50648cd22c4ea8ee403d65fe32e, type: 3}
+      propertyPath: slideVertically
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7669955160533924664, guid: 00b2a50648cd22c4ea8ee403d65fe32e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.99
+      value: 14.976
       objectReference: {fileID: 0}
     - target: {fileID: 7669955160533924664, guid: 00b2a50648cd22c4ea8ee403d65fe32e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.93
+      value: 7.949
       objectReference: {fileID: 0}
     - target: {fileID: 7669955160533924664, guid: 00b2a50648cd22c4ea8ee403d65fe32e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -983,23 +1011,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7669955160533924664, guid: 00b2a50648cd22c4ea8ee403d65fe32e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.000008800888
-      objectReference: {fileID: 0}
-    - target: {fileID: 7669955160533924664, guid: 00b2a50648cd22c4ea8ee403d65fe32e, type: 3}
-      propertyPath: m_LocalRotation.x
       value: 0.9999972
       objectReference: {fileID: 0}
     - target: {fileID: 7669955160533924664, guid: 00b2a50648cd22c4ea8ee403d65fe32e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669955160533924664, guid: 00b2a50648cd22c4ea8ee403d65fe32e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0023847674
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7669955160533924664, guid: 00b2a50648cd22c4ea8ee403d65fe32e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000020984976
+      value: 0.002382237
       objectReference: {fileID: 0}
     - target: {fileID: 7669955160533924664, guid: 00b2a50648cd22c4ea8ee403d65fe32e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0.001
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 7669955160533924664, guid: 00b2a50648cd22c4ea8ee403d65fe32e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -17775,6 +17803,10 @@ PrefabInstance:
     - target: {fileID: 6541970870807539296, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: m_Name
       value: Knight_NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
+      propertyPath: hasCutscene
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: cameraFollow

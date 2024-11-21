@@ -100,8 +100,12 @@ public class PlayerController : MonoBehaviour
         originalSprite = spriteRenderer.sprite;
         originalScale = transform.localScale;
 
-        //Initialize health
-        health = maxHealth;
+        // Initialize health from PersistentDataManager
+        if (PersistentDataManager.Instance != null)
+        {
+            maxHealth = PersistentDataManager.Instance.maxHealth;
+            health = PersistentDataManager.Instance.currentHealth;
+        }
         OnHealthChanged?.Invoke(health, maxHealth);
 
         #region Artifact Powers Enables/Disables
@@ -248,12 +252,22 @@ public class PlayerController : MonoBehaviour
         health += amount;
         health = Mathf.Clamp(health, 0, maxHealth);
         OnHealthChanged?.Invoke(health, maxHealth);
+        SaveHealth();
     }
     public void IncreaseMaxHealth(int amount)
     {
         maxHealth += amount;
         health = Mathf.Clamp(health, 0, maxHealth);
         OnHealthChanged?.Invoke(health, maxHealth);
+        SaveHealth();
+    }
+
+    private void SaveHealth()
+    {
+        if (PersistentDataManager.Instance != null)
+        {
+            PersistentDataManager.Instance.UpdateHealth(maxHealth, health);
+        }
     }
     void ProcessInputs()
     {

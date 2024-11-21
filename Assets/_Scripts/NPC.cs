@@ -27,6 +27,9 @@ public class NPC : MonoBehaviour
     [SerializeField] private Transform doorTransform;
     [SerializeField] private Transform cutsceneCameraTarget;
 
+    // Add a bool to control cutscene activation
+    [SerializeField] private bool hasCutscene = false;
+
     void Start()
     {
         dialogueText.text = "";
@@ -95,7 +98,11 @@ public class NPC : MonoBehaviour
             _animalese.StopSpeaking();
             conversationOver = true; // Redundant but just in case
             Reset();
-            StartCoroutine(Cutscene());
+            // Check if the cutscene should start
+            if (hasCutscene)
+            {
+                StartCoroutine(Cutscene());
+            }
         }
     }
 
@@ -116,7 +123,7 @@ public class NPC : MonoBehaviour
         }
     }
 
-    public void StartDialogue()
+    public virtual void StartDialogue()
     {
         if (!dialoguePanel.activeInHierarchy)
         {

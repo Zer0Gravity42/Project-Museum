@@ -8,6 +8,7 @@ public class DoorController : MonoBehaviour
     public float openSpeed = 1.0f; // Adjustable speed in the inspector
     public float openDistance = 2.0f; // Distance the doors slide apart
     public bool isOpen = false; // Toggleable in the inspector
+    public bool slideVertically = false; // New bool for sliding up/down
 
     private Vector3 leftClosedPos;
     private Vector3 rightClosedPos;
@@ -36,9 +37,17 @@ public class DoorController : MonoBehaviour
         leftClosedPos = leftDoor.transform.localPosition;
         rightClosedPos = rightDoor.transform.localPosition;
 
-        // Calculate open positions
-        leftOpenPos = leftClosedPos + new Vector3(-openDistance, 0, 0);
-        rightOpenPos = rightClosedPos + new Vector3(openDistance, 0, 0);
+        // Calculate open positions based on the sliding direction
+        if (slideVertically)
+        {
+            leftOpenPos = leftClosedPos + new Vector3(0, openDistance, 0);
+            rightOpenPos = rightClosedPos + new Vector3(0, -openDistance, 0);
+        }
+        else
+        {
+            leftOpenPos = leftClosedPos + new Vector3(-openDistance, 0, 0);
+            rightOpenPos = rightClosedPos + new Vector3(openDistance, 0, 0);
+        }
 
         previousIsOpen = isOpen;
         // Initialize AudioSource
