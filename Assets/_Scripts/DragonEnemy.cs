@@ -9,17 +9,28 @@ public class DragonEnemy : Enemy
     public float projectileSpeed = 14f;  // Speed of the projectile
     private Vector2 MoveDirection;
     private bool justAttacked = false;
+    private SpriteRenderer spriteRenderer; // Added SpriteRenderer variable
 
     protected override void setSpeedAndHealth()
     {
         speed = 1f;
         health = 8;
         anim = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Initialize the SpriteRenderer
         MoveDirection = UnityEngine.Random.insideUnitCircle.normalized;
     }
 
     protected override void move()
     {
+        if (directionToPlayer.x > 0)
+        {
+            spriteRenderer.flipX = true;  // Face right
+        }
+        else if (directionToPlayer.x < 0)
+        {
+            spriteRenderer.flipX = false;   // Face left
+        }
+
         //move further if too close
         if (distanceFromPlayer < 6)
         {
@@ -34,6 +45,14 @@ public class DragonEnemy : Enemy
         else
         {
             transform.position += (Vector3)(MoveDirection * speed * Time.deltaTime);
+        }
+        if(timer > 0.5f)
+        {
+            anim.SetBool("attack", false);
+        }
+        if(timer > 1.6f)
+        {
+            anim.SetBool("attack", true);
         }
         //change direction
         if(justAttacked)

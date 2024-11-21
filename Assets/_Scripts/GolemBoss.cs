@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,11 @@ public class GolemBoss : basicEnemy
     public Text bossNameLabel;
     public TextMeshProUGUI bossQuoteLabel;
     private bool isDead = false; // Flag to track if the boss is dead
+
+    public List<GameObject> golemSpawns;
+    private int previousHealth;
+    private float3 teleportPositon;
+    private bool teleportStart = false;
 
     protected override void setSpeedAndHealth()
     {
@@ -52,10 +58,25 @@ public class GolemBoss : basicEnemy
         base.Update();
         UpdateBossQuotePosition();
 
+        if(timer > 2.5)
+        {
+            teleport();
+            awake = false;
+        }
+
         // If the boss is dead, deactivate the health bar and text label
         if (health <= 0 && !isDead)
         {
             isDead = true; //Mark the boss as dead so the audio doesn't 
+
+            //kill any alive spawns
+            for(int i = 0;i < golemSpawns.Count;i++)
+            {
+                if (golemSpawns[i]!= null)
+                {
+                    golemSpawns[i].GetComponent<GolemEnemy>().health = 0;
+                }
+            }
 
             StartCoroutine(PlayBossDeathAudio());
             GameObject.Find("BossDoor").transform.Find("RightDoor").GetComponent<DoorController>().OpenDoor();
@@ -81,6 +102,28 @@ public class GolemBoss : basicEnemy
         {
             spriteRenderer.flipX = true;
         }
+
+        if(health < 50 && previousHealth == 50)
+        {
+            golemSpawns[0].GetComponent<GolemEnemy>().activateGolem();
+        }
+        if (health < 40 && previousHealth >= 40)
+        {
+            golemSpawns[1].GetComponent<GolemEnemy>().activateGolem();
+        }
+        if (health < 30 && previousHealth >= 30)
+        {
+            golemSpawns[2].GetComponent<GolemEnemy>().activateGolem();
+        }
+        if (health < 20 && previousHealth >= 20)
+        {
+            golemSpawns[3].GetComponent<GolemEnemy>().activateGolem();
+        }
+        if (health < 10 && previousHealth >= 10)
+        {
+            golemSpawns[4].GetComponent<GolemEnemy>().activateGolem();
+        }
+        previousHealth = health;
     }
 
     public void ActivateHealthBar()
@@ -102,6 +145,35 @@ public class GolemBoss : basicEnemy
             bossNameLabel.gameObject.SetActive(true);
 
         }
+    }
+
+    private void teleport()
+    {
+        if(teleportStart == false)
+        {
+            teleportPositon.x = player.transform.position.x - (directionToPlayer.x*3);
+            teleportPositon.y = player.transform.position.y - (directionToPlayer.y * 3);
+        }
+        teleportStart = true;
+        anim.SetBool("awake", false);
+
+        anim.SetBool("teleportout", true);
+
+        if(timer > 3)
+        {
+            anim.SetBool("teleportin", true);
+            gameObject.transform.position = teleportPositon;
+        }
+        if(timer>3.5)
+        {
+            timer = 1;
+            awake= true;
+            teleportStart = false;
+            anim.SetBool("awake", true);
+            anim.SetBool("teleportin", false);
+            anim.SetBool("teleportout", false);
+        }
+
     }
 
     private void UpdateHealthBar()
