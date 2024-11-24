@@ -16,6 +16,8 @@ TagManager:
   - GolemWeapon
   - TrainingRoomExit
   - TrainingRoomEnter
+  - Level2Portal
+  - Level3Portal
   layers:
   - Default
   - TransparentFX
