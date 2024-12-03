@@ -22416,6 +22416,10 @@ PrefabInstance:
       value: Curious Mage
       objectReference: {fileID: 0}
     - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
+      propertyPath: myPortrait
+      value: 
+      objectReference: {fileID: -363660510, guid: 75477b667145c904590d76eaaf307976, type: 3}
+    - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: dialogueName
       value: 
       objectReference: {fileID: 2054845245}
