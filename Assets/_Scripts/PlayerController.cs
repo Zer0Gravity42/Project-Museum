@@ -611,6 +611,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void CameraShake()
+    {
+        cameraFollow.TriggerShake();
+    }
    
 
 }
