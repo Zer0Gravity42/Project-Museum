@@ -87,5 +87,9 @@ public class InteractionObject : MonoBehaviour
         Debug.Log(text);
     }
 
+    void DoExitTutorial()
+    {
+        Application.LoadLevel("Museum");
+    }
     
 }

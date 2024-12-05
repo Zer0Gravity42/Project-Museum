@@ -460,6 +460,12 @@ public class PlayerController : MonoBehaviour
             currentInteraction = null;
         }
 
+        if(Input.GetButtonDown("Interact") && currentInteraction && currentInteraction.GetComponent<TutorialExit>())
+        {
+            currentInteraction.SendMessage("DoExitTutorial");
+            currentInteraction = null;
+        }
+
     }
 
     private void ClearTempManagerObjects()
