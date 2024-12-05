@@ -11,41 +11,54 @@ public class NPC : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public TextMeshProUGUI dialogueName;
     public Image dialoguePortrait;
-    public string[] dialogue;
     private int index = 0;
 
     public float wordSpeed;
     public bool playerIsClose;
 
     private Animalese _animalese;
-    private bool conversationOver = false; // Flag
+    private bool conversationOver = false;
 
+    [SerializeField] private string[] firstDialogue;      // For the first time (0)
+    [SerializeField] private string[] secondDialogue;     // For 1-3 visits
+    [SerializeField] private string[] thirdDialogue;      // For 4-5 visits
+    [SerializeField] private string[] defaultDialogue;    // For 6+ visits
+    
     // New serialized fields
     public DoorController doorController;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private CameraFollow cameraFollow;
     [SerializeField] private Transform doorTransform;
     [SerializeField] private Transform cutsceneCameraTarget;
-
+    
     // Add a bool to control cutscene activation
     [SerializeField] private bool hasCutscene = false;
+
+    protected string[] dialogue; // Holds the current dialogue
+    private int dayNumber = 1; // Tracks the number of visits
 
     void Start()
     {
         dialogueText.text = "";
         _animalese = GetComponent<Animalese>();
+
+        // Retrieve the dungeonVisits count from MainManager
+        if (MainManager.Instance != null)
+        {
+            dayNumber = MainManager.Instance.dayNumber;
+        }
+
+        SetDialogueBasedOnVisits();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Check if E is pressed and the dialogue panel is active
         if (Input.GetKeyDown(KeyCode.E) && dialoguePanel.activeInHierarchy)
         {
             if (dialogueText.text == dialogue[index] && !conversationOver)
             {
                 NextLine();
-                if (!conversationOver) // Check if the conversation isn't over
+                if (!conversationOver)
                 {
                     _animalese.Speak(dialogue[index]);
                 }
@@ -64,7 +77,7 @@ public class NPC : MonoBehaviour
         dialogueText.text = "";
         index = 0;
         dialoguePanel.SetActive(false);
-        conversationOver = true; // Set flag
+        conversationOver = true;
     }
 
     IEnumerator Typing()
@@ -96,7 +109,7 @@ public class NPC : MonoBehaviour
         else
         {
             _animalese.StopSpeaking();
-            conversationOver = true; // Redundant but just in case
+            conversationOver = true;
             Reset();
             // Check if the cutscene should start
             if (hasCutscene)
@@ -130,12 +143,32 @@ public class NPC : MonoBehaviour
             dialoguePanel.SetActive(true);
             dialoguePortrait.sprite = myPortrait;
             dialogueName.text = myName;
-            conversationOver = false; // Reset flag
+            conversationOver = false;
             _animalese.Speak(dialogue[index]);
             StartCoroutine(Typing());
         }
     }
 
+    private void SetDialogueBasedOnVisits()
+    {
+        if (dayNumber == 1)
+        {
+            dialogue = firstDialogue;
+        }
+        else if (dayNumber >= 2 && dayNumber <= 3)
+        {
+            dialogue = secondDialogue;
+        }
+        else if (dayNumber >= 4 && dayNumber <= 5)
+        {
+            dialogue = thirdDialogue;
+        }
+        else
+        {
+            dialogue = defaultDialogue;
+        }
+    }
+    
     // New coroutine for the cutscene
     private IEnumerator Cutscene()
     {
@@ -163,5 +196,4 @@ public class NPC : MonoBehaviour
         // Unlock player input
         playerController.UnlockMovement();
     }
-
 }

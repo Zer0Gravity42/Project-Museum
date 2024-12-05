@@ -6,27 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
+    path: Assets/_Scenes/Main Menu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Dungeon.unity
+    path: Assets/_Scenes/Dungeon.unity
     guid: d9d600ba05e1f7d40a1387dde6cfdfdf
   - enabled: 1
-    path: Assets/Scenes/Museum.unity
+    path: Assets/_Scenes/Museum.unity
     guid: 5142f5af7bcb0c14992a6ad4481db330
   - enabled: 1
-    path: Assets/Scenes/DungeonFloors/Floor1.unity
+    path: Assets/_Scenes/DungeonFloors/Floor1.unity
     guid: 8565e1fa297306a49a3b07ff0178fb1d
   - enabled: 1
-    path: Assets/Scenes/DungeonFloors/Floor2.unity
+    path: Assets/_Scenes/DungeonFloors/Floor2.unity
     guid: 4a9ebcc30b9177641a6a3e5dc4111908
   - enabled: 1
-    path: Assets/Scenes/DungeonFloors/Floor3.unity
+    path: Assets/_Scenes/DungeonFloors/Floor3.unity
     guid: 88cf6b5e91e4137409cacab6e34a0cff
   - enabled: 1
-    path: Assets/Scenes/DungeonFloors/Floor4.unity
+    path: Assets/_Scenes/DungeonFloors/Floor4.unity
     guid: 7670e620212f30c478b6db9e2aa17e8a
   - enabled: 1
-    path: Assets/Scenes/NewPlayerIntro.unity
+    path: Assets/_Scenes/NewPlayerIntro.unity
     guid: b4cfe112b0c0afd4593610d9b690a342
   m_configObjects: {}

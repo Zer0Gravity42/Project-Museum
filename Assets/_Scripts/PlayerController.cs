@@ -361,6 +361,7 @@ public class PlayerController : MonoBehaviour
         if (collision.tag == "DungeonPortal")
         {
             Application.LoadLevel("Floor1"); //loads the dungeon scene
+            MainManager.Instance.dayNumber++;
         }
 
         if (collision.tag == "MuseumPortal")
