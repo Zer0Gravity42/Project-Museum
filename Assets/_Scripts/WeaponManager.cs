@@ -6,7 +6,7 @@ public class WeaponManager : MonoBehaviour
 {
     public Follower swordFollower;  // Reference to SwordFollower instance
     public Follower rangedFollower; // Reference to RangedFollower instance
-    public Follower hammerFollower;
+   
 
     private Follower currentWeapon; // The currently equipped weapon
     private int currentWeaponIndex = 0; // 0 for Sword, 1 for Ranged, 2 for hammer
@@ -39,10 +39,7 @@ public class WeaponManager : MonoBehaviour
         {
             SwitchWeapon(1); // Switch to ranged
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            SwitchWeapon(2); // Switch to hammer
-        }
+       
 
         // Handle weapon switching via mouse scroll wheel
         HandleMouseScroll();
@@ -59,11 +56,11 @@ public class WeaponManager : MonoBehaviour
             // If scrolling up, increment weapon index; if scrolling down, decrement weapon index
             if (scroll > 0)
             {
-                currentWeaponIndex = (currentWeaponIndex + 1) % 3; // Cycles between 0 and 1
+                currentWeaponIndex = (currentWeaponIndex + 1) % 2; // Cycles between 0 and 1
             }
             else if (scroll < 0)
             {
-                currentWeaponIndex = (currentWeaponIndex - 1 + 3) % 3; // Handles negative scroll, cycles back to 1
+                currentWeaponIndex = (currentWeaponIndex - 1 + 2) % 2; // Handles negative scroll, cycles back to 1
             }
 
             // Switch to the weapon based on the updated index
@@ -77,7 +74,7 @@ public class WeaponManager : MonoBehaviour
         // Disable all weapons initially
         swordFollower.gameObject.SetActive(false);
         rangedFollower.gameObject.SetActive(false);
-        hammerFollower.gameObject.SetActive(false);
+       
 
         // Activate the chosen weapon
         if (weaponIndex == 0)
@@ -91,12 +88,6 @@ public class WeaponManager : MonoBehaviour
             currentWeapon = rangedFollower;
             rangedFollower.gameObject.SetActive(true);
             Debug.Log("Switched to Ranged Weapon");
-        }
-        else if (weaponIndex == 2)
-        {
-            currentWeapon = hammerFollower;
-            hammerFollower.gameObject.SetActive(true);
-            Debug.Log("Switched to Hammer");
         }
 
         currentWeaponIndex = weaponIndex; // Update the current weapon index
