@@ -9,11 +9,13 @@ public class MenuController : MonoBehaviour
     public AudioSource audioSourceLoop;
     public AudioClip menuButton;
     public AudioClip menuMusicLoop;
+    public Animator anim;
     
     // Start is called before the first frame update
     void Start()
     {
         PlaySoundLoop(menuMusicLoop);
+        
     }
 
     // Update is called once per frame
@@ -21,6 +23,14 @@ public class MenuController : MonoBehaviour
     {
     }
     
+
+    //onclick
+    public void MoveMenu()
+    {
+        PlaySound(menuButton);
+        anim.Play("moveAnimation");
+    }
+
     //onclick
     public void StartGame()
     {
@@ -64,7 +74,7 @@ public class MenuController : MonoBehaviour
         yield return new WaitForSeconds(time);
         
         // Load the level after the sound finishes
-        Application.LoadLevel("Museum");
+        Application.LoadLevel("NewPlayerIntro");
     }
     
 }
