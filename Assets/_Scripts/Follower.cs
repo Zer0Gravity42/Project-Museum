@@ -22,7 +22,7 @@ public abstract class Follower : MonoBehaviour
         SetRotation();
     }
 
-    void Update()
+    protected virtual void Update()
     {
         // Handle the follower's position and direction in relation to the player
         UpdatePositionAndDirection();
