@@ -4208,6 +4208,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1485574184152146510, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: chargeBarUI
+      value: 
+      objectReference: {fileID: 1253963765}
     - target: {fileID: 2658885101104753919, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -4265,8 +4269,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8452144706355131449, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: cooldownBar
+      value: 
+      objectReference: {fileID: 1866438953}
+    - target: {fileID: 8452144706355131449, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: canTransform
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8452144706355131449, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: weaponManager
@@ -19237,6 +19245,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f319714bbd83f1b49a2dec21e4e1c89f, type: 3}
+--- !u!114 &1253963765 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8590662903131600772, guid: 85631bb7c6690064bb2071481c7ce735, type: 3}
+  m_PrefabInstance: {fileID: 2036908897}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1291409923
 GameObject:
   m_ObjectHideFlags: 0
@@ -21435,6 +21454,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6050697104333198762, guid: 38e62a9c554e93b42a06d6f2480e3e89, type: 3}
   m_PrefabInstance: {fileID: 1866438951}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1866438953 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4892803447806351747, guid: 38e62a9c554e93b42a06d6f2480e3e89, type: 3}
+  m_PrefabInstance: {fileID: 1866438951}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1880253145 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1770234393516973558, guid: e6fcdd157e482c64db514b491dd68f86, type: 3}
@@ -22222,6 +22252,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 118024690}
+    - target: {fileID: 3531336176174805856, guid: 85631bb7c6690064bb2071481c7ce735, type: 3}
+      propertyPath: canvasRect
+      value: 
+      objectReference: {fileID: 1768137072}
+    - target: {fileID: 3531336176174805856, guid: 85631bb7c6690064bb2071481c7ce735, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 914959368}
+    - target: {fileID: 3531336176174805856, guid: 85631bb7c6690064bb2071481c7ce735, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 118024694}
     - target: {fileID: 4393808279442992543, guid: 85631bb7c6690064bb2071481c7ce735, type: 3}
       propertyPath: m_Layer
       value: 5
@@ -22327,7 +22369,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5089717582388843653, guid: 85631bb7c6690064bb2071481c7ce735, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8831572181240620936, guid: 85631bb7c6690064bb2071481c7ce735, type: 3}
       insertIndex: -1

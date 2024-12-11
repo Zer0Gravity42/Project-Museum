@@ -189,6 +189,8 @@ public class RangedFollower : Follower
         rb.velocity = firePoint.up * projectileSpeed;
         fireball.transform.rotation *= Quaternion.Euler(0, 0, -90);
 
+        PlaySound(shotgun);
+
         // Trigger camera shake for fireball shot
         cameraFollow.shakeMagnitude = fireballShotShakeMagnitude;
         cameraFollow.TriggerShake();
@@ -197,6 +199,7 @@ public class RangedFollower : Follower
         // Direction opposite of the firing direction
         Vector2 knockbackDirection = -firePoint.up;
         playerController.GetComponent<Rigidbody2D>().AddForce(knockbackDirection * fireballKnockbackForce, ForceMode2D.Impulse);
+
     }
 
     public void PlaySound(AudioClip clip)
