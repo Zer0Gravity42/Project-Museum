@@ -4195,6 +4195,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a929e0b436be9244b5f77f96fef9a76, type: 3}
+--- !u!114 &278871122 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2203905528858711746, guid: 85631bb7c6690064bb2071481c7ce735, type: 3}
+  m_PrefabInstance: {fileID: 2036908897}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &282081635 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6954590505583343400, guid: 6aba49076b7398644b3bc5872496a4f3, type: 3}
@@ -4208,6 +4219,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1485574184152146510, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: chargeBarUI
+      value: 
+      objectReference: {fileID: 278871122}
     - target: {fileID: 2658885101104753919, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -22222,6 +22237,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 118024690}
+    - target: {fileID: 4164834548113053138, guid: 85631bb7c6690064bb2071481c7ce735, type: 3}
+      propertyPath: offset.y
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164834548113053138, guid: 85631bb7c6690064bb2071481c7ce735, type: 3}
+      propertyPath: canvasRect
+      value: 
+      objectReference: {fileID: 1768137072}
+    - target: {fileID: 4164834548113053138, guid: 85631bb7c6690064bb2071481c7ce735, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 914959368}
+    - target: {fileID: 4164834548113053138, guid: 85631bb7c6690064bb2071481c7ce735, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 118024694}
     - target: {fileID: 4393808279442992543, guid: 85631bb7c6690064bb2071481c7ce735, type: 3}
       propertyPath: m_Layer
       value: 5
