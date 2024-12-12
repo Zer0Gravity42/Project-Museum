@@ -34,7 +34,15 @@ public class BossActivator : MonoBehaviour
             else
             {
                 GolemBoss golemBoss = boss.GetComponent<GolemBoss>();
-                golemBoss.ActivateHealthBar();
+                if(golemBoss != null)
+                {
+                    golemBoss.ActivateHealthBar();
+                }
+                else
+                {
+                    SkeletonBoss skeletonBoss= boss.GetComponent<SkeletonBoss>();
+                    skeletonBoss.ActivateHealthBar();
+                }
             }
             
             //Play the boss music

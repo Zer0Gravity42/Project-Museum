@@ -58,7 +58,7 @@ public class GolemBoss : basicEnemy
         base.Update();
         UpdateBossQuotePosition();
 
-        if(timer > 2.5)
+        if(timer > 2)
         {
             teleport();
             awake = false;
@@ -159,12 +159,12 @@ public class GolemBoss : basicEnemy
 
         anim.SetBool("teleportout", true);
 
-        if(timer > 3)
+        if(timer > 2.5)
         {
             anim.SetBool("teleportin", true);
             gameObject.transform.position = teleportPositon;
         }
-        if(timer>3.5)
+        if(timer>3)
         {
             timer = 1;
             awake= true;
