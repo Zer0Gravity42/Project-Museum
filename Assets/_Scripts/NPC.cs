@@ -11,13 +11,13 @@ public class NPC : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public TextMeshProUGUI dialogueName;
     public Image dialoguePortrait;
-    private int index = 0;
+    protected int index = 0;
 
     public float wordSpeed;
     public bool playerIsClose;
 
-    private Animalese _animalese;
-    private bool conversationOver = false;
+    protected Animalese _animalese;
+    protected bool conversationOver = false;
 
     [SerializeField] private string[] firstDialogue;      // For the first time (0)
     [SerializeField] private string[] secondDialogue;     // For 1-3 visits
@@ -26,8 +26,8 @@ public class NPC : MonoBehaviour
     
     // New serialized fields
     public DoorController doorController;
-    [SerializeField] private PlayerController playerController;
-    [SerializeField] private CameraFollow cameraFollow;
+    [SerializeField] protected PlayerController playerController;
+    [SerializeField] protected CameraFollow cameraFollow;
     [SerializeField] private Transform doorTransform;
     [SerializeField] private Transform cutsceneCameraTarget;
     
