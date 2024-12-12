@@ -34,7 +34,7 @@ public class MeleeSkeleton : Enemy
         {
             attackMode = true;
         }
-        if(distanceFromPlayer >2) 
+        if(!attackMode) 
         {
             anim.SetBool("canWalk", true);
             transform.position -= (Vector3)(directionToPlayer * speed * Time.deltaTime);
@@ -67,7 +67,7 @@ public class MeleeSkeleton : Enemy
                     weaponHitbox.ActivateHitbox();
                 }
             }     
-            if(timer > 0.6)
+            if(timer > 1.0)
             {
                 TriggerCooling();
             }
@@ -86,8 +86,6 @@ public class MeleeSkeleton : Enemy
             weaponHitbox.DeactivateHitbox();
         }
     }
-
-    // Select the closer target between the left and right limits
     
 
     // Flip the enemy to face the target
