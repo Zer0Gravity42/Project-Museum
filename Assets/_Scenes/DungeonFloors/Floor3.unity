@@ -9558,11 +9558,11 @@ PrefabInstance:
       objectReference: {fileID: 3526854275416675196}
     - target: {fileID: 3672597162103819736, guid: bedc60413b7acdc419492368ad93d745, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -25.73
       objectReference: {fileID: 0}
     - target: {fileID: 3672597162103819736, guid: bedc60413b7acdc419492368ad93d745, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 30.25
       objectReference: {fileID: 0}
     - target: {fileID: 3672597162103819736, guid: bedc60413b7acdc419492368ad93d745, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10023,7 +10023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boss: {fileID: 1915238255}
-  bossSpawnPosition: {x: -7.153113, y: 0, z: 0}
+  bossSpawnPosition: {x: -45, y: 29, z: 0}
   dungeonController: {fileID: 1291409926}
 --- !u!61 &543145641
 BoxCollider2D:
@@ -10057,7 +10057,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.61666507, y: -0.29010156}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -10068,7 +10068,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4.6019397, y: 0.41979688}
   m_EdgeRadius: 0
 --- !u!4 &543145642
 Transform:
@@ -10079,7 +10079,7 @@ Transform:
   m_GameObject: {fileID: 543145639}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7065366, w: 0.7076766}
-  m_LocalPosition: {x: -22, y: -20.61, z: -0.1072871}
+  m_LocalPosition: {x: -56.32, y: 6.32, z: -0.1072871}
   m_LocalScale: {x: 1, y: 6.635096, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17342,11 +17342,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4713160907097683786, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -24.63
       objectReference: {fileID: 0}
     - target: {fileID: 4713160907097683786, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 30.71
       objectReference: {fileID: 0}
     - target: {fileID: 4713160907097683786, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: m_LocalPosition.z

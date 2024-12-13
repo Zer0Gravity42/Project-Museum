@@ -21,13 +21,14 @@ public class SkeletonBoss : Enemy
     private float teleportTime = 0.0f;
     private float3 teleportPositon;
     private bool teleportStart = false;
+    private bool flipped = false;
 
     // Start is called before the first frame update
     protected override void setSpeedAndHealth()
     {
         maxHealth = 75;
         health = maxHealth;
-        speed = 3;
+        speed = 2;
         anim = GetComponent<Animator>();
         Transform hitboxTransform = transform.Find("Hitbox");
         if (hitboxTransform != null)
@@ -57,9 +58,22 @@ public class SkeletonBoss : Enemy
         StartCoroutine(ShowBossCaption());
     }
 
+    public override void takeDamage(int damage)
+    {
+        base.takeDamage(damage);
+        UpdateHealthBar();
+    }
+
     protected override void Update()
     {
         base.Update();
+
+        teleportTime += Time.deltaTime;
+
+        if (teleportTime >= 3 && flipped)
+        {
+            teleport();
+        }
 
         if (health <= 0 && !isDead)
         {
@@ -83,8 +97,7 @@ public class SkeletonBoss : Enemy
 
     protected override void move()
     {
-        teleportTime += Time.deltaTime;
-        if (distanceFromPlayer <= 5 && distanceFromPlayer >= 2 && !cooling)
+        if (distanceFromPlayer <= 5 && distanceFromPlayer >= 3 && !cooling)
         {
             Flip();
             attackMode = true;
@@ -92,24 +105,16 @@ public class SkeletonBoss : Enemy
         if (!attackMode)
         {
             anim.SetBool("canWalk", true);
-            if(distanceFromPlayer > 2)
+            if(distanceFromPlayer > 3)
             {
-                Debug.Log("hg");
                 transform.position -= (Vector3)(directionToPlayer * speed * Time.deltaTime);
                 Flip();
             }
             else
-            {
-                if(teleportTime > 2)
-                {
-                    teleport();
-                    awake= false;
-                }
-                else
-                {
-                    transform.position += (Vector3)(directionToPlayer * speed * Time.deltaTime);
-                    NegativeFlip();
-                }
+            { 
+                Debug.Log("d");
+                transform.position += (Vector3)(directionToPlayer * speed * Time.deltaTime);
+                NegativeFlip();
             }
         }
         if (cooling)
@@ -126,22 +131,30 @@ public class SkeletonBoss : Enemy
     {
         if (attackMode)
         {
-            if (timer > 2.5)
+            if (timer > 2)
             {
                 timer = 0;
                 anim.SetBool("attack", true);
+                if (weaponHitbox != null)
+                {
+                    weaponHitbox.ActivateHitbox();
+                }
             }
             if(timer>1.4)
             {
                 anim.SetBool("attack", false);
                 attackMode = false;
                 cooling = true;
+                if (weaponHitbox != null)
+                {
+                    weaponHitbox.DeactivateHitbox();
+                }
             }
             if(timer >0.4 && timer < 0.6)
             {
                 transform.position -= (Vector3)(directionToPlayer * speed * 2 * Time.deltaTime);
             }
-            if (timer > 1.05 && timer < 1.25)
+            if (timer > 1 && timer < 1.2)
             {
                 transform.position -= (Vector3)(directionToPlayer * speed * 2 * Time.deltaTime);
             }
@@ -154,20 +167,21 @@ public class SkeletonBoss : Enemy
         {
             teleportPositon.x = transform.position.x - 5;
             teleportPositon.y = transform.position.y;
+            teleportTime = 3;
         }
         teleportStart = true;
+        awake = false;
         anim.SetBool("awake", false);
-
         anim.SetBool("teleportout", true);
 
-        if (timer > 2.5)
+        if (teleportTime > 3.5)
         {
             anim.SetBool("teleportin", true);
             transform.position = teleportPositon;
         }
-        if (timer > 3)
+        if (teleportTime > 4)
         {
-            timer = 1;
+            teleportTime = 0;
             awake = true;
             teleportStart = false;
             anim.SetBool("awake", true);
@@ -188,7 +202,7 @@ public class SkeletonBoss : Enemy
         {
             rotation.y = 0;
         }
-
+        flipped = false;
         transform.eulerAngles = rotation;
     }
     public void NegativeFlip()
@@ -202,7 +216,7 @@ public class SkeletonBoss : Enemy
         {
             rotation.y = 180;
         }
-
+        flipped = true;
         transform.eulerAngles = rotation;
     }
 
