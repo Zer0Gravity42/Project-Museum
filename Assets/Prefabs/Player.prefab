@@ -9947,12 +9947,12 @@ MonoBehaviour:
   dashSpeed: 30
   dashDuration: 0.2
   dashCooldown: 1
-  canDash: 1
+  canDash: 0
   isDashing: 0
   afterImageInterval: 0.04
   golemSprite: {fileID: 930655085, guid: fc12778e62232624c8e38b96418dbac8, type: 3}
   canMove: 1
-  canTransform: 1
+  canTransform: 0
   golemAttackClip: {fileID: 7400000, guid: 363555414b93a83429fbd7f8383cd48c, type: 2}
   golemHitbox: {fileID: 6819479954847253560}
   attackSound: {fileID: 8300000, guid: b7f8695cf65a4f24eb37544298821146, type: 3}

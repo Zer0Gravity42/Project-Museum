@@ -99,7 +99,11 @@ public class PlayerController : MonoBehaviour
         // Save the original player sprite at the start
         originalSprite = spriteRenderer.sprite;
         originalScale = transform.localScale;
+        // Find the SwordFollower child object
+        SwordFollower swordFollower = GetComponentInChildren<SwordFollower>();
 
+        //Find the rangedFollower child object
+        RangedFollower rangedFol = GetComponentInChildren<RangedFollower>();
         // Initialize health from PersistentDataManager
         if (PersistentDataManager.Instance != null)
         {
@@ -124,15 +128,21 @@ public class PlayerController : MonoBehaviour
             canTransform = true;
         }
         #endregion
-        //#region SuperSword: if an Artifact with an ID of 3 is equipped in either slots, allow the player to use the super sword
-        //if (tempManager.GetComponent<MainManager>().equippedSlotOneId == 3 || tempManager.GetComponent<MainManager>().equippedSlotTwoId == 3)
-        //{
-        //    canDash = true;
-        //}
-        //#endregion
+        #region SuperSword: if an Artifact with an ID of 3 is equipped in either slots, allow the player to use the super sword
+        if (tempManager.GetComponent<MainManager>().equippedSlotOneId == 3 || tempManager.GetComponent<MainManager>().equippedSlotTwoId == 3)
+        {
+            swordFollower.artifactActive = true;
+        }
+        #endregion
+        #region Fireball: if an Artifact with an ID of 4 is equipped in either slots, allow the player to use the super sword
+        if (tempManager.GetComponent<MainManager>().equippedSlotOneId == 4 || tempManager.GetComponent<MainManager>().equippedSlotTwoId == 4)
+        {
+            rangedFol.fireArtifactActive = true;
+        }
+        #endregion
 
         //IF THE SCENE IS IN THE MUSEUM NO ARTIFACT POWERS WE DONT WANT OUR CUSTOMERS TO DIE
-        if(SceneManager.GetActiveScene().name == "Museum")
+        if (SceneManager.GetActiveScene().name == "Museum")
         {
             ToggleAllArtifacts(false);
         }
