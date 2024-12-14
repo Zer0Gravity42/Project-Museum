@@ -11022,6 +11022,18 @@ PrefabInstance:
       propertyPath: normalShotShakeMagnitude
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: artifactActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: comboResetTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: flyingDistance
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3080769868798930617, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: m_Name
       value: Player
