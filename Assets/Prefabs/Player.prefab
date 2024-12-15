@@ -10578,15 +10578,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b340f26b30459a4da48d1902d073d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  artifactActive: 0
+  artifactActive: 1
   swingDuration: 0.2
   thrustDuration: 0.2
-  comboResetTime: 1
-  flyingDistance: 1
+  comboResetTime: 3
+  flyingDistance: 5
   rotateSpeed: 7
   speedLines: {fileID: 7648502877234644673}
   audioSourceOnce: {fileID: 5468875776821418049}
   swordSwing: {fileID: 8300000, guid: 5c702f62b72485040bba34733d56adc1, type: 3}
+  ghostSwordPrefab: {fileID: 2180741236866045477, guid: 2809460ca88c32944ba1470e62f1ef51, type: 3}
+  ghostSwordCooldown: 0
+  ghostSwordCooldownUI: {fileID: 0}
 --- !u!114 &3430574100151773556
 MonoBehaviour:
   m_ObjectHideFlags: 0
