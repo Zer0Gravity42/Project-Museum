@@ -9291,6 +9291,14 @@ PrefabInstance:
       propertyPath: audioSourceOnce
       value: 
       objectReference: {fileID: 1801903170}
+    - target: {fileID: 2658885101104753919, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0.003238678
+      objectReference: {fileID: 0}
+    - target: {fileID: 2658885101104753919, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.13923645
+      objectReference: {fileID: 0}
     - target: {fileID: 3080769868798930617, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: m_Name
       value: Player
