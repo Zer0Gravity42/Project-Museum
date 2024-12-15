@@ -11024,7 +11024,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: artifactActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: comboResetTime
@@ -11033,6 +11033,18 @@ PrefabInstance:
     - target: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: flyingDistance
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: ghostSwordPrefab
+      value: 
+      objectReference: {fileID: 2180741236866045477, guid: 2809460ca88c32944ba1470e62f1ef51, type: 3}
+    - target: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: ghostSwordCooldown
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2658885101104753919, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: m_PreviewTimeScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3080769868798930617, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: m_Name
