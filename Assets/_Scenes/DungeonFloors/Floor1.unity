@@ -1538,11 +1538,6 @@ MonoBehaviour:
   bossNameLabel: {fileID: 0}
   bossQuoteLabel: {fileID: 987220856}
   enemySpawn: {fileID: 9023326529117949394, guid: 104acf9c5c866774fbe5ac8be7a567ba, type: 3}
---- !u!198 &572903326 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5422477009580412773, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
-  m_PrefabInstance: {fileID: 1052128724878336216}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &583433278 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5233898857969991977, guid: 00b2a50648cd22c4ea8ee403d65fe32e, type: 3}
@@ -11249,37 +11244,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 571728017784480758, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 9.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 571728017784480758, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 1485574184152146510, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: chargeBarUI
       value: 
       objectReference: {fileID: 819528436}
-    - target: {fileID: 1485574184152146510, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
-      propertyPath: maxEmissionRate
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1485574184152146510, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
-      propertyPath: maxParticleSize
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1485574184152146510, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
-      propertyPath: chargingParticles
-      value: 
-      objectReference: {fileID: 572903326}
-    - target: {fileID: 1485574184152146510, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
-      propertyPath: normalShotShakeMagnitude
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: artifactActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: comboResetTime
@@ -11290,16 +11261,16 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
-      propertyPath: ghostSwordPrefab
-      value: 
-      objectReference: {fileID: 2180741236866045477, guid: 2809460ca88c32944ba1470e62f1ef51, type: 3}
-    - target: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: ghostSwordCooldown
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2658885101104753919, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
-      propertyPath: m_PreviewTimeScale
-      value: 1
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2658885101104753919, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.21673584
       objectReference: {fileID: 0}
     - target: {fileID: 3080769868798930617, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: m_Name
@@ -11345,14 +11316,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5081957454757948479, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8452144706355131449, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: cooldownBar
       value: 
       objectReference: {fileID: 96288926}
+    - target: {fileID: 8452144706355131449, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: canTransform
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8452144706355131449, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: weaponManager
       value: 

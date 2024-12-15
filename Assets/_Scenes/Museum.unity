@@ -423,6 +423,9 @@ MonoBehaviour:
   speedLines: {fileID: 2101414313}
   audioSourceOnce: {fileID: 16870245}
   swordSwing: {fileID: 8300000, guid: 5c702f62b72485040bba34733d56adc1, type: 3}
+  ghostSwordPrefab: {fileID: 2180741236866045477, guid: 2809460ca88c32944ba1470e62f1ef51, type: 3}
+  ghostSwordCooldown: 5
+  ghostSwordCooldownUI: {fileID: 0}
 --- !u!114 &16870248
 MonoBehaviour:
   m_ObjectHideFlags: 0
