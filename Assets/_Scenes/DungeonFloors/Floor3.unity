@@ -1461,7 +1461,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1777877546}
         m_TargetAssemblyTypeName: ElevatorController, Assembly-CSharp
         m_MethodName: LoadFloor2
         m_Mode: 1
@@ -2645,7 +2645,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1777877546}
         m_TargetAssemblyTypeName: ElevatorController, Assembly-CSharp
         m_MethodName: LoadFloor1
         m_Mode: 1
@@ -3397,7 +3397,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1777877546}
         m_TargetAssemblyTypeName: ElevatorController, Assembly-CSharp
         m_MethodName: CloseElevatorUI
         m_Mode: 1
@@ -4930,6 +4930,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1769827821}
   m_CullTransparentMesh: 1
+--- !u!114 &1777877546 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3177051808426777615, guid: 2ed9ca0d79e742f488077503c98745d8, type: 3}
+  m_PrefabInstance: {fileID: 2010084072}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28c84a6edad449d4bb4c65419b54a3d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1801903163 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
@@ -5120,7 +5131,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1777877546}
         m_TargetAssemblyTypeName: ElevatorController, Assembly-CSharp
         m_MethodName: LoadFloor4
         m_Mode: 1
@@ -9167,7 +9178,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1777877546}
         m_TargetAssemblyTypeName: ElevatorController, Assembly-CSharp
         m_MethodName: LoadFloor3
         m_Mode: 1
