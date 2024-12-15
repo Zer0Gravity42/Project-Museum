@@ -10995,7 +10995,7 @@ PrefabInstance:
       objectReference: {fileID: 819528436}
     - target: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: artifactActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: comboResetTime
@@ -11008,6 +11008,14 @@ PrefabInstance:
     - target: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: ghostSwordCooldown
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2658885101104753919, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2658885101104753919, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.21673584
       objectReference: {fileID: 0}
     - target: {fileID: 3080769868798930617, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: m_Name
@@ -11057,6 +11065,10 @@ PrefabInstance:
       propertyPath: cooldownBar
       value: 
       objectReference: {fileID: 96288926}
+    - target: {fileID: 8452144706355131449, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: canTransform
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8452144706355131449, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: weaponManager
       value: 
