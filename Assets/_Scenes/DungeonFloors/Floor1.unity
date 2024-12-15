@@ -765,11 +765,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6211499522843616133, guid: 22f8f26bdbaaab24fb1a079091844792, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.46
+      value: 1.99
       objectReference: {fileID: 0}
     - target: {fileID: 6211499522843616133, guid: 22f8f26bdbaaab24fb1a079091844792, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.16
+      value: -10.95
       objectReference: {fileID: 0}
     - target: {fileID: 6211499522843616133, guid: 22f8f26bdbaaab24fb1a079091844792, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11420,7 +11420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: firstDialogue.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: thirdDialogue.Array.size
@@ -11432,27 +11432,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: defaultDialogue.Array.size
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: firstDialogue.Array.data[0]
-      value: This is my first dialogue
+      value: First time down here huh? Well good luck.
       objectReference: {fileID: 0}
     - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: firstDialogue.Array.data[1]
-      value: It plays on Day 1 only
+      value: Paul is waiting for you at the end. Let's see if you got what it takes.
       objectReference: {fileID: 0}
     - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: firstDialogue.Array.data[2]
-      value: Okay door time.
+      value: You'll have to grab the key to the west before you head in.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
+      propertyPath: firstDialogue.Array.data[3]
+      value: Try not to die.
       objectReference: {fileID: 0}
     - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: thirdDialogue.Array.data[0]
-      value: This is my third dialogue
+      value: Hey, welcome back. How's the artifact hunting going?
       objectReference: {fileID: 0}
     - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: thirdDialogue.Array.data[1]
-      value: Day 4 only. Okay door time.
+      value: Some of the stuff down here can be really usefull yeah.
       objectReference: {fileID: 0}
     - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: secondDialogue.Array.data[0]
@@ -11460,15 +11464,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: secondDialogue.Array.data[1]
-      value: This is my dialogue that plays on day 2 and 3.
+      value: Make sure you're thorough when you look around, you never know what
+        you'll find.
       objectReference: {fileID: 0}
     - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: secondDialogue.Array.data[2]
-      value: Open Says me.
+      value: Be carefull
       objectReference: {fileID: 0}
     - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: defaultDialogue.Array.data[0]
-      value: This is my default Dialogue
+      value: Ah, hello again curator. Good Luck out there!
       objectReference: {fileID: 0}
     - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: defaultDialogue.Array.data[1]

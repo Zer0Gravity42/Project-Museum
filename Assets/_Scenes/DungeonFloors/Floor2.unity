@@ -22450,7 +22450,7 @@ PrefabInstance:
     - target: {fileID: 857238431716508478, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -363660510, guid: 75477b667145c904590d76eaaf307976, type: 3}
+      objectReference: {fileID: -573238354, guid: 75477b667145c904590d76eaaf307976, type: 3}
     - target: {fileID: 3807756296809479664, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -22537,12 +22537,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: myName
-      value: Curious Mage
+      value: The Archer
       objectReference: {fileID: 0}
     - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: myPortrait
       value: 
-      objectReference: {fileID: -363660510, guid: 75477b667145c904590d76eaaf307976, type: 3}
+      objectReference: {fileID: -573238354, guid: 75477b667145c904590d76eaaf307976, type: 3}
     - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: dialogueName
       value: 
@@ -22570,6 +22570,58 @@ PrefabInstance:
     - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
       propertyPath: dialogue.Array.data[1]
       value: Watch your step in this area, lots of loose rocks
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
+      propertyPath: firstDialogue.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
+      propertyPath: thirdDialogue.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
+      propertyPath: secondDialogue.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
+      propertyPath: defaultDialogue.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
+      propertyPath: firstDialogue.Array.data[0]
+      value: Hey there, don't mind me. I had to take a quick break.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
+      propertyPath: firstDialogue.Array.data[1]
+      value: This area tires me out, I always have to watch my step with all the
+        rocks.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
+      propertyPath: thirdDialogue.Array.data[0]
+      value: Hey there, don't mind me. I had to take a quick break.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
+      propertyPath: thirdDialogue.Array.data[1]
+      value: This area tires me out, I always have to watch my step with all the
+        rocks.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
+      propertyPath: secondDialogue.Array.data[0]
+      value: Hey there, don't mind me. I had to take a quick break.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
+      propertyPath: secondDialogue.Array.data[1]
+      value: This area tires me out, I always have to watch my step with all the
+        rocks.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
+      propertyPath: defaultDialogue.Array.data[0]
+      value: Hey there, don't mind me. I had to take a quick break.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080798478938009902, guid: f7b1489a206515c45991dea79bada47a, type: 3}
+      propertyPath: defaultDialogue.Array.data[1]
+      value: This area tires me out, I always have to watch my step with all the
+        rocks.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

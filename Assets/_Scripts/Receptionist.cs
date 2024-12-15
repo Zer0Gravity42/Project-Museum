@@ -28,7 +28,7 @@ public class ReceptionistNPC : NPC
                 else
                 {
                     // Regular dialogue when conditions aren't met
-                    dialogue = new string[] { "Welcome to the museum!" };
+                    dialogue = new string[] { "Welcome to the museum! Check with me to receive boosts when you haave enough artifacts." };
                 }
             }
 
