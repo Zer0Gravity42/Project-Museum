@@ -4371,7 +4371,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ba6d84da1f94bc8b5410f84e1f1616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUp: Allows your sword to whirl around you and unleash devastating damage.
+  popUp: 'Press F: Allows your sword to whirl around you and unleash devastating
+    damage.'
   receivedMessage: 0
   ArtifactSpriteReference: {fileID: 1797541840, guid: 75477b667145c904590d76eaaf307976, type: 3}
   ArtifactID: 3
@@ -13178,8 +13179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ba6d84da1f94bc8b5410f84e1f1616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUp: Found after fending off the evil spirit of Paul, harness this artifact's
-    rugged strength to pummel your foes,
+  popUp: 'Press T: Found after fending off the evil spirit of Paul, harness this
+    artifact''s rugged strength to pummel your foes,'
   receivedMessage: 0
   ArtifactSpriteReference: {fileID: 615463281, guid: 5943ee4e040ad0b478476a1e7b4c7ba6, type: 3}
   ArtifactID: 2
