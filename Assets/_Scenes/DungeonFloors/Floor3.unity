@@ -617,7 +617,7 @@ PrefabInstance:
     - target: {fileID: 4919479632642997544, guid: 497f638ec6eb19c46bbb2a8c98130ecb, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1217481225}
     - target: {fileID: 4919479632642997544, guid: 497f638ec6eb19c46bbb2a8c98130ecb, type: 3}
       propertyPath: mainCanvas
       value: 
@@ -4110,7 +4110,7 @@ PrefabInstance:
     - target: {fileID: 4919479632642997544, guid: 497f638ec6eb19c46bbb2a8c98130ecb, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1217481225}
     - target: {fileID: 4919479632642997544, guid: 497f638ec6eb19c46bbb2a8c98130ecb, type: 3}
       propertyPath: mainCanvas
       value: 
@@ -4195,7 +4195,7 @@ PrefabInstance:
     - target: {fileID: 4919479632642997544, guid: 497f638ec6eb19c46bbb2a8c98130ecb, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1217481225}
     - target: {fileID: 4919479632642997544, guid: 497f638ec6eb19c46bbb2a8c98130ecb, type: 3}
       propertyPath: mainCanvas
       value: 
