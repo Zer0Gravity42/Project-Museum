@@ -71,7 +71,7 @@ public class SwordFollower : Follower
         }
 
         // Press F to spawn ghost sword (orbit + artifact logic on its own script)
-        if (Input.GetKeyDown(KeyCode.F) && ghostSwordCooldownTimer <= 0f)
+        if (Input.GetKeyDown(KeyCode.F) && ghostSwordCooldownTimer <= 0f && artifactActive)
         {
             ghostSwordCooldownTimer = ghostSwordCooldown;
             if (ghostSwordPrefab != null)
