@@ -7161,6 +7161,10 @@ PrefabInstance:
       propertyPath: buttonFloor4
       value: 
       objectReference: {fileID: 2053649537}
+    - target: {fileID: 3177051808426777615, guid: 2ed9ca0d79e742f488077503c98745d8, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 118024690}
     - target: {fileID: 3269124616047352737, guid: 2ed9ca0d79e742f488077503c98745d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.24594243

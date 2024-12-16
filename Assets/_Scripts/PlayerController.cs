@@ -364,7 +364,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed", movementDirection.sqrMagnitude);  // Use square magnitude to determine if the player is moving
     }
 
-    private void UpdateManagerInfo()
+    public void UpdateManagerInfo()
     {
         GameObject tempManager = GameObject.FindGameObjectWithTag("MainManager");
         tempManager.SendMessage("AddAllToPermanents");

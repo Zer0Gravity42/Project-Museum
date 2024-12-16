@@ -9,7 +9,9 @@ public class ElevatorController : MonoBehaviour
     [SerializeField] GameObject buttonFloor2;
     [SerializeField] GameObject buttonFloor3;
     [SerializeField] GameObject buttonFloor4;
-    
+
+    [SerializeField] PlayerController playerController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class ElevatorController : MonoBehaviour
     public void OpenElevatorUI()
     {
         elevatorUI.SetActive(true);
+        
     }
     
     public void CloseElevatorUI()
@@ -35,21 +38,25 @@ public class ElevatorController : MonoBehaviour
     //Loading Floors
     public void LoadFloor1()
     {
+        playerController.UpdateManagerInfo();
         UnityEngine.SceneManagement.SceneManager.LoadScene("Floor1");
     }
     
     public void LoadFloor2()
     {
+        playerController.UpdateManagerInfo();
         UnityEngine.SceneManagement.SceneManager.LoadScene("Floor2");
     }
     
     public void LoadFloor3()
     {
+        playerController.UpdateManagerInfo();
         UnityEngine.SceneManagement.SceneManager.LoadScene("Floor3");
     }
     
     public void LoadFloor4()
     {
+        playerController.UpdateManagerInfo();
         UnityEngine.SceneManagement.SceneManager.LoadScene("Floor4");
     }
     

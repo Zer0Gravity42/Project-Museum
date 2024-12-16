@@ -9070,6 +9070,10 @@ PrefabInstance:
       propertyPath: buttonFloor4
       value: 
       objectReference: {fileID: 1802689493}
+    - target: {fileID: 3177051808426777615, guid: 2ed9ca0d79e742f488077503c98745d8, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 1052128724878336217}
     - target: {fileID: 3269124616047352737, guid: 2ed9ca0d79e742f488077503c98745d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.69203913
@@ -9461,6 +9465,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+--- !u!114 &1052128724878336217 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8452144706355131449, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+  m_PrefabInstance: {fileID: 1052128724878336216}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217481225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc77ca84f828c784aa951f70a4e45d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &3526854275416675196 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4713160907097683786, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
