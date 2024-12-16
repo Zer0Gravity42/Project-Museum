@@ -233,7 +233,7 @@ public class PlayerController : MonoBehaviour
     public void die()
     {
         ClearTempManagerObjects();
-        Application.LoadLevel("Main Menu");
+        Application.LoadLevel("Museum");
     }
 
     private void ToggleAllArtifacts(bool x)
@@ -363,6 +363,13 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed", movementDirection.sqrMagnitude);  // Use square magnitude to determine if the player is moving
     }
 
+    private void UpdateArtifactStorage()
+    {
+        GameObject tempManager = GameObject.FindGameObjectWithTag("MainManager");
+        tempManager.SendMessage("AddAllToPermanents");
+        ClearTempManagerObjects();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -376,18 +383,18 @@ public class PlayerController : MonoBehaviour
 
         if (collision.tag == "MuseumPortal")
         {
-            GameObject tempManager = GameObject.FindGameObjectWithTag("MainManager");
-            tempManager.SendMessage("AddAllToPermanents");
-            ClearTempManagerObjects();
+            UpdateArtifactStorage();
             Application.LoadLevel("Museum"); //loads the dungeon system
         }
         if(collision.tag == "Level2Portal")
         {
+            UpdateArtifactStorage();
             //do something here to open level 2 on the elevator ex if level 2 = false level2 = true and mainmanager.setelevatorlevel(2))
             Application.LoadLevel("Floor2");
         }
         if (collision.tag == "Level3Portal")
-        {
+        {   
+            UpdateArtifactStorage();
             //do something here to open level 2 on the elevator ex if level 2 = false level2 = true and mainmanager.setelevatorlevel(2))
             Application.LoadLevel("Floor3");
         }
