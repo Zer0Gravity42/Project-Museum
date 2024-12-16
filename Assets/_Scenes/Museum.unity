@@ -414,7 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b340f26b30459a4da48d1902d073d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  artifactActive: 0
+  artifactActive: 1
   swingDuration: 0.2
   thrustDuration: 0.2
   comboResetTime: 1
