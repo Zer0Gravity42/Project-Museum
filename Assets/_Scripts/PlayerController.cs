@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
         SwordFollower swordFollower = GetComponentInChildren<SwordFollower>();
 
         //Find the rangedFollower child object
-        RangedFollower rangedFol = GetComponentInChildren<RangedFollower>();
+        RangedFollower rangedFol = GetComponentInChildren<RangedFollower>(true);
         // Initialize health from PersistentDataManager
         if (PersistentDataManager.Instance != null)
         {
@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour
             swordFollower.artifactActive = true;
         }
         #endregion
-        #region Fireball: if an Artifact with an ID of 4 is equipped in either slots, allow the player to use the super sword
+        #region Fireball: if an Artifact with an ID of 4 is equipped in either slots, allow the player to use the shotgun artifact
         if (tempManager.GetComponent<MainManager>().equippedSlotOneId == 4 || tempManager.GetComponent<MainManager>().equippedSlotTwoId == 4)
         {
             rangedFol.fireArtifactActive = true;

@@ -5639,6 +5639,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5355275263961639403, guid: b0447261b91325243b3eda0c330dc7a8, type: 3}
+      propertyPath: permanentArtifactIds.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355275263961639403, guid: b0447261b91325243b3eda0c330dc7a8, type: 3}
+      propertyPath: permanentArtifactIds.Array.data[0]
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11333,6 +11341,10 @@ PrefabInstance:
       propertyPath: chargeBarUI
       value: 
       objectReference: {fileID: 819528436}
+    - target: {fileID: 1485574184152146510, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+      propertyPath: fireArtifactActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1855162459133030699, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
       propertyPath: artifactActive
       value: 0
