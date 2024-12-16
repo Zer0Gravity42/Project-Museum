@@ -389,7 +389,13 @@ public class PlayerController : MonoBehaviour
             UpdateManagerInfo();
             Application.LoadLevel("Museum"); //loads the dungeon system
         }
-        if(collision.tag == "Level2Portal")
+        if (collision.tag == "CombatTutorialPortal")
+        {
+            UpdateManagerInfo();
+            Application.LoadLevel("CombatTutorial"); //loads the combat tutorial
+
+        }
+        if (collision.tag == "Level2Portal")
         {
             UpdateManagerInfo();
             //do something here to open level 2 on the elevator ex if level 2 = false level2 = true and mainmanager.setelevatorlevel(2))

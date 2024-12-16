@@ -89,7 +89,7 @@ public class InteractionObject : MonoBehaviour
 
     void DoExitTutorial()
     {
-        Application.LoadLevel("Museum");
+        Application.LoadLevel("CombatTutorial");
     }
     
     void DoSleep()

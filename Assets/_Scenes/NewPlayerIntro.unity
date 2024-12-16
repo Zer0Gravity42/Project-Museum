@@ -2924,12 +2924,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4239923407971735781, guid: 6117f887359b8f24dae02013c35469a3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.30293
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239923407971735781, guid: 6117f887359b8f24dae02013c35469a3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.30293
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239923407971735781, guid: 6117f887359b8f24dae02013c35469a3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.43431
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239923407971735781, guid: 6117f887359b8f24dae02013c35469a3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.982455
+      value: -4.28
       objectReference: {fileID: 0}
     - target: {fileID: 4239923407971735781, guid: 6117f887359b8f24dae02013c35469a3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.16
+      value: 12.8
       objectReference: {fileID: 0}
     - target: {fileID: 4239923407971735781, guid: 6117f887359b8f24dae02013c35469a3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5073,7 +5085,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 93.391945, y: 19.36713, z: 104.16644, w: 30.150518}
+  m_margin: {x: 92.73562, y: 19.317905, z: 101.70524, w: 30.150518}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5111,7 +5123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61c54001e275248f788980018d8f77a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: To Museum
+  message: To Combat Tutorial
 --- !u!19719996 &1597016836
 TilemapCollider2D:
   m_ObjectHideFlags: 0

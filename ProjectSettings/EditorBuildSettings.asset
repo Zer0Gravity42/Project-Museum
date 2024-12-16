@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/NewPlayerIntro.unity
     guid: b4cfe112b0c0afd4593610d9b690a342
+  - enabled: 1
+    path: Assets/_Scenes/CombatTutorial.unity
+    guid: e6a825a5b6a6f7b409b6936af227f746
   m_configObjects: {}
