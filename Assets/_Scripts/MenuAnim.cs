@@ -9,6 +9,8 @@ public class MenuAnim : MonoBehaviour
 
     public void MenuMove()
     {
+
         anim.SetTrigger("move");
+
     }
 }

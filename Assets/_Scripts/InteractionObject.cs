@@ -92,4 +92,8 @@ public class InteractionObject : MonoBehaviour
         Application.LoadLevel("Museum");
     }
     
+    void DoSleep()
+    {
+        gameObject.GetComponent<Couch>().receivedMessage = true;
+    }
 }

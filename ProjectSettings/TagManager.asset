@@ -18,6 +18,7 @@ TagManager:
   - TrainingRoomEnter
   - Level2Portal
   - Level3Portal
+  - sleepMask
   layers:
   - Default
   - TransparentFX
