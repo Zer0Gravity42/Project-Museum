@@ -4225,6 +4225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   receivedMessage: 0
+  sleepMaskObject: {fileID: 1605425766}
   sleepMask: {fileID: 1605425768}
   playerController: {fileID: 729914817}
 --- !u!1 &680699596
@@ -5879,6 +5880,26 @@ PrefabInstance:
     - target: {fileID: 4687076234405728730, guid: b0447261b91325243b3eda0c330dc7a8, type: 3}
       propertyPath: m_Name
       value: MainManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355275263961639403, guid: b0447261b91325243b3eda0c330dc7a8, type: 3}
+      propertyPath: permanentArtifactIds.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355275263961639403, guid: b0447261b91325243b3eda0c330dc7a8, type: 3}
+      propertyPath: permanentArtifactIds.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355275263961639403, guid: b0447261b91325243b3eda0c330dc7a8, type: 3}
+      propertyPath: permanentArtifactIds.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355275263961639403, guid: b0447261b91325243b3eda0c330dc7a8, type: 3}
+      propertyPath: permanentArtifactIds.Array.data[2]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5355275263961639403, guid: b0447261b91325243b3eda0c330dc7a8, type: 3}
+      propertyPath: permanentArtifactIds.Array.data[3]
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13987,8 +14008,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1991.68, y: 1150}
+  m_AnchoredPosition: {x: 12.4278, y: 1.5494}
+  m_SizeDelta: {x: 1962.4222, y: 1117.0403}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1605425768
 Animator:
