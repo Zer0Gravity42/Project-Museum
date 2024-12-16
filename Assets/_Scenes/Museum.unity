@@ -6373,10 +6373,13 @@ MonoBehaviour:
   dialoguePortrait: {fileID: 133263633}
   wordSpeed: 0
   playerIsClose: 0
-  firstDialogue: []
-  secondDialogue: []
+  firstDialogue:
+  - Welcome to the Museum! Any artifacts you bring back I'll collect for you.
+  secondDialogue:
+  - Feel free to take the artifacts you! Each has a unique ability.
   thirdDialogue: []
-  defaultDialogue: []
+  defaultDialogue:
+  - Welcome to the museum! Check with me to receive boosts when you have enough artifacts.
   doorController: {fileID: 0}
   playerController: {fileID: 729914817}
   cameraFollow: {fileID: 1656079381}
