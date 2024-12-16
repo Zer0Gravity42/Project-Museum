@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using UnityEditor;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class basicEnemy : Enemy
