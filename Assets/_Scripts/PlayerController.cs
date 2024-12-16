@@ -364,13 +364,22 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed", movementDirection.sqrMagnitude);  // Use square magnitude to determine if the player is moving
     }
 
-    public void UpdateManagerInfo()
+    public void UpdateManagerInfo(int floorLevel)
     {
         GameObject tempManager = GameObject.FindGameObjectWithTag("MainManager");
         tempManager.SendMessage("AddAllToPermanents");
         ClearTempManagerObjects();
 
         SaveHealth();
+
+        if(floorLevel== 2) 
+        {
+            tempManager.SendMessage("LevelTwoElevatorOpen");
+        }
+        if (floorLevel == 3)
+        {
+            tempManager.SendMessage("LevelThreeElevatorOpen");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -386,24 +395,24 @@ public class PlayerController : MonoBehaviour
 
         if (collision.tag == "MuseumPortal")
         {
-            UpdateManagerInfo();
+            UpdateManagerInfo(0);
             Application.LoadLevel("Museum"); //loads the dungeon system
         }
         if (collision.tag == "CombatTutorialPortal")
         {
-            UpdateManagerInfo();
+            UpdateManagerInfo(1);
             Application.LoadLevel("CombatTutorial"); //loads the combat tutorial
 
         }
         if (collision.tag == "Level2Portal")
         {
-            UpdateManagerInfo();
+            UpdateManagerInfo(2);
             //do something here to open level 2 on the elevator ex if level 2 = false level2 = true and mainmanager.setelevatorlevel(2))
             Application.LoadLevel("Floor2");
         }
         if (collision.tag == "Level3Portal")
         {   
-            UpdateManagerInfo();
+            UpdateManagerInfo(3);
             //do something here to open level 2 on the elevator ex if level 2 = false level2 = true and mainmanager.setelevatorlevel(2))
             Application.LoadLevel("Floor3");
         }

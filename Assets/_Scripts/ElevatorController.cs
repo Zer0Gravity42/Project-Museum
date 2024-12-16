@@ -11,11 +11,14 @@ public class ElevatorController : MonoBehaviour
     [SerializeField] GameObject buttonFloor4;
 
     [SerializeField] PlayerController playerController;
+    private GameObject mainManager;
 
     // Start is called before the first frame update
     void Start()
     {
         CloseElevatorUI(); //For redundancy
+
+        mainManager = GameObject.FindGameObjectWithTag("MainManager");
     }
     
     public void OpenElevatorUI()
@@ -29,19 +32,19 @@ public class ElevatorController : MonoBehaviour
         buttonFloor4.SetActive(false);
         
         //If floor 2 unlocked, make the button visible
-        if(MainManager.CheckFloor2Unlocked)
+        if(mainManager.GetComponent<MainManager>().CheckFloor2Unlocked())
         {
             buttonFloor2.SetActive(true);
         }
         
         //If floor 3 unlocked, make the button visible
-        if(MainManager.CheckFloor3Unlocked)
+        if(mainManager.GetComponent<MainManager>().CheckFloor3Unlocked())
         {
             buttonFloor3.SetActive(true);
         }
         
         //If floor 4 unlocked, make the button visible
-        if(MainManager.CheckFloor4Unlocked)
+        if(mainManager.GetComponent<MainManager>().CheckFloor4Unlocked())
         {
             buttonFloor4.SetActive(true);
         }
@@ -56,25 +59,25 @@ public class ElevatorController : MonoBehaviour
     //Loading Floors
     public void LoadFloor1()
     {
-        playerController.UpdateManagerInfo();
+        playerController.UpdateManagerInfo(0);
         UnityEngine.SceneManagement.SceneManager.LoadScene("Floor1");
     }
     
     public void LoadFloor2()
     {
-        playerController.UpdateManagerInfo();
+        playerController.UpdateManagerInfo(0);
         UnityEngine.SceneManagement.SceneManager.LoadScene("Floor2");
     }
     
     public void LoadFloor3()
     {
-        playerController.UpdateManagerInfo();
+        playerController.UpdateManagerInfo(0);
         UnityEngine.SceneManagement.SceneManager.LoadScene("Floor3");
     }
     
     public void LoadFloor4()
     {
-        playerController.UpdateManagerInfo();
+        playerController.UpdateManagerInfo(0);
         UnityEngine.SceneManagement.SceneManager.LoadScene("Floor4");
     }
     

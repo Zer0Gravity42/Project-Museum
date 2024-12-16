@@ -22,6 +22,9 @@ public class MainManager : MonoBehaviour
 
     public int dayNumber = 0; // Number of days passed in the game
 
+    public bool openLevelTwo;
+    public bool openLevelThree;
+
     // Reference to the TextMeshPro component for the current day
     public TextMeshProUGUI currentDayText;
 
@@ -98,6 +101,20 @@ public class MainManager : MonoBehaviour
             }
         }
     }
+
+    void LevelTwoElevatorOpen()
+    {
+        openLevelTwo = true;
+    }
+
+    void LevelThreeElevatorOpen()
+    {
+        openLevelThree= true;
+    }
+
+    public bool CheckFloor2Unlocked(){ return openLevelTwo; }
+    public bool CheckFloor3Unlocked() { return openLevelThree; }
+    public bool CheckFloor4Unlocked() { return false; }
 
     private void OnDestroy()
     {
