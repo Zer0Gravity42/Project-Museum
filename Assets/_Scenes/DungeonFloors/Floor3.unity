@@ -333,6 +333,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 57292189}
     m_Modifications:
+    - target: {fileID: 2568545347686997133, guid: 85631bb7c6690064bb2071481c7ce735, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1052128724878336217}
     - target: {fileID: 3531336176174805856, guid: 85631bb7c6690064bb2071481c7ce735, type: 3}
       propertyPath: canvasRect
       value: 
