@@ -17,16 +17,34 @@ public class ElevatorController : MonoBehaviour
     {
         CloseElevatorUI(); //For redundancy
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     
     public void OpenElevatorUI()
     {
         elevatorUI.SetActive(true);
+        
+        //Set all buttons to default state
+        buttonFloor1.SetActive(true);
+        buttonFloor2.SetActive(false);
+        buttonFloor3.SetActive(false);
+        buttonFloor4.SetActive(false);
+        
+        //If floor 2 unlocked, make the button visible
+        if(MainManager.CheckFloor2Unlocked)
+        {
+            buttonFloor2.SetActive(true);
+        }
+        
+        //If floor 3 unlocked, make the button visible
+        if(MainManager.CheckFloor3Unlocked)
+        {
+            buttonFloor3.SetActive(true);
+        }
+        
+        //If floor 4 unlocked, make the button visible
+        if(MainManager.CheckFloor4Unlocked)
+        {
+            buttonFloor4.SetActive(true);
+        }
         
     }
     
