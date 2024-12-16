@@ -6,7 +6,7 @@ using TMPro; // Include TextMeshPro namespace
 using UnityEngine.SceneManagement; // Add Scene Management namespace
 
 public class MainManager : MonoBehaviour
-{
+{ 
     public static MainManager Instance;
 
     // All info relating to persisting data

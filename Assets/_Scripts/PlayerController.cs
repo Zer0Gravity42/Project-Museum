@@ -90,6 +90,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         rb = GetComponent<Rigidbody2D>();
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -190,15 +191,15 @@ public class PlayerController : MonoBehaviour
         }
 
         // Temporary testing: Press 'K' to increase max health by 1
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            IncreaseMaxHealth(1);
-        }
+        //if (Input.GetKeyDown(KeyCode.K))
+        //{
+            //IncreaseMaxHealth(1);
+        //}
         // Temporary testing: Press 'H' to heal 1 hp 
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            Heal(1);
-        }
+        //if (Input.GetKeyDown(KeyCode.H))
+        //{
+          //  Heal(1);
+        //}
 
         // Handle transformation when 'T' is pressed
         if (Input.GetKeyDown(KeyCode.T) && !isTransformed)
@@ -363,11 +364,13 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed", movementDirection.sqrMagnitude);  // Use square magnitude to determine if the player is moving
     }
 
-    private void UpdateArtifactStorage()
+    public void UpdateManagerInfo()
     {
         GameObject tempManager = GameObject.FindGameObjectWithTag("MainManager");
         tempManager.SendMessage("AddAllToPermanents");
         ClearTempManagerObjects();
+
+        SaveHealth();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -383,18 +386,18 @@ public class PlayerController : MonoBehaviour
 
         if (collision.tag == "MuseumPortal")
         {
-            UpdateArtifactStorage();
+            UpdateManagerInfo();
             Application.LoadLevel("Museum"); //loads the dungeon system
         }
         if(collision.tag == "Level2Portal")
         {
-            UpdateArtifactStorage();
+            UpdateManagerInfo();
             //do something here to open level 2 on the elevator ex if level 2 = false level2 = true and mainmanager.setelevatorlevel(2))
             Application.LoadLevel("Floor2");
         }
         if (collision.tag == "Level3Portal")
         {   
-            UpdateArtifactStorage();
+            UpdateManagerInfo();
             //do something here to open level 2 on the elevator ex if level 2 = false level2 = true and mainmanager.setelevatorlevel(2))
             Application.LoadLevel("Floor3");
         }
@@ -481,6 +484,12 @@ public class PlayerController : MonoBehaviour
         if(Input.GetButtonDown("Interact") && currentInteraction && currentInteraction.GetComponent<TutorialExit>())
         {
             currentInteraction.SendMessage("DoExitTutorial");
+            currentInteraction = null;
+        }
+
+        if(Input.GetButtonDown("Interact") && currentInteraction && currentInteraction.GetComponent<Couch>())
+        {
+            currentInteraction.SendMessage("DoSleep");
             currentInteraction = null;
         }
 

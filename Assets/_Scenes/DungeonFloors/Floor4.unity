@@ -1867,6 +1867,8 @@ MonoBehaviour:
   dungeonBossLoop: {fileID: 8300000, guid: 230b4cb610355a24c82c50513ebfc4ba, type: 3}
   dungeonBossVoiceLine: {fileID: 8300000, guid: ccadde6fd54385449bdf0b313b7a74ca, type: 3}
   dungeonBossDeath: {fileID: 8300000, guid: a0775647652ac864c91520f9aad7996f, type: 3}
+  mainCanvas: {fileID: 0}
+  damagePopupPrefab: {fileID: 0}
 --- !u!4 &1291409927
 Transform:
   m_ObjectHideFlags: 0
@@ -2951,6 +2953,10 @@ PrefabInstance:
       propertyPath: buttonFloor4
       value: 
       objectReference: {fileID: 1097617080}
+    - target: {fileID: 3177051808426777615, guid: 2ed9ca0d79e742f488077503c98745d8, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 1052128724878336217}
     - target: {fileID: 3269124616047352737, guid: 2ed9ca0d79e742f488077503c98745d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.72921383
@@ -3686,6 +3692,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1801903170}
   m_SourcePrefab: {fileID: 100100000, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+--- !u!114 &1052128724878336217 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8452144706355131449, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
+  m_PrefabInstance: {fileID: 1052128724878336216}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc77ca84f828c784aa951f70a4e45d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &3526854275416675196 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4713160907097683786, guid: 980d172b3090bd94294e8664ba7ade97, type: 3}
